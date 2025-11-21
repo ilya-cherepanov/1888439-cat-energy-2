@@ -2,6 +2,7 @@
 
 * Студент: [Илья Черепанов](https://up.htmlacademy.ru/adaptive-individual/2/user/1888439).
 * Наставник: [Ирина Антипина](https://htmlacademy.ru/profile/id2108789).
+* Сайт: [Cat Energy](https://ilya-cherepanov.github.io/1888439-cat-energy-2).
 
 ---
 
