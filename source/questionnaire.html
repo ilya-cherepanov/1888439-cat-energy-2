@@ -5,7 +5,9 @@
     <title>Подбор программы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
+    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer -->
+    <!-- linthtml-disable htmlacademy/no-blocking-script -->
+    <script src="scripts/index.js" type="module"></script>
   </head>
 
   <body class="page__body">

@@ -5,8 +5,11 @@
     <title lang="en">Cat Energy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <script src="scripts/index.js" defer></script>
+    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer -->
+    <!-- linthtml-disable htmlacademy/no-blocking-script -->
+    <script src="scripts/index.js" type="module"></script>
   </head>
+
   <body class="page__body">
     <header class="page-header">
       <a class="page-header__logo logo logo--primary" href="index.html" aria-current="page">
