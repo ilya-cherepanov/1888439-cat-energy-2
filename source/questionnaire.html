@@ -5,7 +5,10 @@
     <title>Подбор программы</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer -->
+    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer,
+      если оставить defer то на него ругается HTML Validator, но если убрать, то - LintHTML
+
+      P.S. Здесь изначально было <script src="scripts/index.js" defer></script>, но в gulpfile указано, что собирается esm -->
     <!-- linthtml-disable htmlacademy/no-blocking-script -->
     <script src="scripts/index.js" type="module"></script>
   </head>
@@ -137,7 +140,8 @@
         </div>
         <section class="contacts__map">
           <h3 class="visually-hidden">Мы на карте</h3>
-          <img class="contacts__map-image" src="#" width="320" height="362" alt="Карта с маркером на координатах 59.938631, 30.323037">
+          <img class="contacts__map-marker" src="#" width="56" height="52" alt="Маркер на координатах 59.938631, 30.323037">
+          <img class="contacts__map-image" src="#" width="320" height="362" alt="Карта с центром на Большой Конюшенной улице, доме 19/8">
         </section>
       </section>
 
