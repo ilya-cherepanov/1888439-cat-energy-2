@@ -92,7 +92,7 @@ export function processScripts () {
 
 export function optimizeRaster () {
   const RAW_DENSITY = 2;
-  const TARGET_FORMATS = [undefined, 'webp']; // undefined — initial format: jpg or png
+  const TARGET_FORMATS = [undefined, 'webp', 'avif']; // undefined — initial format: jpg or png
 
   function createOptionsFormat() {
     const formats = [];
