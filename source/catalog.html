@@ -352,10 +352,12 @@
       <section class="subscription">
         <h2 class="subscription__title title">Акции и новинки</h2>
         <p class="subscription__description">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
-        <form class="subscription__form" action="https://echo.htmlacademy.ru" method="post">
-          <label class="visually-hidden" for="subscription-email">Электронная почта:</label>
-          <input class="subscription__input" type="email" name="subscription-email" id="subscription-email" placeholder="кuklachev@gmail.com" required>
-          <button class="subscription__button button button--large" type="submit">Подписаться</button>
+        <form class="subscription__form subscription-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="subscriptin-form__input text-field text-field--large">
+            <label class="text-field__label visually-hidden" for="subscription-email">Электронная почта:</label>
+            <input class="text-field__input" type="email" name="subscription-email" id="subscription-email" placeholder="kuklachev@gmail.com" required>
+          </div>
+          <button class="subscription-form__submit button button--large" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
