@@ -90,7 +90,7 @@ export function processScripts () {
     .pipe(server.stream());
 }
 
-export function optimizeRaster () {
+export async function optimizeRaster () {
   const RAW_DENSITY = 2;
   const TARGET_FORMATS = [undefined, 'webp', 'avif']; // undefined — initial format: jpg or png
 
@@ -105,6 +105,8 @@ export function optimizeRaster () {
             rename: { suffix: `@${density}x` },
             width: ({ width }) => Math.ceil(width * density / RAW_DENSITY),
             jpegOptions: { progressive: true },
+            avifOptions: { quality: 60, effort: 9 },
+            webpOptions: { effort: 6 },
           },
         );
       }
