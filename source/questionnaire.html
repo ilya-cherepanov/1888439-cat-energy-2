@@ -9,12 +9,7 @@
     <link rel="apple-touch-icon" href="favicons/apple.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer,
-      если оставить defer то на него ругается HTML Validator, но если убрать, то - LintHTML
-
-      P.S. Здесь изначально было <script src="scripts/index.js" defer></script>, но в gulpfile указано, что собирается esm -->
-    <!-- linthtml-disable htmlacademy/no-blocking-script -->
-    <script src="scripts/index.js" type="module"></script>
+    <script src="scripts/index.js" defer></script>
   </head>
 
   <body class="page__body">
