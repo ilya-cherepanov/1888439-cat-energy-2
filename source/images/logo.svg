@@ -1,12 +1,12 @@
 <svg xmlns="http://www.w3.org/2000/svg">
   <defs>
       <style>
-        .hidden {
+        .hidden:not(:target) {
           display: none;
         }
 
-        .hidden:target {
-          display: inline;
+        .hidden:target ~ .default {
+          display: none;
         }
       </style>
   </defs>
@@ -25,7 +25,7 @@
     </g>
     <defs>
       <clipPath id="clip0_153_267">
-      <rect width="33" height="38" fill="white"/>
+        <rect width="33" height="38" fill="white"/>
       </clipPath>
     </defs>
   </symbol>
@@ -97,4 +97,8 @@
   <g class="hidden" id="text-gray">
     <use href="#text" fill="#444444" />
   </g>
+  <svg class="default" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 147 38">
+    <use href="#image-small" width="33" height="38"/>
+    <use href="#text" x="46" y="10" width="101" height="18" fill="#111111"/>
+  </svg>
 </svg>
