@@ -1,8 +1,8 @@
 @use "../common/mixins.scss";
-
+@use "../common/variables.scss";
 
 .questionnaire__title {
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 
   @include mixins.secondary-font;
   font-size: 14px;
@@ -13,7 +13,7 @@
   @include mixins.primary-font(
     $font-size: 14px,
     $line-height: 16px,
-    $color: var(--clr-black),
+    $color: var(--clr-black, #{variables.$clr-black}),
   );
   text-align: center;
 }

@@ -2,24 +2,24 @@
 @use "mixins.scss";
 
 :root {
-  --ff-primary: #{variables.$primary-font}, sans-serif;
-  --ff-secondary: #{variables.$secondary-font}, sans-serif;
+  --ff-primary: #{variables.$ff-primary};
+  --ff-secondary: #{variables.$ff-secondary};
 
   --mobile-width: #{variables.$mobile-width};
   --tablet-width: #{variables.$tablet-width};
   --desktop-width: #{variables.$desktop-width};
 
-  --padding-mobile: clamp(20px, 5vw, 30px);
-  --padding-tablet: 30px;
+  --padding-mobile: #{variables.$padding-mobile};
+  --padding-tablet: #{variables.$padding-tablet};
 
-  --rgb-comps-basic-green: 104, 183, 56;
-  --clr-basic-green: rgba(var(--rgb-comps-basic-green), 1);
-  --clr-basic-green-2: #5eaa2f;
-  --clr-basic-grey: #f2f2f2;
-  --clr-special-dark-grey: #444444;
-  --clr-special-dark-grey-2: #222222;
-  --clr-black: #000000;
-  --clr-white: #ffffff;
+  --rgb-comps-basic-green: #{variables.$rgb-comps-basic-green};
+  --clr-basic-green: #{variables.$clr-basic-green};
+  --clr-basic-green-2: #{variables.$clr-basic-green-2};
+  --clr-basic-grey: #{variables.$clr-basic-grey};
+  --clr-special-dark-grey: #{variables.$clr-special-dark-grey};
+  --clr-special-dark-grey-2: #{variables.$clr-special-dark-grey-2};
+  --clr-black: #{variables.$clr-black};
+  --clr-white: #{variables.$clr-white};
 }
 
 html {

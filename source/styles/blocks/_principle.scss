@@ -1,11 +1,12 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .principle {
   padding-inline-start: 80px;
 }
 
 .principle__title {
-  color: var(--clr-basic-grey);
+  color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
 }
 
 .principle__number {

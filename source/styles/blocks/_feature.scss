@@ -1,7 +1,8 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .feature {
-  background-color: var(--clr-basic-grey);
+  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
   padding-inline: 20px 33px;
   padding-block: 30px 18px;
 }

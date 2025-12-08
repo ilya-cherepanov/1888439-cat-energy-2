@@ -1,6 +1,5 @@
 @use "variables.scss";
 @use "mixins.scss";
-
 @include mixins.font-face(
   variables.$primary-font,
   (
@@ -8,7 +7,6 @@
     "woff2": "../../fonts/lato/Lato-Regular.woff2",
   )
 );
-
 @include mixins.font-face(
   variables.$secondary-font,
   (

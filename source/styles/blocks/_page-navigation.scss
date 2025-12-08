@@ -1,5 +1,5 @@
 @use "../common/mixins.scss";
-
+@use "../common/variables.scss";
 
 .page-navigation__list {
   @include mixins.reset-list;
@@ -7,7 +7,7 @@
 
 .page-navigation__link {
   display: block;
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   padding-block: 22px 24px;
 
   @include mixins.secondary-font();

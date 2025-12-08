@@ -1,12 +1,10 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .hero {
-  --_background-color: rgba(var(--rgb-comps-basic-green), 0.85);
+  --_background-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
 
-  padding-inline: var(--padding-mobile);
-  background-image:
-    linear-gradient(var(--_background-color)),
-    url("../../images/backgrounds/cat-background-mobile@1x.jpg");
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   background-image:
     linear-gradient(var(--_background-color)),
     image-set(
@@ -23,10 +21,9 @@
 }
 
 .hero__product-slogan {
-
   @include mixins.secondary-font;
   font-size: 14px;
   line-height: 14px;
-  color: var(--clr-white);
+  color: var(--clr-white, #{variables.$clr-white});
   text-align: center;
 }

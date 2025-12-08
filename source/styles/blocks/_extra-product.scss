@@ -1,4 +1,5 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .extra-product {
   @include mixins.primary-font(
@@ -15,5 +16,5 @@
   @include mixins.secondary-font;
   font-size: 16px;
   line-height: 16px;
-  color: var(--clr-special-dark-grey-2);
+  color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
 }

@@ -1,4 +1,5 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .title {
   @include mixins.secondary-font(
@@ -9,6 +10,6 @@
 }
 
 .hero__page-title.title {
-  color: var(--clr-white);
+  color: var(--clr-white, #{variables.$clr-white});
   text-align: center;
 }

@@ -1,7 +1,8 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .contacts__text {
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 
   @include mixins.primary-font(
     $line-height: 20px,

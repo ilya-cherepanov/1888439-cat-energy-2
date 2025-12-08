@@ -1,4 +1,5 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .extra-products__title {
   margin-block: 25px;
@@ -9,23 +10,20 @@
 
   @include mixins.reset-list;
 
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
 
 .extra-products__promo {
-  --_background-color: rgba(var(--rgb-comps-basic-green), 0.85);
+  --_background-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
 
   padding-block: 186px 43px;
   padding-inline: 58px 61px;
 
-  color: var(--clr-white);
+  color: var(--clr-white, #{variables.$clr-white});
   font-size: 16px;
   line-height: 20px;
   text-align: center;
 
-  background-image:
-    linear-gradient(var(--_background-color)),
-    url("../../images/backgrounds/cat-in-the-bag-mobile@1x.jpg");
   background-image:
     linear-gradient(var(--_background-color)),
     image-set(

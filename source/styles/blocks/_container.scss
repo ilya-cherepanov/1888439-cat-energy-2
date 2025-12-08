@@ -1,3 +1,5 @@
+@use "../common/variables.scss";
+
 .container {
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }

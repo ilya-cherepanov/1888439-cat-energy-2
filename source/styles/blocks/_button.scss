@@ -1,11 +1,12 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .button {
   display: block;
   padding: 10px;
 
   @include mixins.secondary-font(
-    $color: var(--clr-white)
+    $color: var(--clr-white, #{variables.$clr-white})
   );
   font-size: 16px;
   line-height: 20px;
@@ -13,7 +14,7 @@
   text-decoration: none;
 
   border: 0;
-  background-color: var(--clr-basic-green);
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
 }
 
 .button--large {
@@ -23,6 +24,6 @@
 }
 
 .button--secondary {
-  color: var(--clr-special-dark-grey);
-  background-color: var(--clr-basic-grey);
+  color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
 }

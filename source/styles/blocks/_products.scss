@@ -1,4 +1,5 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .products__list {
   @include mixins.reset-list;
@@ -6,7 +7,7 @@
 
 .products__item,
 .products__more-card {
-  padding-inline: var(--padding-mobile);
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
 
 .products__more-card {
