@@ -1,0 +1,14 @@
+@use "../common/mixins.scss";
+
+.title {
+  @include mixins.secondary-font(
+    $text-transform: none,
+  );
+  font-size: 36px;
+  line-height: 36px;
+}
+
+.hero__page-title.title {
+  color: var(--clr-white);
+  text-align: center;
+}

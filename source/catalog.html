@@ -45,7 +45,9 @@
     </header>
 
     <main class="page__main">
-      <h1 class="page-title">Каталог продукции</h1>
+      <div class="container">
+        <h1 class="title">Каталог продукции</h1>
+      </div>
 
       <section class="products">
         <h2 class="visually-hidden">Основные продукты</h2>
@@ -311,7 +313,7 @@
       </section>
 
       <section class="extra-products">
-        <h2 class="extra-products__title title">Дополнительные товары</h2>
+        <h2 class="extra-products__title subtitle">Дополнительные товары</h2>
         <ul class="extra-products__list">
           <li class="extra-products__item extra-product">
             <a class="extra-product__title-link" href="#">
@@ -346,11 +348,13 @@
             <a class="extra-product__button button" href="#">Заказать</a>
           </li>
         </ul>
-        <p class="extra-products__promo">Закажите все и получите чехол для кота в подарок!</p>
+        <div class="container">
+          <p class="extra-products__promo">Закажите все и получите чехол для кота в подарок!</p>
+        </div>
       </section>
 
       <section class="subscription">
-        <h2 class="subscription__title title">Акции и новинки</h2>
+        <h2 class="subscription__title subtitle">Акции и новинки</h2>
         <p class="subscription__description">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
         <form class="subscription__form subscription-form" action="https://echo.htmlacademy.ru" method="post">
           <div class="subscription-form__input text-field text-field--large">

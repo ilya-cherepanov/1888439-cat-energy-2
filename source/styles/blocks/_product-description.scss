@@ -1,0 +1,17 @@
+@use "../common/mixins.scss";
+
+.product-description {
+  @include mixins.primary-font(
+    $font-size: 12px,
+    $line-height: 16px,
+  );
+}
+
+.product-description__item {
+  display: flex;
+  justify-content: space-between;
+}
+
+.product-description__value {
+  margin: 0;
+}

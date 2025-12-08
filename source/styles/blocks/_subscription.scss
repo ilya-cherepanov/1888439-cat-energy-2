@@ -1,0 +1,12 @@
+@use "../common/mixins.scss";
+
+.subscription__description {
+  padding-inline: var(--padding-mobile);
+
+  @include mixins.secondary-font(
+    $text-transform: none,
+  );
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}

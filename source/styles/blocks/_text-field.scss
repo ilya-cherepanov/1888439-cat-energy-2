@@ -1,0 +1,32 @@
+@use "../common/mixins.scss";
+
+.text-field {
+  @include mixins.secondary-font(
+    $color: var(--clr-special-dark-grey),
+  );
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.text-field__input {
+  padding-block: 10px;
+  padding-inline: 20px;
+
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+  text-transform: inherit;
+}
+
+.text-field__input::placeholder {
+  color: inherit;
+}
+
+.text-field--large {
+  font-size: 20px;
+  line-height: 20px;
+}
+
+.text-field--large .text-field__input {
+  padding: 13px;
+}

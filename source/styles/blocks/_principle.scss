@@ -1,0 +1,17 @@
+@use "../common/mixins.scss";
+
+.principle {
+  padding-inline-start: 80px;
+}
+
+.principle__title {
+  color: var(--clr-basic-grey);
+}
+
+.principle__number {
+  display: none;
+}
+
+.principle__description {
+  @include mixins.primary-font;
+}

@@ -1,1 +1,34 @@
-/* здесь используйте глобальные селекторы img, body, html и так далее */
+@use "variables.scss";
+@use "mixins.scss";
+
+:root {
+  --ff-primary: #{variables.$primary-font}, sans-serif;
+  --ff-secondary: #{variables.$secondary-font}, sans-serif;
+
+  --mobile-width: #{variables.$mobile-width};
+  --tablet-width: #{variables.$tablet-width};
+  --desktop-width: #{variables.$desktop-width};
+
+  --padding-mobile: clamp(20px, 5vw, 30px);
+  --padding-tablet: 30px;
+
+  --rgb-comps-basic-green: 104, 183, 56;
+  --clr-basic-green: rgba(var(--rgb-comps-basic-green), 1);
+  --clr-basic-green-2: #5eaa2f;
+  --clr-basic-grey: #f2f2f2;
+  --clr-special-dark-grey: #444444;
+  --clr-special-dark-grey-2: #222222;
+  --clr-black: #000000;
+  --clr-white: #ffffff;
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  margin: 0;
+
+  @include mixins.primary-font();
+}

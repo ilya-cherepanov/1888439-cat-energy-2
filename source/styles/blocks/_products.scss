@@ -1,0 +1,33 @@
+@use "../common/mixins.scss";
+
+.products__list {
+  @include mixins.reset-list;
+}
+
+.products__item,
+.products__more-card {
+  padding-inline: var(--padding-mobile);
+}
+
+.products__more-card {
+  padding-block: 70px 25px;
+
+  @include mixins.primary-font(
+    $font-size: 12px,
+    $line-height: 16px,
+  );
+}
+
+.products__more-title {
+  margin-block: 8px;
+
+  @include mixins.secondary-font;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+}
+
+.products__more-description {
+  margin-block: 8px;
+  text-align: center;
+}

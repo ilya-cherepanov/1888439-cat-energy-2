@@ -1,7 +1,7 @@
 /* GLOBAL */
 @use "common/variables.scss";
-@use "common/global.scss";
 @use "common/fonts.scss";
+@use "common/global.scss";
 
 /* BLOCKS */
 @use "blocks/page.scss";
@@ -10,18 +10,21 @@
 @use "blocks/page-navigation.scss";
 @use "blocks/hero.scss";
 @use "blocks/features.scss";
+@use "blocks/feature.scss";
 @use "blocks/principles.scss";
+@use "blocks/principle.scss";
 @use "blocks/example.scss";
 @use "blocks/slider.scss";
 @use "blocks/page-footer.scss";
 @use "blocks/contacts.scss";
 @use "blocks/socials.scss";
 @use "blocks/copyright.scss";
-@use "blocks/page-title.scss";
+@use "blocks/container.scss";
+@use "blocks/title.scss";
 @use "blocks/products.scss";
 @use "blocks/product-card.scss";
 @use "blocks/product-description.scss";
-@use "blocks/title.scss";
+@use "blocks/subtitle.scss";
 @use "blocks/extra-products.scss";
 @use "blocks/extra-product.scss";
 @use "blocks/subscription.scss";

@@ -1,0 +1,18 @@
+@use "../common/mixins.scss";
+
+
+.page-navigation__list {
+  @include mixins.reset-list;
+}
+
+.page-navigation__link {
+  display: block;
+  padding-inline: var(--padding-mobile);
+  padding-block: 22px 24px;
+
+  @include mixins.secondary-font();
+  font-size: 20px;
+  line-height: 20px;
+  text-decoration: none;
+  text-align: center;
+}
