@@ -1,0 +1,19 @@
+@use "../common/mixins.scss";
+
+
+.questionnaire__title {
+  padding-inline: var(--padding-mobile);
+
+  @include mixins.secondary-font;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.questionnaire__notice {
+  @include mixins.primary-font(
+    $font-size: 14px,
+    $line-height: 16px,
+    $color: var(--clr-black),
+  );
+  text-align: center;
+}

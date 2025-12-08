@@ -1,6 +1,9 @@
 @use "../common/mixins.scss";
 
 .text-field {
+  display: flex;
+  align-items: center;
+
   @include mixins.secondary-font(
     $color: var(--clr-special-dark-grey),
   );
@@ -8,7 +11,12 @@
   line-height: 18px;
 }
 
+.text-field__label {
+  margin-inline-end: 13px;
+}
+
 .text-field__input {
+  flex-grow: 1;
   padding-block: 10px;
   padding-inline: 20px;
 

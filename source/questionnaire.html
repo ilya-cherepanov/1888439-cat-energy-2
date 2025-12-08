@@ -45,7 +45,9 @@
     </header>
 
     <main class="page__main">
-      <h1 class="page-title">Подбор программы</h1>
+      <div class="container">
+        <h1 class="title">Подбор программы</h1>
+      </div>
 
       <section class="questionnaire">
         <h2 class="questionnaire__title">Заполните анкету, и мы подберем программу питания для вашего кота</h2>
@@ -88,7 +90,7 @@
           </fieldset>
 
           <fieldset class="questionnaire__owner-data field-group">
-            <legend class="title">Контактные данные (владельца кота)</legend>
+            <legend class="subtitle">Контактные данные (владельца кота)</legend>
 
             <ul class="field-group__list">
               <li class="field-group__item text-field">
@@ -103,12 +105,14 @@
           </fieldset>
 
           <div class="questionnaire__comment textarea-field">
-            <label class="textarea-field__label title" for="comment">Комментарий</label>
-            <textarea class="textarea-field__input" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+            <label class="textarea-field__label subtitle" for="comment">Комментарий</label>
+            <div class="container">
+              <textarea class="textarea-field__input" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+            </div>
           </div>
 
           <fieldset class="questionnaire__additionally field-group">
-            <legend class="title">Дополнительно</legend>
+            <legend class="subtitle">Дополнительно</legend>
 
             <ul class="field-group__list">
               <li class="field-group__item checkbox-field">
