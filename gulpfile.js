@@ -104,9 +104,10 @@ export async function optimizeRaster () {
             format,
             rename: { suffix: `@${density}x` },
             width: ({ width }) => Math.ceil(width * density / RAW_DENSITY),
-            jpegOptions: { progressive: true },
-            avifOptions: { quality: 60, effort: 9 },
+            jpegOptions: { progressive: true, mozjpeg: true },
+            avifOptions: { quality: 70, effort: 9 },
             webpOptions: { effort: 6 },
+            pngOptions: { effort: 10, compressionLevel: 9, quality: 100 }
           },
         );
       }
