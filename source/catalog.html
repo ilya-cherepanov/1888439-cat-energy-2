@@ -1,23 +1,30 @@
 <!DOCTYPE html>
 <html class="page" lang="ru">
   <head>
-    <meta charset="UTF-8">
-    <title>Каталог продукции</title>
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Каталог продукции</title>
+    <link rel="icon" href="favicon.ico">
+    <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="favicons/apple.png">
+    <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="styles/styles.css">
-    <!-- Правило линтера игнорируется потому, что <script type="module"> автоматически работает как defer,
-      если оставить defer то на него ругается HTML Validator, но если убрать, то - LintHTML
-
-      P.S. Здесь изначально было <script src="scripts/index.js" defer></script>, но в gulpfile указано, что собирается esm -->
-    <!-- linthtml-disable htmlacademy/no-blocking-script -->
-    <script src="scripts/index.js" type="module"></script>
+    <script src="scripts/index.js" defer></script>
   </head>
 
   <body class="page__body">
     <header class="page-header">
       <a class="page-header__logo logo logo--primary" href="index.html">
-        <img class="logo__image" src="#" width="34" height="38" alt="Логотип сайта Кэт Энерджи">
-        <img class="logo__text" src="#" width="101" height="18" lang="en" alt="Cat Energy">
+        <picture>
+          <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-desktop.svg" width="70" height="59">
+          <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-tablet.svg" width="60" height="50">
+          <img class="logo__image" src="images/logo-mobile.svg" width="34" height="38" alt="Логотип сайта">
+        </picture>
+        <picture>
+          <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-text.svg#text-gray" width="118" height="21">
+          <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-text.svg#text-gray" width="101" height="18">
+          <img class="logo__text" src="images/logo-text.svg" width="101" height="18" lang="en" alt="Cat Energy">
+        </picture>
       </a>
       <nav class="page-navigation">
         <button class="page-navigation__burger" type="button">
@@ -31,7 +38,7 @@
             <a class="page-navigation__link page-navigation__link--current" href="catalog.html" aria-current="page">Каталог продукции</a>
           </li>
           <li class="page-navigation__item">
-            <a class="page-navigation__link" href="questionnaire.html">Подбор программы</a>
+            <a class="page-navigation__link" href="#">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -52,7 +59,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="68" height="86" alt="Оранжевая упаковка 'Кэт Энерджи ПРО' курица, 500 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/chicken-small-desktop@1x.avif 1x, images/product/chicken-small-desktop@2x.avif 2x" width="161" height="172">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/chicken-small-desktop@1x.webp 1x, images/product/chicken-small-desktop@2x.webp 2x" width="161" height="172">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/chicken-small-desktop@1x.png 1x, images/product/chicken-small-desktop@2x.png 2x" width="161" height="172">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/chicken-small-tablet@1x.avif 1x, images/product/chicken-small-tablet@2x.avif 2x" width="161" height="172">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/chicken-small-tablet@1x.webp 1x, images/product/chicken-small-tablet@2x.webp 2x" width="161" height="172">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/chicken-small-tablet@1x.png 1x, images/product/chicken-small-tablet@2x.png 2x" width="161" height="172">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/chicken-small-mobile@1x.avif 1x, images/product/chicken-small-mobile@2x.avif 2x" width="68" height="86">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/chicken-small-mobile@1x.webp 1x, images/product/chicken-small-mobile@2x.webp 2x" width="68" height="86">
+                <img class="product-card__image" src="images/product/chicken-small-mobile@1x.png" srcset="images/product/chicken-small-mobile@2x.png 2x" width="68" height="86" alt="Оранжевая упаковка 'Кэт Энерджи ПРО' курица, 500 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -80,7 +95,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="84" height="100" alt="Оранжевая упаковка 'Кэт Энерджи ПРО' курица, 1000 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/chicken-large-desktop@1x.avif 1x, images/product/chicken-large-desktop@2x.avif 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/chicken-large-desktop@1x.webp 1x, images/product/chicken-large-desktop@2x.webp 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/chicken-large-desktop@1x.png 1x, images/product/chicken-large-desktop@2x.png 2x" width="172" height="196">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/chicken-large-tablet@1x.avif 1x, images/product/chicken-large-tablet@2x.avif 2x" width="168" height="206">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/chicken-large-tablet@1x.webp 1x, images/product/chicken-large-tablet@2x.webp 2x" width="168" height="206">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/chicken-large-tablet@1x.png 1x, images/product/chicken-large-tablet@2x.png 2x" width="168" height="206">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/chicken-large-mobile@1x.avif 1x, images/product/chicken-large-mobile@2x.avif 2x" width="84" height="100">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/chicken-large-mobile@1x.webp 1x, images/product/chicken-large-mobile@2x.webp 2x" width="84" height="100">
+                <img class="product-card__image" src="images/product/chicken-large-mobile@1x.png" srcset="images/product/chicken-large-mobile@2x.png 2x" width="84" height="100" alt="Оранжевая упаковка 'Кэт Энерджи ПРО' курица, 1000 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -108,7 +131,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="68" height="78" alt="Зеленая упаковка 'Кэт Энерджи ПРО' рыба, 500 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/fish-small-desktop@1x.avif 1x, images/product/fish-small-desktop@2x.avif 2x" width="163" height="174">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/fish-small-desktop@1x.webp 1x, images/product/fish-small-desktop@2x.webp 2x" width="163" height="174">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/fish-small-desktop@1x.png 1x, images/product/fish-small-desktop@2x.png 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/fish-small-tablet@1x.avif 1x, images/product/fish-small-tablet@2x.avif 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/fish-small-tablet@1x.webp 1x, images/product/fish-small-tablet@2x.webp 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/fish-small-tablet@1x.png 1x, images/product/fish-small-tablet@2x.png 2x" width="163" height="174">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/fish-small-mobile@1x.avif 1x, images/product/fish-small-mobile@2x.avif 2x" width="68" height="78">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/fish-small-mobile@1x.webp 1x, images/product/fish-small-mobile@2x.webp 2x" width="68" height="78">
+                <img class="product-card__image" src="images/product/fish-small-mobile@1x.png" srcset="images/product/fish-small-mobile@2x.png 2x" width="68" height="78" alt="Зеленая упаковка 'Кэт Энерджи ПРО' рыба, 500 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -136,7 +167,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="84" height="100" alt="Зеленая упаковка 'Кэт Энерджи ПРО' рыба, 1000 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/fish-large-desktop@1x.avif 1x, images/product/fish-large-desktop@2x.avif 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/fish-large-desktop@1x.webp 1x, images/product/fish-large-desktop@2x.webp 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/fish-large-desktop@1x.png 1x, images/product/fish-large-desktop@2x.png 2x" width="172" height="196">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/fish-large-tablet@1x.avif 1x, images/product/fish-large-tablet@2x.avif 2x" width="168" height="200">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/fish-large-tablet@1x.webp 1x, images/product/fish-large-tablet@2x.webp 2x" width="168" height="200">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/fish-large-tablet@1x.png 1x, images/product/fish-large-tablet@2x.png 2x" width="168" height="200">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/fish-large-mobile@1x.avif 1x, images/product/fish-large-mobile@2x.avif 2x" width="84" height="100">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/fish-large-mobile@1x.webp 1x, images/product/fish-large-mobile@2x.webp 2x" width="84" height="100">
+                <img class="product-card__image" src="images/product/fish-large-mobile@1x.png" srcset="images/product/fish-large-mobile@2x.png 2x" width="84" height="100" alt="Зеленая упаковка 'Кэт Энерджи ПРО' рыба, 1000 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -164,7 +203,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="68" height="78" alt="Синяя упаковка 'Кэт Энерджи СЛИМ' гречка, 500 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/buckwheat-small-desktop@1x.avif 1x, images/product/buckwheat-small-desktop@2x.avif 2x" width="161" height="171">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/buckwheat-small-desktop@1x.webp 1x, images/product/buckwheat-small-desktop@2x.webp 2x" width="161" height="171">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/buckwheat-small-desktop@1x.png 1x, images/product/buckwheat-small-desktop@2x.png 2x" width="161" height="171">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/buckwheat-small-tablet@1x.avif 1x, images/product/buckwheat-small-tablet@2x.avif 2x" width="161" height="171">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/buckwheat-small-tablet@1x.webp 1x, images/product/buckwheat-small-tablet@2x.webp 2x" width="161" height="171">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/buckwheat-small-tablet@1x.png 1x, images/product/buckwheat-small-tablet@2x.png 2x" width="161" height="171">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/buckwheat-small-mobile@1x.avif 1x, images/product/buckwheat-small-mobile@2x.avif 2x" width="68" height="78">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/buckwheat-small-mobile@1x.webp 1x, images/product/buckwheat-small-mobile@2x.webp 2x" width="68" height="78">
+                <img class="product-card__image" src="images/product/buckwheat-small-mobile@1x.png" srcset="images/product/buckwheat-small-mobile@2x.png 2x" width="68" height="78" alt="Синяя упаковка 'Кэт Энерджи СЛИМ' гречка, 500 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -192,7 +239,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="84" height="100" alt="Синяя упаковка 'Кэт Энерджи СЛИМ' гречка, 1000 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/buckwheat-large-desktop@1x.avif 1x, images/product/buckwheat-large-desktop@2x.avif 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/buckwheat-large-desktop@1x.webp 1x, images/product/buckwheat-large-desktop@2x.webp 2x" width="172" height="196">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/buckwheat-large-desktop@1x.png 1x, images/product/buckwheat-large-desktop@2x.png 2x" width="172" height="196">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/buckwheat-large-tablet@1x.avif 1x, images/product/buckwheat-large-tablet@2x.avif 2x" width="168" height="200">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/buckwheat-large-tablet@1x.webp 1x, images/product/buckwheat-large-tablet@2x.webp 2x" width="168" height="200">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/buckwheat-large-tablet@1x.png 1x, images/product/buckwheat-large-tablet@2x.png 2x" width="168" height="200">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/buckwheat-large-mobile@1x.avif 1x, images/product/buckwheat-large-mobile@2x.avif 2x" width="84" height="100">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/buckwheat-large-mobile@1x.webp 1x, images/product/buckwheat-large-mobile@2x.webp 2x" width="84" height="100">
+                <img class="product-card__image" src="images/product/buckwheat-large-mobile@1x.png" srcset="images/product/buckwheat-large-mobile@2x.png 2x" width="84" height="100" alt="Синяя упаковка 'Кэт Энерджи СЛИМ' гречка, 1000 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -220,7 +275,15 @@
             </a>
             <a class="product-card__image-link" href="#" tabindex="-1">
               <picture class="product-card__image-wrapper">
-                <img class="product-card__image" src="#" width="72" height="84" alt="Фиолетовая упаковка 'Кэт Энерджи СЛИМ' рис, 500 грамм">
+                <source media="(min-width: 1440px)" type="image/avif" srcset="images/product/rice-small-desktop@1x.avif 1x, images/product/rice-small-desktop@2x.avif 2x" width="163" height="174">
+                <source media="(min-width: 1440px)" type="image/webp" srcset="images/product/rice-small-desktop@1x.webp 1x, images/product/rice-small-desktop@2x.webp 2x" width="163" height="174">
+                <source media="(min-width: 1440px)" type="image/png" srcset="images/product/rice-small-desktop@1x.png 1x, images/product/rice-small-desktop@2x.png 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/avif" srcset="images/product/rice-small-tablet@1x.avif 1x, images/product/rice-small-tablet@2x.avif 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/webp" srcset="images/product/rice-small-tablet@1x.webp 1x, images/product/rice-small-tablet@2x.webp 2x" width="163" height="174">
+                <source media="(min-width: 768px)" type="image/png" srcset="images/product/rice-small-tablet@1x.png 1x, images/product/rice-small-tablet@2x.png 2x" width="163" height="174">
+                <source media="(min-width: 320px)" type="image/avif" srcset="images/product/rice-small-mobile@1x.avif 1x, images/product/rice-small-mobile@2x.avif 2x" width="72" height="84">
+                <source media="(min-width: 320px)" type="image/webp" srcset="images/product/rice-small-mobile@1x.webp 1x, images/product/rice-small-mobile@2x.webp 2x" width="72" height="84">
+                <img class="product-card__image" src="images/product/rice-small-mobile@1x.png" srcset="images/product/rice-small-mobile@2x.png 2x" width="72" height="84" alt="Фиолетовая упаковка 'Кэт Энерджи СЛИМ' рис, 500 грамм">
               </picture>
             </a>
             <dl class="product-card__description product-description">
@@ -289,10 +352,12 @@
       <section class="subscription">
         <h2 class="subscription__title title">Акции и новинки</h2>
         <p class="subscription__description">Подпишитесь на наши новости и не пропустите ни одного предложения!</p>
-        <form class="subscription__form" action="https://echo.htmlacademy.ru" method="post">
-          <label class="visually-hidden" for="subscription-email">Электронная почта:</label>
-          <input class="subscription__input" type="email" name="subscription-email" id="subscription-email" placeholder="кuklachev@gmail.com" required>
-          <button class="subscription__button button button--large" type="submit">Подписаться</button>
+        <form class="subscription__form subscription-form" action="https://echo.htmlacademy.ru" method="post">
+          <div class="subscription-form__input text-field text-field--large">
+            <label class="text-field__label visually-hidden" for="subscription-email">Электронная почта:</label>
+            <input class="text-field__input" type="email" name="subscription-email" id="subscription-email" placeholder="kuklachev@gmail.com" required>
+          </div>
+          <button class="subscription-form__submit button button--large" type="submit">Подписаться</button>
         </form>
       </section>
     </main>
@@ -308,14 +373,31 @@
         </div>
         <section class="contacts__map">
           <h3 class="visually-hidden">Мы на карте</h3>
-          <img class="contacts__map-marker" src="#" width="56" height="52" alt="Маркер на координатах 59.938631, 30.323037">
-          <img class="contacts__map-image" src="#" width="320" height="362" alt="Карта с центром на Большой Конюшенной улице, доме 19/8">
+          <picture>
+            <source media="(min-width: 768px)" type="image/avif" srcset="images/map/pins/map-pin-tablet@1x.avif 1x, images/map/pins/map-pin-tablet@2x.avif 2x" width="113" height="106">
+            <source media="(min-width: 768px)" type="image/webp" srcset="images/map/pins/map-pin-tablet@1x.webp 1x, images/map/pins/map-pin-tablet@2x.webp 2x" width="113" height="106">
+            <source media="(min-width: 768px)" type="image/png" srcset="images/map/pins/map-pin-tablet@1x.png 1x, images/map/pins/map-pin-tablet@2x.png 2x" width="113" height="106">
+            <source media="(min-width: 320px)" type="image/avif" srcset="images/map/pins/map-pin-mobile@1x.avif 1x, images/map/pins/map-pin-mobile@2x.avif 2x" width="56" height="52">
+            <source media="(min-width: 320px)" type="image/webp" srcset="images/map/pins/map-pin-mobile@1x.webp 1x, images/map/pins/map-pin-mobile@2x.webp 2x" width="56" height="52">
+            <img class="contacts__map-marker" src="images/map/pins/map-pin-mobile@1x.png" srcset="images/map/pins/map-pin-mobile@2x.png 2x" width="56" height="52" alt="Маркер на координатах 59.938631, 30.323037">
+          </picture>
+          <picture>
+            <source media="(min-width: 1440px)" type="image/avif" srcset="images/map/map-desktop@1x.avif 1x, images/map/map-desktop@2x.avif 2x" width="1440" height="400">
+            <source media="(min-width: 1440px)" type="image/webp" srcset="images/map/map-desktop@1x.webp 1x, images/map/map-desktop@2x.webp 2x" width="1440" height="400">
+            <source media="(min-width: 1440px)" type="image/png" srcset="images/map/map-desktop@1x.png 1x, images/map/map-desktop@2x.png 2x" width="1440" height="400">
+            <source media="(min-width: 768px)" type="image/avif" srcset="images/map/map-tablet@1x.avif 1x, images/map/map-tablet@2x.avif 2x" width="768" height="400">
+            <source media="(min-width: 768px)" type="image/webp" srcset="images/map/map-tablet@1x.webp 1x, images/map/map-tablet@2x.webp 2x" width="768" height="400">
+            <source media="(min-width: 768px)" type="image/png" srcset="images/map/map-tablet@1x.png 1x, images/map/map-tablet@2x.png 2x" width="768" height="400">
+            <source media="(min-width: 320px)" type="image/avif" srcset="images/map/map-mobile@1x.avif 1x, images/map/map-mobile@2x.avif 2x" width="320" height="362">
+            <source media="(min-width: 320px)" type="image/webp" srcset="images/map/map-mobile@1x.webp 1x, images/map/map-mobile@2x.webp 2x" width="320" height="362">
+            <img class="contacts__map-image" src="images/map/map-mobile@1x.png" srcset="images/map/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с центром на Большой Конюшенной улице, доме 19/8">
+          </picture>
         </section>
       </section>
 
       <div class="page-footer__end">
         <a class="page-footer__logo logo logo--secondary" href="index.html">
-          <img class="logo__text" src="#" width="128" height="24" lang="en" alt="Cat Energy">
+          <img class="logo__text" src="images/logo-text.svg" width="128" height="24" lang="en" alt="Cat Energy">
         </a>
 
         <section class="page-footer__socials socials">
