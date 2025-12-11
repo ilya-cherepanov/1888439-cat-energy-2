@@ -1,4 +1,5 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .copyright {
   @include mixins.primary-font(
@@ -6,4 +7,30 @@
     $line-height: 20px,
   );
   text-decoration: none;
+}
+
+.copyright::after {
+  content: "";
+
+  display: inline-block;
+  inline-size: 27px;
+  block-size: 34px;
+
+  text-align: end;
+  vertical-align: middle;
+
+  background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+  mask-image: url("../../icons/stack.svg#html-academy-logo");
+  mask-repeat: no-repeat;
+  mask-size: 27px 34px;
+  mask-position: center;
+}
+
+.copyright:hover::after,
+.copyright:active::after {
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+.copyright:active {
+  filter: opacity(0.3);
 }

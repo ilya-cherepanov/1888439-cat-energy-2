@@ -1,11 +1,43 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .socials__list {
   @include mixins.reset-list;
+  display: flex;
 }
 
 .socials__link {
+  display: block;
+  min-block-size: 38px;
+  min-inline-size: 52px;
+
   @include mixins.primary-font;
   font-style: normal;
   text-decoration: none;
+
+  background-color: var(--clr-special-grey-2, #{variables.$clr-special-dark-grey-2});
+  mask-size: 28px 22px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.socials__link--vk {
+  mask-image: url("../../icons/stack.svg#vkontakte");
+}
+
+.socials__link--youtube {
+  mask-image: url("../../icons/stack.svg#youtube");
+}
+
+.socials__link--telegram {
+  mask-image: url("../../icons/stack.svg#telegram");
+}
+
+.socials__link:hover,
+.socials__link:active {
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+.socials__link:active {
+  filter: opacity(0.3);
 }
