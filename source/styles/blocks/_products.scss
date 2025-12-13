@@ -11,12 +11,36 @@
 }
 
 .products__more-card {
-  padding-block: 70px 25px;
+  --cross-size: 30px;
+
+  position: relative;
+
+  padding-block: 80px 25px;
 
   @include mixins.primary-font(
     $font-size: 12px,
     $line-height: 16px,
   );
+}
+
+.products__more-card::before,
+.products__more-card::after {
+  content: "";
+  position: absolute;
+  inset-inline-start: 50%;
+  inset-block-start: 40px;
+
+  display: block;
+  inline-size: var(--cross-size);
+  block-size: 2px;
+  margin-block-start: -1px;
+  margin-inline-start: calc(-1 * var(--cross-size) / 2);
+
+  background-color: #d3d3d3;
+}
+
+.products__more-card::before {
+  transform: rotate(90deg);
 }
 
 .products__more-title {

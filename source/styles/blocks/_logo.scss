@@ -1,1 +1,11 @@
-// Logo
+.logo {
+  text-decoration: none;
+}
+
+.logo:hover {
+  filter: opacity(0.8);
+}
+
+.logo:active {
+  filter: opacity(0.6);
+}

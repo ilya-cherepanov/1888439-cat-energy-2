@@ -5,6 +5,42 @@
   @include mixins.reset-list;
 }
 
+.page-navigation__burger {
+  position: relative;
+
+  inline-size: 24px;
+  block-size: 18px;
+
+  border: 0;
+  background-color: rgba(0, 0, 0, 0);
+  background-image: linear-gradient(var(--clr-black, #{variables.$clr-black}));
+  background-repeat: no-repeat;
+  background-size: 24px 2px;
+  background-position: center;
+}
+
+.page-navigation__burger::before,
+.page-navigation__burger::after {
+  content: "";
+
+  position: absolute;
+  inset-inline-start: 0;
+
+  display: block;
+  inline-size: 100%;
+  block-size: 2px;
+
+  background-color: var(--clr-black, #{variables.$clr-black});
+}
+
+.page-navigation__burger::before {
+  inset-block-start: 0;
+}
+
+.page-navigation__burger::after {
+  inset-block-end: 0;
+}
+
 .page-navigation__link {
   display: block;
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
