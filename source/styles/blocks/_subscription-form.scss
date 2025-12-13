@@ -1,0 +1,5 @@
+@use "../common/variables.scss";
+
+.subscription-form {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+}

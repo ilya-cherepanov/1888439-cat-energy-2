@@ -1,0 +1,40 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.extra-products__title {
+  margin-block: 25px;
+}
+
+.extra-products__list {
+  margin-block: 35px;
+
+  @include mixins.reset-list;
+
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+}
+
+.extra-products__promo {
+  --_background-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
+
+  padding-block: 186px 43px;
+  padding-inline: 58px 61px;
+
+  color: var(--clr-white, #{variables.$clr-white});
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+
+  background-image:
+    linear-gradient(var(--_background-color)),
+    image-set(
+      url("../../images/backgrounds/cat-in-the-bag-mobile@2x.avif") 2x type("image/avif"),
+      url("../../images/backgrounds/cat-in-the-bag-mobile@1x.avif") 1x type("image/avif"),
+      url("../../images/backgrounds/cat-in-the-bag-mobile@2x.webp") 2x type("image/webp"),
+      url("../../images/backgrounds/cat-in-the-bag-mobile@1x.webp") 1x type("image/webp"),
+      url("../../images/backgrounds/cat-in-the-bag-mobile@2x.jpg") 2x,
+      url("../../images/backgrounds/cat-in-the-bag-mobile@1x.jpg") 1x,
+    );
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center;
+}

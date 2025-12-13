@@ -1,0 +1,31 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.example {
+  padding-block: 25px 40px;
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+  background-color: #eaeaea;
+
+  @include mixins.primary-font;
+}
+
+.example__results-title {
+  font-size: 12px;
+  line-height: 12px;
+}
+
+.example__results-value {
+  padding: 7px;
+  margin: 0;
+
+  @include mixins.secondary-font;
+  font-size: 24px;
+  line-height: 24px;
+}
+
+.example__price {
+  @include mixins.secondary-font;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+}

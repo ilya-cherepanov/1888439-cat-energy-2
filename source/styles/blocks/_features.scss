@@ -1,0 +1,10 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.features {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+}
+
+.features__list {
+  @include mixins.reset-list;
+}

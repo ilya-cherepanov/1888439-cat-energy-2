@@ -1,0 +1,11 @@
+@use "../common/mixins.scss";
+
+.socials__list {
+  @include mixins.reset-list;
+}
+
+.socials__link {
+  @include mixins.primary-font;
+  font-style: normal;
+  text-decoration: none;
+}

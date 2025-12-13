@@ -1,0 +1,29 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.hero {
+  --_background-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
+
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+  background-image:
+    linear-gradient(var(--_background-color)),
+    image-set(
+      url("../../images/backgrounds/cat-background-mobile@2x.avif") 2x type("image/avif"),
+      url("../../images/backgrounds/cat-background-mobile@1x.avif") 1x type("image/avif"),
+      url("../../images/backgrounds/cat-background-mobile@2x.webp") 2x type("image/webp"),
+      url("../../images/backgrounds/cat-background-mobile@1x.webp") 1x type("image/webp"),
+      url("../../images/backgrounds/cat-background-mobile@2x.jpg") 2x,
+      url("../../images/backgrounds/cat-background-mobile@1x.jpg") 1x,
+    );
+  background-repeat: no-repeat, no-repeat;
+  background-size: cover, cover;
+  background-position: center, center top;
+}
+
+.hero__product-slogan {
+  @include mixins.secondary-font;
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--clr-white, #{variables.$clr-white});
+  text-align: center;
+}

@@ -1,0 +1,34 @@
+@use "variables.scss";
+@use "mixins.scss";
+
+:root {
+  --ff-primary: #{variables.$ff-primary};
+  --ff-secondary: #{variables.$ff-secondary};
+
+  --mobile-width: #{variables.$mobile-width};
+  --tablet-width: #{variables.$tablet-width};
+  --desktop-width: #{variables.$desktop-width};
+
+  --padding-mobile: #{variables.$padding-mobile};
+  --padding-tablet: #{variables.$padding-tablet};
+
+  --rgb-comps-basic-green: #{variables.$rgb-comps-basic-green};
+  --clr-basic-green: #{variables.$clr-basic-green};
+  --clr-basic-green-2: #{variables.$clr-basic-green-2};
+  --clr-basic-grey: #{variables.$clr-basic-grey};
+  --clr-special-dark-grey: #{variables.$clr-special-dark-grey};
+  --clr-special-dark-grey-2: #{variables.$clr-special-dark-grey-2};
+  --clr-black: #{variables.$clr-black};
+  --clr-white: #{variables.$clr-white};
+}
+
+html {
+  block-size: 100%;
+}
+
+body {
+  min-block-size: 100%;
+  margin: 0;
+
+  @include mixins.primary-font();
+}

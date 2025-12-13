@@ -1,0 +1,16 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.principles {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+}
+
+.principles__title {
+  @include mixins.secondary-font(
+    $text-transform: none,
+  );
+}
+
+.principles__list {
+  @include mixins.reset-list;
+}

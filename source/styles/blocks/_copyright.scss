@@ -1,0 +1,9 @@
+@use "../common/mixins.scss";
+
+.copyright {
+  @include mixins.primary-font(
+    $font-size: 16px,
+    $line-height: 20px,
+  );
+  text-decoration: none;
+}

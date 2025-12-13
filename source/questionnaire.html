@@ -45,7 +45,9 @@
     </header>
 
     <main class="page__main">
-      <h1 class="page-title">Подбор программы</h1>
+      <div class="container">
+        <h1 class="title">Подбор программы</h1>
+      </div>
 
       <section class="questionnaire">
         <h2 class="questionnaire__title">Заполните анкету, и мы подберем программу питания для вашего кота</h2>
@@ -88,7 +90,7 @@
           </fieldset>
 
           <fieldset class="questionnaire__owner-data field-group">
-            <legend class="title">Контактные данные (владельца кота)</legend>
+            <legend class="subtitle">Контактные данные (владельца кота)</legend>
 
             <ul class="field-group__list">
               <li class="field-group__item text-field">
@@ -103,12 +105,14 @@
           </fieldset>
 
           <div class="questionnaire__comment textarea-field">
-            <label class="textarea-field__label title" for="comment">Комментарий</label>
-            <textarea class="textarea-field__input" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+            <label class="textarea-field__label subtitle" for="comment">Комментарий</label>
+            <div class="container">
+              <textarea class="textarea-field__input" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+            </div>
           </div>
 
           <fieldset class="questionnaire__additionally field-group">
-            <legend class="title">Дополнительно</legend>
+            <legend class="subtitle">Дополнительно</legend>
 
             <ul class="field-group__list">
               <li class="field-group__item checkbox-field">
@@ -148,14 +152,6 @@
         <section class="contacts__map">
           <h3 class="visually-hidden">Мы на карте</h3>
           <picture>
-            <source media="(min-width: 768px)" type="image/avif" srcset="images/map/pins/map-pin-tablet@1x.avif 1x, images/map/pins/map-pin-tablet@2x.avif 2x" width="113" height="106">
-            <source media="(min-width: 768px)" type="image/webp" srcset="images/map/pins/map-pin-tablet@1x.webp 1x, images/map/pins/map-pin-tablet@2x.webp 2x" width="113" height="106">
-            <source media="(min-width: 768px)" type="image/png" srcset="images/map/pins/map-pin-tablet@1x.png 1x, images/map/pins/map-pin-tablet@2x.png 2x" width="113" height="106">
-            <source media="(min-width: 320px)" type="image/avif" srcset="images/map/pins/map-pin-mobile@1x.avif 1x, images/map/pins/map-pin-mobile@2x.avif 2x" width="56" height="52">
-            <source media="(min-width: 320px)" type="image/webp" srcset="images/map/pins/map-pin-mobile@1x.webp 1x, images/map/pins/map-pin-mobile@2x.webp 2x" width="56" height="52">
-            <img class="contacts__map-marker" src="images/map/pins/map-pin-mobile@1x.png" srcset="images/map/pins/map-pin-mobile@2x.png 2x" width="56" height="52" alt="Маркер на координатах 59.938631, 30.323037">
-          </picture>
-          <picture>
             <source media="(min-width: 1440px)" type="image/avif" srcset="images/map/map-desktop@1x.avif 1x, images/map/map-desktop@2x.avif 2x" width="1440" height="400">
             <source media="(min-width: 1440px)" type="image/webp" srcset="images/map/map-desktop@1x.webp 1x, images/map/map-desktop@2x.webp 2x" width="1440" height="400">
             <source media="(min-width: 1440px)" type="image/png" srcset="images/map/map-desktop@1x.png 1x, images/map/map-desktop@2x.png 2x" width="1440" height="400">
@@ -164,7 +160,7 @@
             <source media="(min-width: 768px)" type="image/png" srcset="images/map/map-tablet@1x.png 1x, images/map/map-tablet@2x.png 2x" width="768" height="400">
             <source media="(min-width: 320px)" type="image/avif" srcset="images/map/map-mobile@1x.avif 1x, images/map/map-mobile@2x.avif 2x" width="320" height="362">
             <source media="(min-width: 320px)" type="image/webp" srcset="images/map/map-mobile@1x.webp 1x, images/map/map-mobile@2x.webp 2x" width="320" height="362">
-            <img class="contacts__map-image" src="images/map/map-mobile@1x.png" srcset="images/map/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с центром на Большой Конюшенной улице, доме 19/8">
+            <img class="contacts__map-image" src="images/map/map-mobile@1x.png" srcset="images/map/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с маркером на Большой Конюшенной улице, доме 19/8">
           </picture>
         </section>
       </section>

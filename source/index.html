@@ -47,14 +47,16 @@
     <main class="page__main">
       <div class="hero">
         <hgroup class="hero__page-heading">
-          <h1 class="hero__page-title">
+          <h1 class="hero__page-title title">
             <span class="visually-hidden" lang="en">Cat Energy -</span>
             Функциональное питание для котов
           </h1>
           <p class="hero__product-slogan">Занялся собой? Займись котом!</p>
         </hgroup>
-        <a class="hero__button button button--large" href="#">Подобрать программу</a>
         <picture>
+          <source media="(min-width: 1440px)" type="image/avif" srcset="images/hero-can-desktop@1x.avif 1x, images/hero-can-desktop@2x.avif 2x" width="552" height="499">
+          <source media="(min-width: 1440px)" type="image/webp" srcset="images/hero-can-desktop@1x.webp 1x, images/hero-can-desktop@2x.webp 2x" width="552" height="499">
+          <source media="(min-width: 1440px)" type="image/png" srcset="images/hero-can-desktop@1x.png 1x, images/hero-can-desktop@2x.png 2x" width="552" height="499">
           <source media="(min-width: 768px)" type="image/avif" srcset="images/hero-can-tablet@1x.avif 1x, images/hero-can-tablet@2x.avif 2x" width="709" height="609">
           <source media="(min-width: 768px)" type="image/webp" srcset="images/hero-can-tablet@1x.webp 1x, images/hero-can-tablet@2x.webp 2x" width="709" height="609">
           <source media="(min-width: 768px)" type="image/png" srcset="images/hero-can-tablet@1x.png 1x, images/hero-can-tablet@2x.png 2x" width="709" height="609">
@@ -62,6 +64,7 @@
           <source media="(min-width: 320px)" type="image/webp" srcset="images/hero-can-mobile@1x.webp 1x, images/hero-can-mobile@2x.webp 2x" width="280" height="270">
           <img class="hero__image" src="images/hero-can-mobile@1x.png" srcset="images/hero-can-mobile@2x.png 2x" width="280" height="270" alt="Пример товара 'Кэт Энерджи Про' со вкусом курицы в 500 граммовой упаковке">
         </picture>
+        <a class="hero__button button button--large" href="#">Подобрать программу</a>
       </div>
 
       <section class="features">
@@ -89,7 +92,7 @@
       </section>
 
       <section class="principles">
-        <h2 class="principles__title">Как это работает</h2>
+        <h2 class="principles__title title">Как это работает</h2>
         <ol class="principles__list">
           <li class="principles__item principle principle--composition">
             <h3 class="principle__title">
@@ -131,7 +134,7 @@
       </section>
 
       <section class="example">
-        <h2 class="example__title">Живой пример</h2>
+        <h2 class="example__title title">Живой пример</h2>
         <p class="example__description">
           Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на <span lang="en">Cat Energy Slim</span>.
           Отличный результат без изнуряющих тренировок!
@@ -185,14 +188,6 @@
         </div>
         <section class="contacts__map">
           <h3 class="visually-hidden">Мы на карте</h3>
-          <picture>
-            <source media="(min-width: 768px)" type="image/avif" srcset="images/map/pins/map-pin-tablet@1x.avif 1x, images/map/pins/map-pin-tablet@2x.avif 2x" width="113" height="106">
-            <source media="(min-width: 768px)" type="image/webp" srcset="images/map/pins/map-pin-tablet@1x.webp 1x, images/map/pins/map-pin-tablet@2x.webp 2x" width="113" height="106">
-            <source media="(min-width: 768px)" type="image/png" srcset="images/map/pins/map-pin-tablet@1x.png 1x, images/map/pins/map-pin-tablet@2x.png 2x" width="113" height="106">
-            <source media="(min-width: 320px)" type="image/avif" srcset="images/map/pins/map-pin-mobile@1x.avif 1x, images/map/pins/map-pin-mobile@2x.avif 2x" width="56" height="52">
-            <source media="(min-width: 320px)" type="image/webp" srcset="images/map/pins/map-pin-mobile@1x.webp 1x, images/map/pins/map-pin-mobile@2x.webp 2x" width="56" height="52">
-            <img class="contacts__map-marker" src="images/map/pins/map-pin-mobile@1x.png" srcset="images/map/pins/map-pin-mobile@2x.png 2x" width="56" height="52" alt="Маркер на координатах 59.938631, 30.323037">
-          </picture>
           <picture>
             <source media="(min-width: 1440px)" type="image/avif" srcset="images/map/map-desktop@1x.avif 1x, images/map/map-desktop@2x.avif 2x" width="1440" height="400">
             <source media="(min-width: 1440px)" type="image/webp" srcset="images/map/map-desktop@1x.webp 1x, images/map/map-desktop@2x.webp 2x" width="1440" height="400">

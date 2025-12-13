@@ -1,0 +1,18 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.product-card {
+  padding-block: 20px 25px;
+}
+
+.product-card__title-link {
+  text-decoration: none;
+}
+
+.product-card__title {
+  @include mixins.secondary-font(
+    $color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2}),
+  );
+  font-size: 16px;
+  line-height: 20px;
+}

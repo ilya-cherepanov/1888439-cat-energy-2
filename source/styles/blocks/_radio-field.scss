@@ -1,0 +1,10 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.radio-field {
+  @include mixins.secondary-font(
+    $color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey}),
+  );
+  font-size: 16px;
+  line-height: 18px;
+}

@@ -1,0 +1,17 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+
+.textarea-field__input {
+  display: block;
+  box-sizing: border-box;
+  inline-size: 100%;
+  min-block-size: 150px;
+  padding: 14px;
+
+  @include mixins.secondary-font(
+    $color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey}),
+  );
+  font-size: 16px;
+  line-height: 18px;
+}

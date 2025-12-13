@@ -1,0 +1,12 @@
+@use "../common/variables.scss";
+
+.page-footer {
+  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+}
+
+.page-footer__end {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+  padding-block: 40px;
+
+  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+}

@@ -1,0 +1,20 @@
+@use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.contacts__text {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+
+  @include mixins.primary-font(
+    $line-height: 20px,
+  );
+}
+
+.contacts__welcome {
+  @include mixins.secondary-font;
+  font-size: 16px;
+  line-height: 20px;
+}
+
+.contacts__address {
+  font-style: normal;
+}
