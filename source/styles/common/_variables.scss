@@ -9,7 +9,7 @@ $tablet-width: 768px;
 $desktop-width: 1440px;
 
 $padding-mobile: clamp(20px, 5vw, 30px);
-$padding-tablet: 30px;
+$padding-tablet: clamp(30px, calc(13vw - 70px), 110px);
 
 $rgb-comps-basic-green: 104, 183, 56;
 $clr-basic-green: #68b738;
