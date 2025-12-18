@@ -4,8 +4,6 @@
 .hero {
   --_overlay-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
 
-  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
-  padding-block-start: 27px;
   background-image:
     linear-gradient(
       to bottom,
@@ -24,6 +22,11 @@
   background-repeat: no-repeat, no-repeat, no-repeat;
   background-size: auto, auto 63%, auto 63%;
   background-position: center, center top, center top;
+}
+
+.hero__container {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+  padding-block-start: 27px;
 }
 
 .hero__page-heading {
@@ -52,12 +55,14 @@
 
 @media (min-width: variables.$tablet-width) {
   .hero {
+    background: none;
+  }
+
+  .hero__container {
     display: grid;
     grid-template-columns: clamp(80px, calc(103px - 1.5vw), 90px) 224px 1fr clamp(80px, calc(103px - 1.5vw), 90px);
     padding-block-start: 65px;
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
-
-    background: none;
   }
 
   .hero__page-heading {
@@ -65,7 +70,6 @@
     inline-size: 416px;
     grid-column: 2 / -1;
   }
-
 
   .hero__product-slogan {
     margin-block: 21px;
@@ -88,14 +92,44 @@
 
 @media (min-width: variables.$desktop-width) {
   .hero {
-    grid-template-columns: 80px 224px 143px 47px 1fr 80px;
-    background-image: linear-gradient(to right, rgba(0, 0, 0, 0) 50%, var(--_overlay-color) 50%);
-    background-repeat: no-repeat;
-    background-position: center;
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    inset-inline-start: 50%;
+    z-index: -2;
+
+    display: block;
+
+    background-image:
+      linear-gradient(var(--_overlay-color) 50%),
+      image-set(
+        url("../../images/backgrounds/cat-background-desktop@2x.avif") 2x type("image/avif"),
+        url("../../images/backgrounds/cat-background-desktop@1x.avif") 1x type("image/avif"),
+        url("../../images/backgrounds/cat-background-desktop@2x.webp") 2x type("image/webp"),
+        url("../../images/backgrounds/cat-background-desktop@1x.webp") 1x type("image/webp"),
+        url("../../images/backgrounds/cat-background-desktop@2x.jpg") 2x,
+        url("../../images/backgrounds/cat-background-desktop@1x.jpg") 1x,
+      ),
+      linear-gradient(#4f4e52, #3e3d41 1388px);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, left 0 bottom 0, left 0 bottom 0;
+  }
+
+  .hero__container {
+    padding-inline: 0;
+    padding-block-start: 29px;
+    grid-template-columns: minmax(190px, 1fr) 224px 143px 47px auto minmax(190px, 1fr);
+    grid-template-rows: 81px auto 1fr;
+    clear: both;
   }
 
   .hero__page-heading {
-    grid-row: 1;
+    grid-row: 2;
     grid-column: 2 / 5;
   }
 
@@ -103,5 +137,10 @@
     grid-column: 4 / -2;
     grid-row: 1 / 4;
     justify-self: start;
+  }
+
+  .hero__button {
+    align-self: start;
+    grid-row: 3;
   }
 }

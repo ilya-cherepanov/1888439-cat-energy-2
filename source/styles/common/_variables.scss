@@ -8,8 +8,13 @@ $mobile-width: 320px;
 $tablet-width: 768px;
 $desktop-width: 1440px;
 
-$padding-mobile: clamp(20px, 5vw, 30px);
-$padding-tablet: clamp(30px, calc(13vw - 70px), 110px);
+$padding-mobile-breakpoint: 20px;
+$padding-tablet-breakpoint: 30px;
+$padding-desktop-breakpoint: 110px;
+
+$padding-mobile: clamp($padding-mobile-breakpoint, 5vw, $padding-tablet-breakpoint);
+$padding-tablet: clamp($padding-tablet-breakpoint, calc(13vw - 70px), $padding-desktop-breakpoint);
+$padding-desktop: calc(50vw - $desktop-width / 2 + $padding-desktop-breakpoint);
 
 $rgb-comps-basic-green: 104, 183, 56;
 $clr-basic-green: #68b738;

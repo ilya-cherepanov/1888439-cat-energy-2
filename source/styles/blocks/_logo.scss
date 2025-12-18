@@ -1,11 +1,50 @@
+@use "../common/variables.scss";
+
 .logo {
+  display: grid;
+  grid-template-columns: var(--padding-mobile, #{variables.$padding-mobile}) 1fr 101px;
+  grid-template-rows: 66px;
+  align-items: center;
+
+  .logo__link--image {
+    grid-column: 2;
+    justify-self: start;
+  }
+}
+
+.logo--secondary {
+  display: block;
+
   text-decoration: none;
 }
 
-.logo:hover {
+.logo__link {
+  text-decoration: none;
+}
+
+.logo--secondary:hover,
+:not(.logo--secondary) .logo__link:hover {
   filter: opacity(0.8);
 }
 
-.logo:active {
+.logo--secondary:active,
+:not(.logo--secondary) .logo__link:active {
   filter: opacity(0.6);
+}
+
+.logo__image {
+  display: block;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .logo {
+    display: flex;
+    column-gap: 13px;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .logo {
+    column-gap: 14px;
+  }
 }
