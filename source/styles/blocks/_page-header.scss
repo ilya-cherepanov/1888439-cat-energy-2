@@ -51,7 +51,6 @@
 
   .page-header__navigation {
     grid-column: 3;
-    justify-self: end;
-    align-self: end;
+    place-self: end;
   }
 }
