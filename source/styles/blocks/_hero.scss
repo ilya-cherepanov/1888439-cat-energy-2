@@ -115,14 +115,14 @@
         url("../../images/backgrounds/cat-background-desktop@2x.jpg") 2x,
         url("../../images/backgrounds/cat-background-desktop@1x.jpg") 1x,
       ),
-      linear-gradient(#4f4e52, #3e3d41 1388px);
+      linear-gradient(to right, #4f4e52, #3e3d41 1388px);
     background-repeat: no-repeat, no-repeat, no-repeat;
     background-position: center, left 0 bottom 0, left 0 bottom 0;
   }
 
   .hero__container {
     padding-inline: 0;
-    padding-block-start: 29px;
+    padding-block: 29px 52px;
     grid-template-columns: minmax(190px, 1fr) 224px 143px 47px auto minmax(190px, 1fr);
     grid-template-rows: 81px auto 1fr;
     clear: both;
@@ -136,7 +136,7 @@
   .hero__image-container {
     grid-column: 4 / -2;
     grid-row: 1 / 4;
-    justify-self: start;
+    place-self: end start;
   }
 
   .hero__button {

@@ -2,12 +2,11 @@
 
 .logo {
   display: grid;
-  grid-template-columns: var(--padding-mobile, #{variables.$padding-mobile}) 1fr 101px;
+  grid-template-columns: 1fr 101px;
   grid-template-rows: 66px;
   align-items: center;
 
   .logo__link--image {
-    grid-column: 2;
     justify-self: start;
   }
 }

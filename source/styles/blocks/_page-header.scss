@@ -3,11 +3,14 @@
 .page-header {
   box-sizing: border-box;
   display: grid;
-  grid-template-columns: 1fr 101px 1fr;
+  grid-template-columns:
+    var(--padding-mobile, #{variables.$padding-mobile})
+    1fr 101px 1fr
+    var(--padding-mobile, #{variables.$padding-mobile});
 }
 
 .page-header__logo {
-  grid-column: 1 / span 2;
+  grid-column: 2 / span 2;
   grid-row: 1;
   z-index: 1;
 }
@@ -52,5 +55,6 @@
   .page-header__navigation {
     grid-column: 3;
     place-self: end;
+    margin-inline-start: 33px;
   }
 }
