@@ -12,7 +12,8 @@
 }
 
 .logo--secondary {
-  display: block;
+  display: flex;
+  justify-content: center;
 
   text-decoration: none;
 }
