@@ -1,12 +1,44 @@
 @use "../common/variables.scss";
 
-.page-footer {
-  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
-}
-
 .page-footer__end {
+  box-sizing: border-box;
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   padding-block: 40px;
 
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+}
+
+.page-footer__logo {
+  margin-block-end: 20px;
+}
+
+.page-footer__socials {
+  border-block: 1px solid #d9d9d9;
+  margin-bottom: 20px;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .page-footer__end {
+    display: flex;
+    justify-content: space-between;
+    padding-block: 55px;
+    padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+    max-inline-size: var(--desktop-width, #{variables.$desktop-width});
+    margin-inline: auto;
+  }
+
+  .page-footer__logo {
+    margin: 0;
+  }
+
+  .page-footer__socials {
+    border-block: 0;
+    margin: 0;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .page-footer {
+    background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+  }
 }

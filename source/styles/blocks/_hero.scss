@@ -2,11 +2,14 @@
 @use "../common/variables.scss";
 
 .hero {
-  --_background-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
+  --_overlay-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
 
-  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   background-image:
-    linear-gradient(var(--_background-color)),
+    linear-gradient(
+      to bottom,
+      var(--_overlay-color) calc(63% + 1px),
+      rgba(0, 0, 0, 0) calc(63% + 1px)
+    ),
     image-set(
       url("../../images/backgrounds/cat-background-mobile@2x.avif") 2x type("image/avif"),
       url("../../images/backgrounds/cat-background-mobile@1x.avif") 1x type("image/avif"),
@@ -14,16 +17,130 @@
       url("../../images/backgrounds/cat-background-mobile@1x.webp") 1x type("image/webp"),
       url("../../images/backgrounds/cat-background-mobile@2x.jpg") 2x,
       url("../../images/backgrounds/cat-background-mobile@1x.jpg") 1x,
-    );
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-  background-position: center, center top;
+    ),
+    linear-gradient(to right, #4e4d53 calc(50% - 160px), #454449 calc(50% + 160px));
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: auto, auto 63%, auto 63%;
+  background-position: center, center top, center top;
+}
+
+.hero__container {
+  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+  padding-block-start: 27px;
+}
+
+.hero__page-heading {
+  padding-inline: clamp(15px, calc(17vw - 40px), 90px);
+}
+
+.hero__page-title {
+  margin-block: 0 clamp(25px, 6vw, 40px);
 }
 
 .hero__product-slogan {
+  margin-block: 21px;
+
   @include mixins.secondary-font;
-  font-size: 14px;
-  line-height: 14px;
+  font-size: clamp(14px, 3vw, 20px);
+  line-height: clamp(14px, 3vw, 20px);
   color: var(--clr-white, #{variables.$clr-white});
   text-align: center;
+}
+
+.hero__image {
+  display: block;
+  inline-size: 100%;
+  object-fit: contain;
+}
+
+@media (min-width: variables.$tablet-width) {
+  .hero {
+    background: none;
+  }
+
+  .hero__container {
+    display: grid;
+    grid-template-columns: clamp(80px, calc(103px - 1.5vw), 90px) 224px 1fr clamp(80px, calc(103px - 1.5vw), 90px);
+    padding-block-start: 65px;
+    padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+  }
+
+  .hero__page-heading {
+    padding-inline: 0;
+    inline-size: 416px;
+    grid-column: 2 / -1;
+  }
+
+  .hero__product-slogan {
+    margin-block: 21px;
+
+    color: var(--clr-black, #{variables.$clr-black});
+    text-align: start;
+  }
+
+  .hero__image-container {
+    grid-row: 2 / 4;
+    grid-column: 1 / -1;
+  }
+
+  .hero__button {
+    grid-row: 2;
+    grid-column: 2;
+    margin-block: 29px;
+  }
+}
+
+@media (min-width: variables.$desktop-width) {
+  .hero {
+    position: relative;
+  }
+
+  .hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+    inset-inline-start: 50%;
+    z-index: -2;
+
+    display: block;
+
+    background-image:
+      linear-gradient(var(--_overlay-color) 50%),
+      image-set(
+        url("../../images/backgrounds/cat-background-desktop@2x.avif") 2x type("image/avif"),
+        url("../../images/backgrounds/cat-background-desktop@1x.avif") 1x type("image/avif"),
+        url("../../images/backgrounds/cat-background-desktop@2x.webp") 2x type("image/webp"),
+        url("../../images/backgrounds/cat-background-desktop@1x.webp") 1x type("image/webp"),
+        url("../../images/backgrounds/cat-background-desktop@2x.jpg") 2x,
+        url("../../images/backgrounds/cat-background-desktop@1x.jpg") 1x,
+      ),
+      linear-gradient(to right, #4f4e52, #3e3d41 1388px);
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-position: center, left 0 bottom 0, left 0 bottom 0;
+  }
+
+  .hero__container {
+    padding-inline: 0;
+    padding-block: 29px 52px;
+    grid-template-columns: minmax(190px, 1fr) 224px 143px 47px auto minmax(190px, 1fr);
+    grid-template-rows: 81px auto 1fr;
+    clear: both;
+  }
+
+  .hero__page-heading {
+    grid-row: 2;
+    grid-column: 2 / 5;
+  }
+
+  .hero__image-container {
+    grid-column: 4 / -2;
+    grid-row: 1 / 4;
+    place-self: end start;
+  }
+
+  .hero__button {
+    align-self: start;
+    grid-row: 3;
+  }
 }

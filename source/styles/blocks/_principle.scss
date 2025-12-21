@@ -2,7 +2,34 @@
 @use "../common/variables.scss";
 
 .principle {
+  --icon: linear-gradient(rgba(0, 0, 0, 0));
+  --icon-position: 0 10px;
+
   padding-inline-start: 80px;
+  padding-block: 10px;
+
+  background-image:
+    var(--icon),
+    linear-gradient(var(--clr-basic-green, #{variables.$clr-basic-green}));
+  background-repeat: no-repeat no-repeat;
+  background-size: 60px 60px, 60px 60px;
+  background-position: var(--icon-position), var(--icon-position);
+}
+
+.principle--composition {
+  --icon: url("../../icons/stack.svg#leaf");
+}
+
+.principle--substance {
+  --icon: url("../../icons/stack.svg#form");
+}
+
+.principle--application {
+  --icon: url("../../icons/stack.svg#eat");
+}
+
+.principle--result {
+  --icon: url("../../icons/stack.svg#weight");
 }
 
 .principle__title {

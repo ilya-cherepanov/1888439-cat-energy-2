@@ -25,6 +25,7 @@
   text-align: center;
 
   background-image:
+    url("../../icons/stack.svg#gift"),
     linear-gradient(var(--_background-color)),
     image-set(
       url("../../images/backgrounds/cat-in-the-bag-mobile@2x.avif") 2x type("image/avif"),
@@ -34,7 +35,7 @@
       url("../../images/backgrounds/cat-in-the-bag-mobile@2x.jpg") 2x,
       url("../../images/backgrounds/cat-in-the-bag-mobile@1x.jpg") 1x,
     );
-  background-repeat: no-repeat, no-repeat;
-  background-size: cover, cover;
-  background-position: center, center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
+  background-size: 78px 80px, cover, cover;
+  background-position: center 59px, center, center;
 }

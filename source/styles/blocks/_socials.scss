@@ -1,11 +1,75 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
+
+.socials {
+  padding-block: 14px;
+}
 
 .socials__list {
   @include mixins.reset-list;
+  display: flex;
+  justify-content: center;
+  margin: 0;
 }
 
 .socials__link {
+  position: relative;
+
+  display: block;
+  min-block-size: 38px;
+  min-inline-size: 52px;
+
   @include mixins.primary-font;
   font-style: normal;
   text-decoration: none;
+}
+
+.socials__link::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  display: block;
+
+  background-color: var(--clr-special-grey-2, #{variables.$clr-special-dark-grey-2});
+  mask-size: 28px 22px;
+  mask-repeat: no-repeat;
+  mask-position: center;
+}
+
+.socials__link--vk::before {
+  mask-image: url("../../icons/stack.svg#vkontakte");
+}
+
+.socials__link--youtube::before {
+  mask-image: url("../../icons/stack.svg#youtube");
+}
+
+.socials__link--telegram::before {
+  mask-image: url("../../icons/stack.svg#telegram");
+}
+
+.socials__link:is(:hover, :focus, :active)::before {
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+@supports selector(:focus-visible) {
+  .socials__link:focus::before {
+    background-color: var(--clr-special-grey-2, #{variables.$clr-special-dark-grey-2});
+  }
+
+  .socials__link:is(:hover, :focus-visible, :active)::before {
+    background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  }
+}
+
+.socials__link:active {
+  filter: opacity(0.3);
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .socials {
+    padding: 0;
+  }
 }

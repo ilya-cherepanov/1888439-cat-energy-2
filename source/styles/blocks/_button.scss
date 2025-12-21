@@ -17,6 +17,12 @@
   background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
 }
 
+.button--adaptive {
+  padding: clamp(10px, 2vw, 14px);
+  font-size: clamp(16px, 3vw, 20px);
+  line-height: clamp(20px, 4vw, 26px);
+}
+
 .button--large {
   padding: 15px;
   font-size: 20px;

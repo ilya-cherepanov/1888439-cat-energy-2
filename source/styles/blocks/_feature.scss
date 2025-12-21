@@ -2,9 +2,54 @@
 @use "../common/variables.scss";
 
 .feature {
+  position: relative;
+
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
   padding-inline: 20px 33px;
   padding-block: 30px 18px;
+}
+
+.feature::before,
+.feature::after {
+  content: "";
+  position: absolute;
+  display: block;
+}
+
+.feature::before {
+  inset-inline-start: 20px;
+  inset-block-start: 24px;
+
+  inline-size: 50px;
+  block-size: 50px;
+
+  border-radius: 50%;
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+.feature::after {
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.feature--slim::after {
+  inset-inline-start: 27px;
+  inset-block-start: 21px;
+
+  inline-size: 36px;
+  block-size: 50px;
+
+  background-image: url("../../icons/stack.svg#cat-slim");
+}
+
+.feature--pro::after {
+  inset-inline-start: 12px;
+  inset-block-start: 35px;
+
+  inline-size: 67px;
+  block-size: 28px;
+
+  background-image: url("../../icons/stack.svg#cat-pro");
 }
 
 .feature__title {
@@ -20,10 +65,35 @@
 }
 
 .feature__follow {
-  @include mixins.secondary-font;
   padding-block: 4px;
 
+  @include mixins.secondary-font;
   font-size: 16px;
   line-height: 16px;
   text-decoration: none;
+}
+
+.feature__follow::after {
+  content: "";
+
+  display: inline-block;
+  inline-size: 57px;
+  block-size: 12px;
+
+  background-image:
+    linear-gradient(var(--clr-black, #{variables.$clr-black})),
+    url("../../icons/stack.svg#triangle");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 18px 2px, 7px 11px;
+  background-position: 25px center, 43px center;
+}
+
+.feature__follow:hover::after,
+.feature__follow:active::after {
+  background-size: 26px 2px, 7px 11px;
+  background-position: 25px center, 51px center;
+}
+
+.feature__follow:active {
+  filter: opacity(0.3);
 }

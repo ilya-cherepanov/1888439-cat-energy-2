@@ -1,1 +1,62 @@
-// Logo
+@use "../common/variables.scss";
+
+.logo {
+  display: grid;
+  grid-template-columns: 1fr 101px;
+  grid-template-rows: 66px;
+  align-items: center;
+
+  .logo__link--image {
+    justify-self: start;
+  }
+}
+
+.logo--secondary {
+  display: flex;
+  justify-content: center;
+
+  text-decoration: none;
+}
+
+.logo__link {
+  text-decoration: none;
+}
+
+.logo--secondary:is(:hover, :focus),
+:not(.logo--secondary) .logo__link:is(:hover, :focus) {
+  filter: opacity(0.8);
+}
+
+@supports selector(:focus-visible) {
+  .logo--secondary:is(:focus),
+  :not(.logo--secondary) .logo__link:is(:focus) {
+    filter: none;
+  }
+
+  .logo--secondary:is(:hover, :focus-visible),
+  :not(.logo--secondary) .logo__link:is(:hover, :focus-visible) {
+    filter: opacity(0.8);
+  }
+}
+
+.logo--secondary:active,
+:not(.logo--secondary) .logo__link:active {
+  filter: opacity(0.6);
+}
+
+.logo__image {
+  display: block;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .logo {
+    display: flex;
+    column-gap: 13px;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .logo {
+    column-gap: 14px;
+  }
+}
