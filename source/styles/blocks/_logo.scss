@@ -22,9 +22,21 @@
   text-decoration: none;
 }
 
-.logo--secondary:hover,
-:not(.logo--secondary) .logo__link:hover {
+.logo--secondary:is(:hover, :focus),
+:not(.logo--secondary) .logo__link:is(:hover, :focus) {
   filter: opacity(0.8);
+}
+
+@supports selector(:focus-visible) {
+  .logo--secondary:is(:focus),
+  :not(.logo--secondary) .logo__link:is(:focus) {
+    filter: none;
+  }
+
+  .logo--secondary:is(:hover, :focus-visible),
+  :not(.logo--secondary) .logo__link:is(:hover, :focus-visible) {
+    filter: opacity(0.8);
+  }
 }
 
 .logo--secondary:active,
