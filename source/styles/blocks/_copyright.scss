@@ -2,6 +2,12 @@
 @use "../common/variables.scss";
 
 .copyright {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  min-inline-size: 163px;
+
   @include mixins.primary-font(
     $font-size: 16px,
     $line-height: 20px,
@@ -16,9 +22,6 @@
   inline-size: 27px;
   block-size: 34px;
 
-  text-align: end;
-  vertical-align: middle;
-
   background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
   mask-image: url("../../icons/stack.svg#html-academy-logo");
   mask-repeat: no-repeat;
@@ -26,9 +29,18 @@
   mask-position: center;
 }
 
-.copyright:hover::after,
-.copyright:active::after {
+.copyright:is(:hover, :focus, :active)::after {
   background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+@supports selector(:focus-visible) {
+  .copyright:focus::after {
+    background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+  }
+
+  .copyright:is(:hover, :focus-visible, :active)::after {
+    background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  }
 }
 
 .copyright:active {

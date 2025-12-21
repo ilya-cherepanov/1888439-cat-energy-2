@@ -34,8 +34,8 @@
 .text-field--large {
   font-size: 20px;
   line-height: 20px;
-}
 
-.text-field--large .text-field__input {
-  padding: 13px;
+  .text-field__input {
+    padding: 13px;
+  }
 }

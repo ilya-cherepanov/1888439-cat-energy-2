@@ -1,1 +1,107 @@
-// Slider
+@use "../common/variables.scss";
+
+
+.slider {
+  --slider-state: 0.5;
+  --slider-width: 280px;
+  --_slider-state: clamp(0, var(--slider-state), 1);
+  --_thumb-offset: calc(var(--slider-width) * var(--_slider-state));
+
+  position: relative;
+
+  block-size: 256px;
+  inline-size: var(--slider-width);
+
+  contain: size;
+}
+
+.slider__image-container {
+  position: absolute;
+  inset: 0;
+}
+
+.slider__image {
+  display: block;
+  block-size: 100%;
+  inline-size: 100%;
+  object-fit: contain;
+  mask-repeat: no-repeat;
+}
+
+.slider__image--before {
+  mask-image:
+    linear-gradient(
+      to right,
+      #000000 var(--_thumb-offset),
+      rgba(0, 0, 0, 0) var(--_thumb-offset),
+    );
+}
+
+.slider__image--after {
+  mask-image:
+    linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0) var(--_thumb-offset),
+      #000000 var(--_thumb-offset),
+    );
+}
+
+.slider__thumb {
+  position: absolute;
+  inset-block-start: 0;
+  inset-inline-start: -2px;
+
+  padding: 0;
+  padding-block: 128px;
+  block-size: 100%;
+  inline-size: 4px;
+
+  border: 0;
+  background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+  border-radius: 2px;
+
+  transform: translateX(var(--_thumb-offset));
+  cursor: ew-resize;
+}
+
+.slider__thumb::after {
+  content: "";
+
+  display: block;
+  inline-size: 40px;
+  block-size: 40px;
+  margin-block-start: -20px;
+  margin-inline-start: -18px;
+  background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+  background-image: url("../../icons/stack.svg#thumb");
+  background-size: 40px 40px;
+  background-repeat: no-repeat;
+
+  border-radius: 50%;
+}
+
+.slider__thumb:not(:disabled):is(:hover, :active),
+.slider__thumb:not(:disabled):is(:hover, :active)::after {
+  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+}
+
+.slider__thumb:not(:disabled):active {
+  filter: opacity(0.6);
+}
+
+.slider__thumb:disabled {
+  filter: opacity(0.6);
+  cursor: default;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .slider {
+    --slider-width: 560px;
+
+    block-size: 512px;
+  }
+
+  .slider__thumb {
+    padding-block: 256px;
+  }
+}
