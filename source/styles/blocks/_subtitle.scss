@@ -7,6 +7,15 @@
   @include mixins.secondary-font(
     $text-transform: none,
   );
-  font-size: 24px;
-  line-height: 24px;
+  font-size: clamp(24px, calc(18.29px + 1.79vw), 32px);
+  line-height: clamp(24px, calc(18.29px + 1.79vw), 32px);
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .subtitle {
+    padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+
+    font-size: clamp(32px, calc(22.86px + 1.19vw), 40px);
+    line-height: clamp(32px, calc(22.86px + 1.19vw), 40px);
+  }
 }

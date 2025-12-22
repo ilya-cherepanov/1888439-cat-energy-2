@@ -3,3 +3,32 @@
 .container {
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
+
+@media (min-width: #{variables.$tablet-width}) {
+  .container {
+    padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1220px 1fr;
+    padding: 0;
+  }
+
+  .container::before,
+  .container::after {
+    content: "";
+    display: block;
+    grid-row: 1 / -1;
+  }
+
+  .container::before {
+    grid-column: 1;
+  }
+
+  .container::after {
+    grid-column: 3;
+  }
+}

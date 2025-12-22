@@ -46,8 +46,8 @@
   margin-block: 2px 4px;
 
   @include mixins.primary-font(
-    $font-size: clamp(14px, calc(12.571px + 0.446vw), 16px),
-    $line-height: clamp(18px, calc(13.714px + 1.339vw), 24px),
+    $font-size: clamp(14px, calc(12.57px + 0.45vw), 16px),
+    $line-height: clamp(18px, calc(13.71px + 1.34vw), 24px),
   );
 }
 

@@ -15,8 +15,8 @@
 
 .example__description {
   margin-block: 20px;
-  font-size: clamp(14px, calc(12.571px + 0.446vw), 16px);
-  line-height: clamp(18px, calc(13.714px + 1.339vw), 24px);
+  font-size: clamp(14px, calc(12.57px + 0.45vw), 16px);
+  line-height: clamp(18px, calc(13.71px + 1.34vw), 24px);
 }
 
 .example__results {
@@ -32,8 +32,8 @@
 }
 
 .example__results-title {
-  font-size: clamp(12px, calc(10.571px + 0.446vw), 14px);
-  line-height: clamp(12px, calc(10.571px + 0.446vw), 14px);
+  font-size: clamp(12px, calc(10.57px + 0.45vw), 14px);
+  line-height: clamp(12px, calc(10.57px + 0.45vw), 14px);
 }
 
 .example__results-value {
@@ -41,15 +41,15 @@
   margin: 0;
 
   @include mixins.secondary-font;
-  font-size: clamp(24px, calc(19.714px + 1.339vw), 30px);
-  line-height: clamp(24px, calc(14.714px + 2.902vw), 37px);
+  font-size: clamp(24px, calc(19.71px + 1.34vw), 30px);
+  line-height: clamp(24px, calc(14.71px + 2.9vw), 37px);
 }
 
 .example__price {
   margin-block: 20px;
 
   @include mixins.secondary-font;
-  font-size: clamp(14px, calc(9.714px + 1.339vw), 20px);
+  font-size: clamp(14px, calc(9.71px + 1.34vw), 20px);
   line-height: 20px;
   text-align: center;
 }

@@ -2,17 +2,108 @@
 @use "../common/variables.scss";
 
 .product-card {
+  display: grid;
+  grid-template-columns: [image] minmax(140px, 1fr) [title description-start] auto 64px [description-end];
+  row-gap: 14px;
   padding-block: 20px 25px;
 }
 
 .product-card__title-link {
+  grid-column: title;
   text-decoration: none;
 }
 
+.product-card__image-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-column: image;
+  grid-row: 1 / 3;
+}
+
+.product-card__description {
+  grid-column: description;
+}
+
+.product-card__button {
+  margin-block-start: 2px;
+  grid-column: 1 / -1;
+}
+
+.product-card__image-wrapper {
+  display: block;
+}
+
+.product-card__image {
+  display: block;
+  inline-size: 100%;
+  block-size: auto;
+}
+
 .product-card__title {
+  margin: 0;
+
   @include mixins.secondary-font(
     $color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2}),
   );
-  font-size: 16px;
-  line-height: 20px;
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(20px, calc(17.14px + 0.89vw), 24px);
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .product-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    row-gap: 20px;
+    padding-block: 0 40px;
+    padding-inline: 37px;
+
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) 81px,
+        var(--clr-basic-grey, #{variables.$clr-basic-grey}) 81px
+      );
+  }
+
+  .product-card__image-link {
+    box-sizing: border-box;
+    block-size: 210px;
+    inline-size: 200px;
+    order: -1;
+    margin-block-end: 2px;
+  }
+
+  .product-card__title-link {
+    padding-inline: 58px 57px;
+    text-align: center;
+  }
+
+  .product-card__description {
+    align-self: stretch;
+    margin-block-end: 12px;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .product-card {
+    padding-inline: 38px;
+    row-gap: 12px;
+  }
+
+  .product-card__image-link {
+    inline-size: 169px;
+    margin-block-end: 0;
+  }
+
+  .product-card__title-link {
+    padding-inline: 15px 14px;
+    margin-block-end: 11px;
+  }
+
+  .product-card__description {
+    margin-block-end: 20px;
+  }
 }

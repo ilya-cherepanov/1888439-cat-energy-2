@@ -3,3 +3,23 @@
 .subscription-form {
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
+
+.subscription-form__input {
+  margin-block-end: 16px;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .subscription-form {
+    padding-inline: 0;
+    display: flex;
+  }
+
+  .subscription-form__input {
+    flex-grow: 1;
+    margin-block: 0;
+  }
+
+  .subscription-form__submit {
+    max-width: 256px;
+  }
+}

@@ -1,9 +1,10 @@
 @use "../common/mixins.scss";
+@use "../common/variables.scss";
 
 .product-description {
   @include mixins.primary-font(
-    $font-size: 12px,
-    $line-height: 16px,
+    $font-size: clamp(12px, calc(9.14px + 0.89vw), 16px),
+    $line-height: clamp(16px, calc(13.14px + 0.89vw), 20px),
   );
 }
 
@@ -14,4 +15,11 @@
 
 .product-description__value {
   margin: 0;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .product-description__item {
+    padding-block: 7px 5px;
+    border-block-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
 }

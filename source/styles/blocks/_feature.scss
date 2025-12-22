@@ -58,8 +58,8 @@
   padding-inline-start: 70px;
 
   @include mixins.secondary-font;
-  font-size: clamp(24px, calc(15.429px + 2.679vw),  36px);
-  line-height: clamp(36px, calc(37.714px - 0.223vw), 37px);
+  font-size: clamp(24px, calc(15.43px + 2.68vw), 36px);
+  line-height: clamp(36px, calc(37.71px - 0.22vw), 37px);
 }
 
 .feature__description {
@@ -68,8 +68,8 @@
   border-block-end: 1px solid #d9d9d9;
 
   @include mixins.primary-font(
-    $font-size: clamp(14px, calc(12.571px + 0.446vw), 16px),
-    $line-height: clamp(18px, calc(13.714px + 1.339vw), 24px),
+    $font-size: clamp(14px, calc(12.57px + 0.45vw), 16px),
+    $line-height: clamp(18px, calc(13.71px + 1.34vw), 24px),
   );
 }
 
@@ -77,8 +77,8 @@
   padding-block: 4px;
 
   @include mixins.secondary-font;
-  font-size: clamp(16px, calc(13.143px + 0.893vw), 20px);
-  line-height: clamp(16px, calc(13.143px + 0.893vw), 20px);
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(16px, calc(13.14px + 0.89vw), 20px);
   text-decoration: none;
 }
 
@@ -128,24 +128,21 @@
   .feature::before {
     inline-size: 200px;
     block-size: 200px;
-    inset-inline-start: auto;
-    inset-inline-end: 63px;
+    inset-inline: auto 63px;
     inset-block-start: 92px;
   }
 
   .feature--slim::after {
     inline-size: 140px;
     block-size: 194px;
-    inset-inline-start: auto;
-    inset-inline-end: 93px;
+    inset-inline: auto 93px;
     inset-block-start: 81px;
   }
 
   .feature--pro::after {
     inline-size: 268px;
     block-size: 112px;
-    inset-inline-start: auto;
-    inset-inline-end: 29px;
+    inset-inline: auto 29px;
     inset-block-start: 135px;
   }
 }
@@ -168,24 +165,21 @@
   .feature::before {
     inline-size: 100px;
     block-size: 100px;
-    inset-inline-start: 52px;
-    inset-inline-end: auto;
+    inset-inline: 52px auto;
     inset-block-start: 47px;
   }
 
   .feature--slim::after {
     inline-size: 70px;
     block-size: 97px;
-    inset-inline-start: 67px;
-    inset-inline-end: auto;
+    inset-inline: 67px auto;
     inset-block-start: 41px;
   }
 
   .feature--pro::after {
     inline-size: 134px;
     block-size: 56px;
-    inset-inline-start: 33px;
-    inset-inline-end: auto;
+    inset-inline: 33px auto;
     inset-block-start: 67px;
   }
 }

@@ -41,15 +41,6 @@
   mask-image: url("../../icons/stack.svg#telegram");
 }
 
-.socials__link:hover,
-.socials__link:active {
-  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
-}
-
-.socials__link:active {
-  filter: opacity(0.3);
-}
-
 .socials__link::before {
   content: "";
 
