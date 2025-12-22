@@ -8,3 +8,36 @@
 .features__list {
   @include mixins.reset-list;
 }
+
+.features__item {
+  margin-block-end: 20px;
+}
+
+.features__item:last-child {
+  margin-block-end: 0;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .features {
+    padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .features {
+    display: grid;
+    grid-template-columns: 1fr [content] 1220px 1fr;
+    padding-inline: 0;
+  }
+
+  .features__list {
+    grid-column: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
+
+  .features__item {
+    margin: 0;
+  }
+}
