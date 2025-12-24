@@ -8,29 +8,29 @@
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
   padding-inline: 20px 33px;
   padding-block: 30px 18px;
-}
 
-.feature::before,
-.feature::after {
-  content: "";
-  position: absolute;
-  display: block;
-}
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
 
-.feature::before {
-  inset-inline-start: 20px;
-  inset-block-start: 24px;
+  &::before {
+    inset-inline-start: 20px;
+    inset-block-start: 24px;
 
-  inline-size: 50px;
-  block-size: 50px;
+    inline-size: 50px;
+    block-size: 50px;
 
-  border-radius: 50%;
-  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
-}
+    border-radius: 50%;
+    background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  }
 
-.feature::after {
-  background-repeat: no-repeat;
-  background-position: center;
+  &::after {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .feature--slim::after {
@@ -80,31 +80,30 @@
   font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
   line-height: clamp(16px, calc(13.14px + 0.89vw), 20px);
   text-decoration: none;
-}
 
-.feature__follow::after {
-  content: "";
+  &::after {
+    content: "";
 
-  display: inline-block;
-  inline-size: 57px;
-  block-size: 12px;
+    display: inline-block;
+    inline-size: 57px;
+    block-size: 12px;
 
-  background-image:
-    linear-gradient(var(--clr-black, #{variables.$clr-black})),
-    url("../../icons/stack.svg#triangle");
-  background-repeat: no-repeat, no-repeat;
-  background-size: 18px 2px, 7px 11px;
-  background-position: 25px center, 43px center;
-}
+    background-image:
+      linear-gradient(var(--clr-black, #{variables.$clr-black})),
+      url("../../icons/stack.svg#triangle");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 18px 2px, 7px 11px;
+    background-position: 25px center, 43px center;
+  }
 
-.feature__follow:hover::after,
-.feature__follow:active::after {
-  background-size: 26px 2px, 7px 11px;
-  background-position: 25px center, 51px center;
-}
+  &:is(:hover, :active)::after {
+    background-size: 26px 2px, 7px 11px;
+    background-position: 25px center, 51px center;
+  }
 
-.feature__follow:active {
-  filter: opacity(0.3);
+  &:active {
+    filter: opacity(0.3);
+  }
 }
 
 @media (min-width: #{variables.$tablet-width}) {
@@ -112,24 +111,15 @@
     padding-block: 77px 57px;
     padding-inline: 52px 316px;
     min-block-size: 372px;
-  }
+    display: flex;
+    flex-direction: column;
 
-  .feature__title {
-    padding: 0;
-    margin-block-end: 24px;
-  }
-
-  .feature__description {
-    padding: 0;
-    margin-block: 24px 48px;
-    border: 0;
-  }
-
-  .feature::before {
-    inline-size: 200px;
-    block-size: 200px;
-    inset-inline: auto 63px;
-    inset-block-start: 92px;
+    &::before {
+      inline-size: 200px;
+      block-size: 200px;
+      inset-inline: auto 63px;
+      inset-block-start: 92px;
+    }
   }
 
   .feature--slim::after {
@@ -145,28 +135,34 @@
     inset-inline: auto 29px;
     inset-block-start: 135px;
   }
+
+  .feature__title {
+    padding: 0;
+    margin-block-end: 24px;
+  }
+
+  .feature__description {
+    padding: 0;
+    margin-block: 0 24px;
+    border: 0;
+  }
+
+  .feature__follow {
+    margin-block-start: auto;
+  }
 }
 
 @media (min-width: #{variables.$desktop-width}) {
   .feature {
     padding-block: 77px 55px;
     padding-inline: 52px 61px;
-  }
 
-  .feature__title {
-    padding-inline-start: 162px;
-    margin-block-end: 73px;
-  }
-
-  .feature__description {
-    margin-block: 23px;
-  }
-
-  .feature::before {
-    inline-size: 100px;
-    block-size: 100px;
-    inset-inline: 52px auto;
-    inset-block-start: 47px;
+    &::before {
+      inline-size: 100px;
+      block-size: 100px;
+      inset-inline: 52px auto;
+      inset-block-start: 47px;
+    }
   }
 
   .feature--slim::after {
@@ -181,5 +177,14 @@
     block-size: 56px;
     inset-inline: 33px auto;
     inset-block-start: 67px;
+  }
+
+  .feature__title {
+    padding-inline-start: 162px;
+    margin-block-end: 73px;
+  }
+
+  .feature__description {
+    margin-block-end: 23px;
   }
 }

@@ -22,23 +22,6 @@
   @include mixins.primary-font;
   font-style: normal;
   text-decoration: none;
-
-  background-color: var(--clr-special-grey-2, #{variables.$clr-special-dark-grey-2});
-  mask-size: 28px 22px;
-  mask-repeat: no-repeat;
-  mask-position: center;
-}
-
-.socials__link--vk {
-  mask-image: url("../../icons/stack.svg#vkontakte");
-}
-
-.socials__link--youtube {
-  mask-image: url("../../icons/stack.svg#youtube");
-}
-
-.socials__link--telegram {
-  mask-image: url("../../icons/stack.svg#telegram");
 }
 
 .socials__link::before {

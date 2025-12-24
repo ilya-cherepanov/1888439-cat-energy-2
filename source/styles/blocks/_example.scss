@@ -13,8 +13,12 @@
   margin-block: 0 40px;
 }
 
+.example__text {
+  margin-block-end: 20px;
+}
+
 .example__description {
-  margin-block: 20px;
+  margin-block: 0 20px;
   font-size: clamp(14px, calc(12.57px + 0.45vw), 16px);
   line-height: clamp(18px, calc(13.71px + 1.34vw), 24px);
 }
@@ -24,7 +28,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   max-inline-size: 367px;
-  margin-block: 20px;
+  margin-block: 0 20px;
 }
 
 .example__results-item {
@@ -46,7 +50,7 @@
 }
 
 .example__price {
-  margin-block: 20px;
+  margin-block: 0;
 
   @include mixins.secondary-font;
   font-size: clamp(14px, calc(9.71px + 1.34vw), 20px);
@@ -60,9 +64,6 @@
 
 @media (min-width: #{variables.$tablet-width}) {
   .example {
-    display: grid;
-    grid-template-columns: [results] fit-content(50%) auto [price] 174px;
-    row-gap: 55px;
     padding-block: 45px 101px;
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
 
@@ -71,9 +72,15 @@
     background-repeat: no-repeat;
   }
 
+  .example__text {
+    display: grid;
+    grid-template-columns: [results] fit-content(50%) auto [price] 174px;
+    row-gap: 55px;
+    margin-block-end: 99px;
+  }
+
   .example__title {
-    grid-column: 1 / -1;
-    margin-block-end: 5px;
+    margin-block-end: 60px;
   }
 
   .example__description {
@@ -92,20 +99,15 @@
     align-self: center;
     text-align: end;
   }
-
-  .example__slider {
-    margin-block-start: 44px;
-    grid-column: 1 / -1;
-  }
 }
 
 @media (min-width: #{variables.$desktop-width}) {
   .example {
     padding-inline: 0;
     padding-block: 0;
+    display: grid;
     grid-template-columns: 1fr [text] 436px 224px [slider] 560px 1fr;
-    grid-template-rows: [title] auto 76px 70px repeat(10, auto) 75px;
-    gap: 0;
+    grid-template-rows: [title slider-start] auto [background-start] 70px [text] auto [slider-end] 75px [background-end];
     background: none;
   }
 
@@ -113,37 +115,38 @@
     content: "";
     display: block;
     grid-column: 1 / -1;
-    grid-row: 3 / -1;
+    grid-row: background;
     background-color: #eaeaea;
   }
 
   .example__title {
     grid-column: text;
     grid-row: title;
-    margin-block-end: 0;
+    margin-block-end: 76px;
+  }
+
+  .example__text {
+    display: block;
+    grid-row: text;
+    grid-column: text;
+    margin-block: 0;
   }
 
   .example__description {
-    grid-column: text;
-    grid-row: 4;
     margin-block-end: 69px;
   }
 
   .example__results {
-    grid-row: 5;
-    grid-column: text;
     margin-block-end: 55px;
   }
 
   .example__price {
-    grid-row: 6;
-    grid-column: text;
     text-align: start;
   }
 
   .example__slider {
     grid-column: slider;
-    grid-row: 1 / -2;
+    grid-row: slider;
     align-self: end;
     margin-block-start: 0;
   }
