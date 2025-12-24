@@ -1,6 +1,14 @@
 @use "../common/mixins.scss";
 @use "../common/variables.scss";
 
+.contacts {
+  background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+}
+
+.contacts--alt {
+  background-color: initial;
+}
+
 .contacts__text {
   display: grid;
   grid-template-columns:
@@ -66,14 +74,12 @@
 
     display: grid;
     grid-template-columns: 1fr [text] 565px 655px 1fr;
-    grid-template-rows: 95px [text] auto 106px;
-    min-block-size: 400px;
+    padding-block: 95px 106px;
   }
 
   .contacts__text {
     grid-template-columns: [welcome] 163px 1fr [address] 157px;
     grid-column: text;
-    grid-row: text;
     padding-inline: 80px;
     z-index: 1;
     background-color: var(--clr-white, #{variables.$clr-white});

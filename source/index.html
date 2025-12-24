@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html class="page page--index" lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -49,7 +49,7 @@
     </header>
 
     <main class="page__main">
-      <div class="hero">
+      <div class="page__hero hero">
         <div class="hero__container">
           <hgroup class="hero__page-heading">
             <h1 class="hero__page-title title">
@@ -73,7 +73,7 @@
         </div>
       </div>
 
-      <section class="features">
+      <section class="page__features features">
         <h2 class="visually-hidden">Варианты применения</h2>
         <ul class="features__list">
           <li class="features__item feature feature--slim">
@@ -97,7 +97,7 @@
         </ul>
       </section>
 
-      <section class="principles">
+      <section class="page__principles principles">
         <h2 class="principles__title title">Как это работает</h2>
         <ol class="principles__list">
           <li class="principles__item principle principle--composition">
@@ -141,22 +141,25 @@
 
       <section class="example">
         <h2 class="example__title title">Живой пример</h2>
-        <p class="example__description">
-          Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на <span lang="en">Cat Energy Slim</span>.
-          Отличный результат без изнуряющих тренировок!
-          При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
-        </p>
-        <dl class="example__results">
-          <div class="example__results-item">
-            <dt class="example__results-title">Снижение веса</dt>
-            <dd class="example__results-value">5 кг</dd>
-          </div>
-          <div class="example__results-item">
-            <dt class="example__results-title">Затрачено времени</dt>
-            <dd class="example__results-value">60 дней</dd>
-          </div>
-        </dl>
-        <p class="example__price">Затраты на питание: 15 000 РУБ.</p>
+
+        <div class="example__text">
+          <p class="example__description">
+            Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на <span lang="en">Cat Energy Slim</span>.
+            Отличный результат без изнуряющих тренировок!
+            При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.
+          </p>
+          <dl class="example__results">
+            <div class="example__results-item">
+              <dt class="example__results-title">Снижение веса</dt>
+              <dd class="example__results-value">5 кг</dd>
+            </div>
+            <div class="example__results-item">
+              <dt class="example__results-title">Затрачено времени</dt>
+              <dd class="example__results-value">60 дней</dd>
+            </div>
+          </dl>
+          <p class="example__price">Затраты на питание: 15 000 РУБ.</p>
+        </div>
 
         <section class="example__slider slider" style="--slider-state: 0.5">
           <h3 class="visually-hidden">Слайдер</h3>
@@ -184,7 +187,7 @@
     </main>
 
     <footer class="page-footer">
-      <section class="page-footer__contacts contacts">
+      <section class="page-footer__contacts contacts contacts--alt">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__text">
           <p class="contacts__welcome">Приглашаем к&nbsp;сотрудничеству дилеров!</p>

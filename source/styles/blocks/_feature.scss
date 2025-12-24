@@ -2,34 +2,35 @@
 @use "../common/variables.scss";
 
 .feature {
+  box-sizing: border-box;
   position: relative;
 
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
   padding-inline: 20px 33px;
   padding-block: 30px 18px;
-}
 
-.feature::before,
-.feature::after {
-  content: "";
-  position: absolute;
-  display: block;
-}
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+  }
 
-.feature::before {
-  inset-inline-start: 20px;
-  inset-block-start: 24px;
+  &::before {
+    inset-inline-start: 20px;
+    inset-block-start: 24px;
 
-  inline-size: 50px;
-  block-size: 50px;
+    inline-size: 50px;
+    block-size: 50px;
 
-  border-radius: 50%;
-  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
-}
+    border-radius: 50%;
+    background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  }
 
-.feature::after {
-  background-repeat: no-repeat;
-  background-position: center;
+  &::after {
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 }
 
 .feature--slim::after {
@@ -53,47 +54,137 @@
 }
 
 .feature__title {
-  @include mixins.secondary-font;
+  margin-block: 0 7px;
   padding-inline-start: 70px;
 
-  font-size: 24px;
-  line-height: 37px;
+  @include mixins.secondary-font;
+  font-size: clamp(24px, calc(15.43px + 2.68vw), 36px);
+  line-height: clamp(36px, calc(37.71px - 0.22vw), 37px);
 }
 
 .feature__description {
-  @include mixins.primary-font;
+  padding-block: 22px;
+  margin-block: 7px 15px;
+  border-block-end: 1px solid #d9d9d9;
+
+  @include mixins.primary-font(
+    $font-size: clamp(14px, calc(12.57px + 0.45vw), 16px),
+    $line-height: clamp(18px, calc(13.71px + 1.34vw), 24px),
+  );
 }
 
 .feature__follow {
   padding-block: 4px;
 
   @include mixins.secondary-font;
-  font-size: 16px;
-  line-height: 16px;
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(16px, calc(13.14px + 0.89vw), 20px);
   text-decoration: none;
+
+  &::after {
+    content: "";
+
+    display: inline-block;
+    inline-size: 57px;
+    block-size: 12px;
+
+    background-image:
+      linear-gradient(var(--clr-black, #{variables.$clr-black})),
+      url("../../icons/stack.svg#triangle");
+    background-repeat: no-repeat, no-repeat;
+    background-size: 18px 2px, 7px 11px;
+    background-position: 25px center, 43px center;
+  }
+
+  &:is(:hover, :active)::after {
+    background-size: 26px 2px, 7px 11px;
+    background-position: 25px center, 51px center;
+  }
+
+  &:active {
+    filter: opacity(0.3);
+  }
 }
 
-.feature__follow::after {
-  content: "";
+@media (min-width: #{variables.$tablet-width}) {
+  .feature {
+    padding-block: 77px 57px;
+    padding-inline: 52px 316px;
+    min-block-size: 372px;
+    display: flex;
+    flex-direction: column;
 
-  display: inline-block;
-  inline-size: 57px;
-  block-size: 12px;
+    &::before {
+      inline-size: 200px;
+      block-size: 200px;
+      inset-inline: auto 63px;
+      inset-block-start: 92px;
+    }
+  }
 
-  background-image:
-    linear-gradient(var(--clr-black, #{variables.$clr-black})),
-    url("../../icons/stack.svg#triangle");
-  background-repeat: no-repeat, no-repeat;
-  background-size: 18px 2px, 7px 11px;
-  background-position: 25px center, 43px center;
+  .feature--slim::after {
+    inline-size: 140px;
+    block-size: 194px;
+    inset-inline: auto 93px;
+    inset-block-start: 81px;
+  }
+
+  .feature--pro::after {
+    inline-size: 268px;
+    block-size: 112px;
+    inset-inline: auto 29px;
+    inset-block-start: 135px;
+  }
+
+  .feature__title {
+    padding: 0;
+    margin-block-end: 24px;
+  }
+
+  .feature__description {
+    padding: 0;
+    margin-block: 0 24px;
+    border: 0;
+  }
+
+  .feature__follow {
+    margin-block-start: auto;
+  }
 }
 
-.feature__follow:hover::after,
-.feature__follow:active::after {
-  background-size: 26px 2px, 7px 11px;
-  background-position: 25px center, 51px center;
-}
+@media (min-width: #{variables.$desktop-width}) {
+  .feature {
+    padding-block: 77px 55px;
+    padding-inline: 52px 61px;
 
-.feature__follow:active {
-  filter: opacity(0.3);
+    &::before {
+      inline-size: 100px;
+      block-size: 100px;
+      inset-inline: 52px auto;
+      inset-block-start: 47px;
+    }
+  }
+
+  .feature--slim::after {
+    inline-size: 70px;
+    block-size: 97px;
+    inset-inline: 67px auto;
+    inset-block-start: 41px;
+  }
+
+  .feature--pro::after {
+    inline-size: 134px;
+    block-size: 56px;
+    inset-inline: 33px auto;
+    inset-block-start: 67px;
+  }
+
+  .feature__title {
+    padding-inline-start: 162px;
+    margin-block-end: 73px;
+  }
+
+  .feature__description {
+    margin-block-end: 23px;
+  }
 }

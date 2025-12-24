@@ -2,8 +2,11 @@
 @use "../common/variables.scss";
 
 .button {
+  box-sizing: border-box;
+
   display: block;
   padding: 10px;
+  inline-size: 100%;
 
   @include mixins.secondary-font(
     $color: var(--clr-white, #{variables.$clr-white})

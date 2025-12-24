@@ -17,7 +17,9 @@
   --clr-basic-green: #{variables.$clr-basic-green};
   --clr-basic-green-2: #{variables.$clr-basic-green-2};
   --clr-basic-grey: #{variables.$clr-basic-grey};
+  --clr-special-grey: #{variables.$clr-special-grey};
   --clr-special-grey-2: #{variables.$clr-special-grey-2};
+  --clr-special-greay-3: #{variables.$clr-special-grey-3};
   --clr-special-dark-grey: #{variables.$clr-special-dark-grey};
   --clr-special-dark-grey-2: #{variables.$clr-special-dark-grey-2};
   --clr-black: #{variables.$clr-black};
@@ -32,5 +34,5 @@ body {
   min-block-size: 100%;
   margin: 0;
 
-  @include mixins.primary-font();
+  @include mixins.primary-font;
 }
