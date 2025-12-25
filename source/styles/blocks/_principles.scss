@@ -6,6 +6,8 @@
 }
 
 .principles__title {
+  margin-block: 0 40px;
+
   @include mixins.secondary-font(
     $text-transform: none,
   );
@@ -13,6 +15,7 @@
 
 .principles__list {
   @include mixins.reset-list;
+  margin: 0;
 }
 
 @media (min-width: #{variables.$tablet-width}) {
@@ -36,6 +39,7 @@
 
   .principles__title {
     grid-column: content;
+    margin-block-end: 32px;
   }
 
   .principles__list {

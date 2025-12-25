@@ -12,7 +12,7 @@ $padding-mobile-breakpoint: 20px;
 $padding-tablet-breakpoint: 30px;
 $padding-desktop-breakpoint: 110px;
 
-$padding-mobile: clamp($padding-mobile-breakpoint, 5vw, $padding-tablet-breakpoint);
+$padding-mobile: clamp(20px, calc(12.86px + 2.23vw), 30px);
 $padding-tablet: clamp($padding-tablet-breakpoint, calc(13vw - 70px), $padding-desktop-breakpoint);
 $padding-desktop: calc(50vw - $desktop-width / 2 + $padding-desktop-breakpoint);
 
@@ -25,5 +25,6 @@ $clr-special-grey-2: #666666;
 $clr-special-grey-3: #ebebeb;
 $clr-special-dark-grey: #444444;
 $clr-special-dark-grey-2: #222222;
+$clr-status-error: #ff8282;
 $clr-black: #000000;
 $clr-white: #ffffff;

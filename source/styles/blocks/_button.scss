@@ -9,7 +9,7 @@
   inline-size: 100%;
 
   @include mixins.secondary-font(
-    $color: var(--clr-white, #{variables.$clr-white})
+    $color: var(--clr-white, #{variables.$clr-white}),
   );
   font-size: 16px;
   line-height: 20px;
@@ -18,6 +18,30 @@
 
   border: 0;
   background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  cursor: pointer;
+
+  &:is(:hover, :focus) {
+    background-color: var(--clr-basic-green-2, #{variables.$clr-basic-green-2});
+  }
+
+  @supports selector(:focus-visible) {
+    &:focus {
+      background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+    }
+
+    &:is(:hover, :focus-visible) {
+      background-color: var(--clr-basic-green-2, #{variables.$clr-basic-green-2});
+    }
+  }
+
+  &:active {
+    color: rgba(255, 255, 255, 0.3);
+  }
+
+  &:disabled {
+    filter: opacity(0.6);
+    pointer-events: none;
+  }
 }
 
 .button--adaptive {
@@ -35,4 +59,20 @@
 .button--secondary {
   color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+
+  &:is(:hover, :focus, :active) {
+    background-color: var(--clr-special-grey-3, #{variables.$clr-special-grey-3});
+    color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+  }
+
+  @supports selector(:focus-visible) {
+    &:focus {
+      background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+    }
+
+    &:is(:hover, :focus-visible, :active) {
+      background-color: var(--clr-special-grey-3, #{variables.$clr-special-grey-3});
+      color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+    }
+  }
 }
