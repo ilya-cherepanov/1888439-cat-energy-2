@@ -18,6 +18,10 @@
   text-decoration: none;
 }
 
+.extra-product__title-link:hover {
+  filter: opacity(0.6);
+}
+
 .extra-product__title {
   margin: 0;
 
