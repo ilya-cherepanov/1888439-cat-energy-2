@@ -72,6 +72,7 @@
   font-size: clamp(12px, calc(10.57px + 0.45vw), 14px);
   line-height: clamp(12px, calc(10.57px + 0.45vw), 14px);
   text-align: center;
+  text-transform: lowercase;
 
   @media (min-width: #{variables.$tablet-width}) {
     padding-inline: 8px;
@@ -109,6 +110,8 @@
 }
 
 .example__slider {
+  inline-size: 280px;
+  block-size: 256px;
   margin-inline: auto;
 }
 
@@ -150,6 +153,11 @@
     grid-column: price;
     align-self: center;
     text-align: end;
+  }
+
+  .example__slider {
+    inline-size: 560px;
+    block-size: 512px;
   }
 }
 
