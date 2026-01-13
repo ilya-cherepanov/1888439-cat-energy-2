@@ -1,5 +1,11 @@
+const Viewport = {
+  MOBILE: 320,
+  TABLET: 768,
+  DESKTOP: 1440,
+};
+
 class NavigationMenu {
-  static States = {
+  static State = {
     OPENED: 'page-navigation--menu-opened',
     CLOSED: 'page-navigation--menu-closed',
     NO_JS: 'page-navigation--no-js',
@@ -20,24 +26,24 @@ class NavigationMenu {
       throw new Error('Couldn\'t find .page-navigation__burger element!');
     }
 
-    this.isOpened = this.menuEl.classList.contains(NavigationMenu.States.OPENED);
+    this.isOpened = this.menuEl.classList.contains(NavigationMenu.State.OPENED);
   }
 
   handleEvents() {
-    this.menuEl.classList.remove(NavigationMenu.States.NO_JS);
+    this.menuEl.classList.remove(NavigationMenu.State.NO_JS);
     this.burgerButtonEl.addEventListener('click', this.onBurgerClickHandle);
   }
 
   onBurgerClickHandle = () => {
     if (this.isOpened) {
       this.menuEl.classList.replace(
-        NavigationMenu.States.OPENED,
-        NavigationMenu.States.CLOSED,
+        NavigationMenu.State.OPENED,
+        NavigationMenu.State.CLOSED,
       );
     } else {
       this.menuEl.classList.replace(
-        NavigationMenu.States.CLOSED,
-        NavigationMenu.States.OPENED,
+        NavigationMenu.State.CLOSED,
+        NavigationMenu.State.OPENED,
       );
     }
 
@@ -45,5 +51,55 @@ class NavigationMenu {
   };
 }
 
+class Map {
+  static PIN_COORDS = [30.323097575388093, 59.93884713117348];
+  static Position = {
+    MOBILE: {
+      center: [30.32314049073375, 59.93942659272679],
+      zoom: 14,
+    },
+    TABLET: {
+      center: [30.322826816002703, 59.93952441961463],
+      zoom: 14.69,
+    },
+    DESKTOP: {
+      center: [30.319832287516306, 59.939114994706415],
+      zoom: 15.78,
+    },
+  };
+
+  constructor() {
+    const viewportWidth = window.innerWidth;
+    const mapPosition = this.selectPosition(viewportWidth);
+    this.map = new window.maplibregl.Map({
+      style: 'https://tiles.openfreemap.org/styles/bright',
+      container: 'map',
+      ...mapPosition,
+    });
+
+    this.marker = this.createPinMarker();
+    this.marker.setLngLat(Map.PIN_COORDS);
+    this.marker.addTo(this.map);
+  }
+
+  createPinMarker() {
+    const pinElement = document.createElement('div');
+    pinElement.classList.add('contacts__map-pin');
+    return new window.maplibregl.Marker({ element: pinElement });
+  }
+
+  selectPosition(viewportWidth) {
+    if (viewportWidth < Viewport.TABLET) {
+      return Map.Position.MOBILE;
+    } else if (viewportWidth >= Viewport.TABLET && viewportWidth < Viewport.DESKTOP) {
+      return Map.Position.TABLET;
+    } else {
+      return Map.Position.DESKTOP;
+    }
+  }
+}
+
 const navigationMenu = new NavigationMenu();
 navigationMenu.handleEvents();
+
+new Map();
