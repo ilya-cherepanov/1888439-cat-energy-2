@@ -2,7 +2,7 @@
 @use "../common/variables.scss";
 
 .example {
-  padding-block: 25px 40px;
+  padding-block: 27px 40px;
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   background-color: #eaeaea;
 
@@ -10,7 +10,7 @@
 }
 
 .example__title {
-  margin-block: 0 40px;
+  margin-block: 0 41px;
 }
 
 .example__text {
@@ -35,7 +35,7 @@
 .example__results-item {
   display: grid;
   grid-template-columns: [value-start] auto [title] min-content auto [value-end];
-  grid-template-rows: [value-start] repeat(2, auto) [value-end title-start] auto 1px auto [title-end];
+  grid-template-rows: [value-start] repeat(2, auto) [value-end title-start] 9px auto [title-end];
   flex-basis: clamp(124px, calc(96.86px + 8.48vw), 162px);
 
   @media (min-width: #{variables.$tablet-width}) {
@@ -82,7 +82,7 @@
 .example__results-value {
   grid-column: value;
   grid-row: value;
-  padding-block: 12px clamp(9px, calc(7.57px + 0.45vw), 11px);
+  padding-block: 15px 7px;
   padding-inline: 12px;
   margin: 0;
 
