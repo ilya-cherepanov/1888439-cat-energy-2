@@ -7,7 +7,6 @@
 
   padding-inline-start: 80px;
   padding-block: 10px;
-  min-block-size: 60px;
 
   background-image:
     var(--icon),
@@ -35,7 +34,10 @@
 
 .principle__title {
   margin: 0;
-  color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+
+  @include mixins.secondary-font(
+    $color: var(--clr-basic-grey, #{variables.$clr-basic-grey}),
+  );
 }
 
 .principle__number {
@@ -62,9 +64,15 @@
     --icon-position: 0 40px;
   }
 
-  .principle__number {
+  .principle__title {
     grid-row: 1;
     grid-column: 2;
+  }
+
+  .principle__number {
+    display: block;
+    font-size: 280px;
+    line-height: 280px;
   }
 
   .principle__description {

@@ -2,7 +2,7 @@
 @use "../common/variables.scss";
 
 .example {
-  padding-block: 25px 40px;
+  padding-block: 27px 40px;
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
   background-color: #eaeaea;
 
@@ -10,7 +10,7 @@
 }
 
 .example__title {
-  margin-block: 0 40px;
+  margin-block: 0 41px;
 }
 
 .example__text {
@@ -26,27 +26,74 @@
 .example__results {
   display: flex;
   justify-content: space-between;
+  align-items: start;
   flex-wrap: wrap;
   max-inline-size: 367px;
   margin-block: 0 20px;
 }
 
 .example__results-item {
-  min-inline-size: 124px;
+  display: grid;
+  grid-template-columns: [value-start] auto [title] min-content auto [value-end];
+  grid-template-rows: [value-start] repeat(2, auto) [value-end title-start] 9px auto [title-end];
+  flex-basis: clamp(124px, calc(96.86px + 8.48vw), 162px);
+
+  @media (min-width: #{variables.$tablet-width}) {
+    grid-template-columns: [value-start] auto [title] fit-content(88%) auto [value-end];
+  }
+
+  &::before,
+  &::after {
+    content: "";
+    display: block;
+    border-block-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
+  &::before {
+    grid-column: 1;
+    grid-row: 2 / -2;
+    border-inline-start: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+    border-end-start-radius: 3px;
+  }
+
+  &::after {
+    grid-column: 3;
+    grid-row: 2 / -2;
+    border-inline-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+    border-end-end-radius: 3px;
+  }
 }
 
 .example__results-title {
+  grid-column: title;
+  grid-row: title;
+  padding-inline: 14px;
+
   font-size: clamp(12px, calc(10.57px + 0.45vw), 14px);
   line-height: clamp(12px, calc(10.57px + 0.45vw), 14px);
+  text-align: center;
+  text-transform: lowercase;
+
+  @media (min-width: #{variables.$tablet-width}) {
+    padding-inline: 8px;
+  }
 }
 
 .example__results-value {
-  padding: 7px;
+  grid-column: value;
+  grid-row: value;
+  padding-block: 15px 7px;
+  padding-inline: 12px;
   margin: 0;
 
   @include mixins.secondary-font;
   font-size: clamp(24px, calc(19.71px + 1.34vw), 30px);
   line-height: clamp(24px, calc(14.71px + 2.9vw), 37px);
+  text-align: center;
+
+  border: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  border-block-end: 0;
+  border-radius: 3px;
 }
 
 .example__price {
@@ -58,7 +105,13 @@
   text-align: center;
 }
 
+.example__price-sum {
+  font-weight: 400;
+}
+
 .example__slider {
+  inline-size: 280px;
+  block-size: 256px;
   margin-inline: auto;
 }
 
@@ -70,12 +123,13 @@
     background-color: initial;
     background-image: linear-gradient(to top, #eaeaea 462px, rgba(0, 0, 0, 0) 462px);
     background-repeat: no-repeat;
+    border-block-start: 1px solid #e6e6e6;
   }
 
   .example__text {
     display: grid;
-    grid-template-columns: [results] fit-content(50%) auto [price] 174px;
-    row-gap: 55px;
+    grid-template-columns: [results] auto [price] 174px;
+    gap: 55px 43px;
     margin-block-end: 99px;
   }
 
@@ -89,6 +143,7 @@
   }
 
   .example__results {
+    gap: 43px;
     margin-block: 0;
     grid-column: results;
   }
@@ -99,6 +154,11 @@
     align-self: center;
     text-align: end;
   }
+
+  .example__slider {
+    inline-size: 560px;
+    block-size: 512px;
+  }
 }
 
 @media (min-width: #{variables.$desktop-width}) {
@@ -108,15 +168,17 @@
     display: grid;
     grid-template-columns: 1fr [text] 436px 224px [slider] 560px 1fr;
     grid-template-rows: [title slider-start] auto [background-start] 70px [text] auto [slider-end] 75px [background-end];
-    background: none;
-  }
 
-  .example::before {
-    content: "";
-    display: block;
-    grid-column: 1 / -1;
-    grid-row: background;
-    background-color: #eaeaea;
+    background: none;
+    border-block-start: 0;
+
+    &::before {
+      content: "";
+      display: block;
+      grid-column: 1 / -1;
+      grid-row: background;
+      background-color: #eaeaea;
+    }
   }
 
   .example__title {
@@ -141,6 +203,10 @@
   }
 
   .example__price {
+    display: flex;
+    justify-content: space-between;
+    max-width: 327px;
+
     text-align: start;
   }
 

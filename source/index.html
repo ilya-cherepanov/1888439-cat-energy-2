@@ -9,6 +9,7 @@
     <link rel="apple-touch-icon" href="favicons/apple.png">
     <link rel="manifest" href="manifest.webmanifest">
     <link rel="stylesheet" href="styles/styles.css">
+    <script src="vendor/maplibre-gl.js" defer></script>
     <script src="scripts/index.js" defer></script>
   </head>
 
@@ -30,7 +31,7 @@
           </picture>
         </a>
       </div>
-      <nav class="page-header__navigation page-navigation page-navigation--desktop-alt">
+      <nav class="page-header__navigation page-navigation page-navigation--desktop-alt page-navigation--no-js page-navigation--menu-closed">
         <button class="page-navigation__burger" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
@@ -158,10 +159,10 @@
               <dd class="example__results-value">60 дней</dd>
             </div>
           </dl>
-          <p class="example__price">Затраты на питание: 15 000 РУБ.</p>
+          <p class="example__price">Затраты на питание: <b class="example__price-sum">15 000 РУБ.</b></p>
         </div>
 
-        <section class="example__slider slider" style="--slider-state: 0.5">
+        <section class="example__slider slider">
           <h3 class="visually-hidden">Слайдер</h3>
           <picture class="slider__image-container">
             <source media="(min-width: 768px)" type="image/avif" srcset="images/slider/before-cat-tablet@1x.avif 1x, images/slider/before-cat-tablet@2x.avif 2x" width="560" height="512">
@@ -197,17 +198,20 @@
         </div>
         <section class="contacts__map">
           <h3 class="visually-hidden">Мы на карте</h3>
-          <picture class="contacts__map-image-container">
-            <source media="(min-width: 1440px)" type="image/avif" srcset="images/map/map-desktop@1x.avif 1x, images/map/map-desktop@2x.avif 2x" width="1440" height="400">
-            <source media="(min-width: 1440px)" type="image/webp" srcset="images/map/map-desktop@1x.webp 1x, images/map/map-desktop@2x.webp 2x" width="1440" height="400">
-            <source media="(min-width: 1440px)" type="image/png" srcset="images/map/map-desktop@1x.png 1x, images/map/map-desktop@2x.png 2x" width="1440" height="400">
-            <source media="(min-width: 768px)" type="image/avif" srcset="images/map/map-tablet@1x.avif 1x, images/map/map-tablet@2x.avif 2x" width="768" height="400">
-            <source media="(min-width: 768px)" type="image/webp" srcset="images/map/map-tablet@1x.webp 1x, images/map/map-tablet@2x.webp 2x" width="768" height="400">
-            <source media="(min-width: 768px)" type="image/png" srcset="images/map/map-tablet@1x.png 1x, images/map/map-tablet@2x.png 2x" width="768" height="400">
-            <source media="(min-width: 320px)" type="image/avif" srcset="images/map/map-mobile@1x.avif 1x, images/map/map-mobile@2x.avif 2x" width="320" height="362">
-            <source media="(min-width: 320px)" type="image/webp" srcset="images/map/map-mobile@1x.webp 1x, images/map/map-mobile@2x.webp 2x" width="320" height="362">
-            <img class="contacts__map-image" src="images/map/map-mobile@1x.png" srcset="images/map/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с маркером на Большой Конюшенной улице, доме 19/8">
-          </picture>
+          <div class="contacts__map-container" id="map"></div>
+          <noscript>
+            <picture class="contacts__map-image-container">
+              <source media="(min-width: 1440px)" type="image/avif" srcset="images/map/map-desktop@1x.avif 1x, images/map/map-desktop@2x.avif 2x" width="1440" height="400">
+              <source media="(min-width: 1440px)" type="image/webp" srcset="images/map/map-desktop@1x.webp 1x, images/map/map-desktop@2x.webp 2x" width="1440" height="400">
+              <source media="(min-width: 1440px)" type="image/png" srcset="images/map/map-desktop@1x.png 1x, images/map/map-desktop@2x.png 2x" width="1440" height="400">
+              <source media="(min-width: 768px)" type="image/avif" srcset="images/map/map-tablet@1x.avif 1x, images/map/map-tablet@2x.avif 2x" width="768" height="400">
+              <source media="(min-width: 768px)" type="image/webp" srcset="images/map/map-tablet@1x.webp 1x, images/map/map-tablet@2x.webp 2x" width="768" height="400">
+              <source media="(min-width: 768px)" type="image/png" srcset="images/map/map-tablet@1x.png 1x, images/map/map-tablet@2x.png 2x" width="768" height="400">
+              <source media="(min-width: 320px)" type="image/avif" srcset="images/map/map-mobile@1x.avif 1x, images/map/map-mobile@2x.avif 2x" width="320" height="362">
+              <source media="(min-width: 320px)" type="image/webp" srcset="images/map/map-mobile@1x.webp 1x, images/map/map-mobile@2x.webp 2x" width="320" height="362">
+              <img class="contacts__map-image" src="images/map/map-mobile@1x.png" srcset="images/map/map-mobile@2x.png 2x" width="320" height="362" alt="Карта с маркером на Большой Конюшенной улице, доме 19/8">
+            </picture>
+          </noscript>
         </section>
       </section>
 

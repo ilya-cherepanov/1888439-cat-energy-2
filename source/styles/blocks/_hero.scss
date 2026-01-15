@@ -38,7 +38,7 @@
 }
 
 .hero__product-slogan {
-  margin-block: 21px;
+  margin-block: 0 27px;
 
   @include mixins.secondary-font;
   font-size: clamp(14px, 3vw, 20px);
@@ -51,6 +51,10 @@
   display: block;
   inline-size: 100%;
   object-fit: contain;
+}
+
+.hero__button {
+  margin-block-start: 3px;
 }
 
 @media (min-width: variables.$tablet-width) {
@@ -86,7 +90,7 @@
   .hero__button {
     grid-row: 2;
     grid-column: 2;
-    margin-block: 29px;
+    margin-block-start: 29px;
   }
 }
 

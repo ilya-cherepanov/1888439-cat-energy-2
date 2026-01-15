@@ -51,6 +51,10 @@
   margin-block-start: clamp(0px, calc(-14.29px + 4.46vw), 20px);
 }
 
+.contacts__map-container {
+  block-size: 362px;
+}
+
 .contacts__map-image {
   display: block;
   inline-size: 100%;
@@ -58,13 +62,67 @@
   object-fit: cover;
 }
 
+.contacts__map-pin {
+  position: relative;
+
+  inline-size: 1px;
+  block-size: 1px;
+
+  &::before {
+    content: "";
+
+    position: absolute;
+    inset-block-start: -53px;
+    inset-inline-start: -26px;
+
+    display: block;
+    inline-size: 57px;
+    block-size: 53px;
+
+    background-image:
+      image-set(
+        url("../../images/map/pins/map-pin-mobile@2x.avif") 2x type("image/avif"),
+        url("../../images/map/pins/map-pin-mobile@1x.avif") 1x type("image/avif"),
+        url("../../images/map/pins/map-pin-mobile@2x.webp") 2x type("image/webp"),
+        url("../../images/map/pins/map-pin-mobile@1x.webp") 1x type("image/webp"),
+        url("../../images/map/pins/map-pin-mobile@2x.png") 2x,
+        url("../../images/map/pins/map-pin-mobile@1x.png") 1x,
+      );
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .contacts__address {
     text-align: end;
   }
 
+  .contacts__map-container {
+    inline-size: 100%;
+    block-size: 400px;
+  }
+
   .contacts__map-image {
     block-size: 400px;
+  }
+
+  .contacts__map-pin::before {
+    inset-block-start: -106px;
+    inset-inline-start: -52px;
+
+    inline-size: 113px;
+    block-size: 106px;
+
+    background-image:
+      image-set(
+        url("../../images/map/pins/map-pin-tablet@2x.avif") 2x type("image/avif"),
+        url("../../images/map/pins/map-pin-tablet@1x.avif") 1x type("image/avif"),
+        url("../../images/map/pins/map-pin-tablet@2x.webp") 2x type("image/webp"),
+        url("../../images/map/pins/map-pin-tablet@1x.webp") 1x type("image/webp"),
+        url("../../images/map/pins/map-pin-tablet@2x.png") 2x,
+        url("../../images/map/pins/map-pin-tablet@1x.png") 1x,
+      );
   }
 }
 
@@ -92,6 +150,10 @@
   .contacts__map {
     position: absolute;
     inset: 0;
+  }
+
+  .contacts__map-container {
+    block-size: 100%;
   }
 
   .contacts__map-image {

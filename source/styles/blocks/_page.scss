@@ -1,73 +1,65 @@
 @use "../common/variables.scss";
 
-.page--index {
-  .page__hero {
-    margin-block-end: 20px;
-  }
-
-  .page__features {
-    margin-block-end: 20px;
-  }
-
-  .page__principles {
-    margin-block-end: 49px;
-  }
+.page--index .page__hero {
+  margin-block-end: 20px;
 }
 
-.page--catalog {
-  .page__header {
-    margin-block-end: 27px;
-  }
+.page--index .page__features {
+  margin-block-end: 23px;
+}
 
-  .page__title {
-    margin-block: 0 15px;
-  }
+.page--index .page__principles {
+  margin-block-end: 40px;
+}
+
+.page--catalog .page__header {
+  margin-block-end: 27px;
+}
+
+.page--catalog .page__title {
+  margin-block: 0 15px;
 }
 
 @media (min-width: #{variables.$tablet-width}) {
-  .page--index {
-    .page__hero {
-      margin-block-end: 0;
-    }
-
-    .page__features {
-      margin-block-end: 45px;
-    }
-
-    .page__principles {
-      margin-block-end: 0;
-    }
+  .page--index .page__hero {
+    margin-block-end: 0;
   }
 
-  .page--catalog {
-    .page__header {
-      margin-block-end: 65px;
-    }
+  .page--index .page__features {
+    margin-block-end: 45px;
+  }
 
-    .page__title {
-      margin-block: 0 10px;
-    }
+  .page--index .page__principles {
+    margin-block-end: 47px;
+  }
+
+  .page--catalog .page__header {
+    margin-block-end: 65px;
+  }
+
+  .page--catalog .page__title {
+    margin-block: 0 10px;
   }
 }
 
 @media (min-width: #{variables.$desktop-width}) {
-  .page--index {
-    .page__hero {
-      margin-block-end: 82px;
-    }
-
-    .page__features {
-      margin-block-end: 71px;
-    }
+  .page--index .page__hero {
+    margin-block-end: 82px;
   }
 
-  .page--catalog {
-    .page__header {
-      margin-block-end: 74px;
-    }
+  .page--index .page__features {
+    margin-block-end: 71px;
+  }
 
-    .page__title {
-      margin-block: 0 13px;
-    }
+  .page--index .page__principles {
+    margin-block-end: 69px;
+  }
+
+  .page--catalog .page__header {
+    margin-block-end: 74px;
+  }
+
+  .page--catalog .page__title {
+    margin-block: 0 13px;
   }
 }

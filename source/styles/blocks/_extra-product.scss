@@ -15,7 +15,12 @@
 
 .extra-product__title-link {
   grid-column: 1 / -1;
+  justify-self: start;
   text-decoration: none;
+}
+
+.extra-product__title-link:hover {
+  filter: opacity(0.6);
 }
 
 .extra-product__title {

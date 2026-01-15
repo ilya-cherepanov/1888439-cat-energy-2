@@ -7,7 +7,7 @@
 
   background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
   padding-inline: 20px 33px;
-  padding-block: 30px 18px;
+  padding-block: 30px 19px;
 
   &::before,
   &::after {
@@ -64,7 +64,7 @@
 
 .feature__description {
   padding-block: 22px;
-  margin-block: 7px 15px;
+  margin-block: 7px 20px;
   border-block-end: 1px solid #d9d9d9;
 
   @include mixins.primary-font(
