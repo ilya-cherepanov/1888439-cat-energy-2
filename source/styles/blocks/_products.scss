@@ -22,7 +22,7 @@
 
   position: relative;
 
-  padding-block: 80px 25px;
+  padding-block: 70px 25px;
 
   @include mixins.primary-font(
     $font-size: 12px,
@@ -60,7 +60,7 @@
 }
 
 .products__more-description {
-  margin-block: 8px;
+  margin-block: 0 21px;
 
   font-size: clamp(12px, calc(9.14px + 0.89vw), 16px);
   line-height: clamp(16px, calc(14.57px + 0.45vw), 18px);

@@ -4,7 +4,7 @@
 .product-card {
   display: grid;
   grid-template-columns: [image] 50% [title description-start] auto 64px [description-end];
-  row-gap: 14px;
+  row-gap: 15px;
   padding-block: 20px 25px;
 }
 
@@ -31,10 +31,11 @@
 
 .product-card__description {
   grid-column: description;
+  margin-block-end: 4px;
 }
 
 .product-card__button {
-  margin-block-start: 2px;
+  margin-block-start: 1px;
   grid-column: 1 / -1;
 }
 
