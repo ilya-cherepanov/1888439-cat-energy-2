@@ -2,7 +2,7 @@
 @use "../common/variables.scss";
 
 .extra-products__title {
-  margin-block: 0 36px;
+  margin-block: 0 35px;
 }
 
 .extra-products__list {
@@ -27,7 +27,7 @@
 .extra-products__promo {
   --_overlay-color: rgba(var(--rgb-comps-basic-green, #{variables.$rgb-comps-basic-green}), 0.85);
 
-  padding-block: 186px 43px;
+  padding-block: 187px 43px;
   padding-inline: 58px 61px;
   margin: 0;
 

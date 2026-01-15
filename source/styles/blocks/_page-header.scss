@@ -7,6 +7,12 @@
     var(--padding-mobile, #{variables.$padding-mobile})
     1fr 101px 1fr
     var(--padding-mobile, #{variables.$padding-mobile});
+
+  border-block-end: 1px solid #d9d9d9;
+}
+
+.page-header--index {
+  border-block-end: 0;
 }
 
 .page-header__logo {
@@ -38,6 +44,7 @@
     gap: 0;
     padding-block-start: 55px;
     padding-inline: 0;
+    border-block-end: 0;
   }
 
   .page-header--floating {
