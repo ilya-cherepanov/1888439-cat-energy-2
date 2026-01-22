@@ -3,7 +3,6 @@
 
 .principle {
   --icon: linear-gradient(rgba(0, 0, 0, 0));
-  --icon-position: 0 10px;
 
   padding-inline-start: 80px;
   padding-block: 10px;
@@ -13,7 +12,7 @@
     linear-gradient(var(--clr-basic-green, #{variables.$clr-basic-green}));
   background-repeat: no-repeat no-repeat;
   background-size: 60px 60px, 60px 60px;
-  background-position: var(--icon-position), var(--icon-position);
+  background-position: 0 10px, 0 10px;
 }
 
 .principle--composition {
@@ -60,8 +59,8 @@
     column-gap: 31px;
     padding: 0;
 
-    background-size: 80px 80px;
-    --icon-position: 0 40px;
+    background-size: 60px 60px, 80px 80px;
+    background-position: 10 50px, 0 40px;
   }
 
   .principle__title {

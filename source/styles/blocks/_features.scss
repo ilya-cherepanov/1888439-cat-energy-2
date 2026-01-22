@@ -22,6 +22,10 @@
   .features {
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
   }
+
+  .features__item {
+    margin-block-end: 30px;
+  }
 }
 
 @media (min-width: #{variables.$desktop-width}) {

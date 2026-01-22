@@ -64,7 +64,7 @@
 
   .hero__container {
     display: grid;
-    grid-template-columns: clamp(80px, calc(103px - 1.5vw), 90px) 224px 1fr clamp(80px, calc(103px - 1.5vw), 90px);
+    grid-template-columns: clamp(80px, calc(103px - 1.5vw), 90px) 242px 1fr clamp(80px, calc(103px - 1.5vw), 90px);
     padding-block-start: 65px;
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
   }

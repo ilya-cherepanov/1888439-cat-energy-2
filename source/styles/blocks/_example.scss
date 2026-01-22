@@ -130,7 +130,7 @@
     display: grid;
     grid-template-columns: [results] auto [price] 174px;
     gap: 55px 43px;
-    margin-block-end: 99px;
+    margin-block-end: 100px;
   }
 
   .example__title {
@@ -148,11 +148,17 @@
     grid-column: results;
   }
 
+  .example__results-value {
+    padding-block-end: 10px;
+  }
+
   .example__price {
     margin-block: 0;
     grid-column: price;
     align-self: center;
     text-align: end;
+
+    line-height: 30px;
   }
 
   .example__slider {
