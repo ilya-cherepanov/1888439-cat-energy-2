@@ -19,8 +19,8 @@
 
 @media (min-width: #{variables.$tablet-width}) {
   .page-footer__end {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
     padding-block: 55px;
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
     max-inline-size: var(--desktop-width, #{variables.$desktop-width});
@@ -28,17 +28,27 @@
   }
 
   .page-footer__logo {
+    justify-self: start;
     margin: 0;
   }
 
   .page-footer__socials {
+    justify-self: center;
     border-block: 0;
     margin: 0;
+  }
+
+  .page-footer__copyright {
+    justify-self: end;
   }
 }
 
 @media (min-width: #{variables.$desktop-width}) {
   .page-footer {
     background-color: var(--clr-basic-grey, #{variables.$clr-basic-grey});
+  }
+
+  .page-footer__end {
+    padding-block: 65px 55px;
   }
 }

@@ -173,7 +173,7 @@
     padding-block: 0;
     display: grid;
     grid-template-columns: 1fr [text] 436px 224px [slider] 560px 1fr;
-    grid-template-rows: [title slider-start] auto [background-start] 70px [text] auto [slider-end] 75px [background-end];
+    grid-template-rows: [title slider-start] auto [background-start] 70px [text] auto [slider-end] 70px [background-end];
 
     background: none;
     border-block-start: 0;
@@ -183,7 +183,7 @@
       display: block;
       grid-column: 1 / -1;
       grid-row: background;
-      background-color: #eaeaea;
+      background-color: #f2f2f2;
     }
   }
 
@@ -205,7 +205,7 @@
   }
 
   .example__results {
-    margin-block-end: 55px;
+    margin-block-end: 50px;
   }
 
   .example__price {
@@ -219,7 +219,6 @@
   .example__slider {
     grid-column: slider;
     grid-row: slider;
-    align-self: end;
     margin-block-start: 0;
   }
 }

@@ -154,8 +154,9 @@
 
 @media (min-width: #{variables.$desktop-width}) {
   .feature {
-    padding-block: 77px 55px;
+    padding-block: 77px 60px;
     padding-inline: 52px 61px;
+    min-block-size: 374px;
 
     &::before {
       inline-size: 100px;

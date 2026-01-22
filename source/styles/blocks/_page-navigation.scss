@@ -197,6 +197,7 @@
 
     .page-navigation__link::after {
       background-color: var(--clr-white, #{variables.$clr-white});
+      margin-block-start: 10px;
     }
   }
 
