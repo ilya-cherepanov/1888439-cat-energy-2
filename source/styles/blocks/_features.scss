@@ -12,10 +12,10 @@
 
 .features__item {
   margin-block-end: 20px;
-}
 
-.features__item:last-child {
-  margin-block-end: 0;
+  &:last-child {
+    margin-block-end: 0;
+  }
 }
 
 @media (min-width: #{variables.$tablet-width}) {

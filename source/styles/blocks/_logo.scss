@@ -5,10 +5,10 @@
   grid-template-columns: 1fr 101px;
   grid-template-rows: 66px;
   align-items: center;
+}
 
-  .logo__link--image {
-    justify-self: start;
-  }
+.logo .logo__link--image {
+  justify-self: start;
 }
 
 .logo--secondary {
@@ -22,14 +22,22 @@
   text-decoration: none;
 }
 
+.logo__image {
+  display: block;
+}
+
+.logo__text {
+  display: block;
+}
+
 .logo--secondary:is(:hover, :focus),
 :not(.logo--secondary) .logo__link:is(:hover, :focus) {
   filter: opacity(0.8);
 }
 
 @supports selector(:focus-visible) {
-  .logo--secondary:is(:focus),
-  :not(.logo--secondary) .logo__link:is(:focus) {
+  .logo--secondary:focus,
+  :not(.logo--secondary) .logo__link:focus {
     filter: none;
   }
 
@@ -42,14 +50,6 @@
 .logo--secondary:active,
 :not(.logo--secondary) .logo__link:active {
   filter: opacity(0.6);
-}
-
-.logo__image {
-  display: block;
-}
-
-.logo__text {
-  display: block;
 }
 
 @media (min-width: #{variables.$tablet-width}) {

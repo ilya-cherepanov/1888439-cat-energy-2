@@ -14,10 +14,10 @@
 
 .extra-products__item {
   border-block-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
-}
 
-.extra-products__item:first-child {
-  border-block-start: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  &:first-child {
+    border-block-start: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
 }
 
 .extra-products__promo-container {
