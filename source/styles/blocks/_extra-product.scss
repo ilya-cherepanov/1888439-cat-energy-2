@@ -50,13 +50,15 @@
 @media (min-width: #{variables.$tablet-width}) {
   .extra-product {
     grid-template-columns: [title] 1fr [amount] 1fr [price] 70px;
-    gap: 25px 20px;
-    padding-inline: 40px;
+    align-items: end;
+    gap: 22px 22px;
+    padding-inline: 38px;
     padding-block: 26px 27px;
   }
 
   .extra-product__title-link {
     grid-column: title;
+    margin-block-end: 3px;
   }
 
   .extra-product__amount {
@@ -67,6 +69,8 @@
 
   .extra-product__price {
     grid-column: price;
+    margin-block-end: 1px;
+    margin-inline-end: 2px;
   }
 
   .extra-product__button {
@@ -77,10 +81,12 @@
 @media (min-width: #{variables.$desktop-width}) {
   .extra-product {
     padding-inline: 0;
-    padding-block: 15px 17px;
-    grid-template-columns: [title] 316px [amount] 240px [price] 1fr [button] 244px;
+    padding-block: 17px 14px;
+    grid-template-columns: [title] 316px [amount] 234px [price] 1fr [button] 244px;
     gap: 0 10px;
     align-items: center;
+
+    border-inline: 0;
   }
 
   .extra-product__title-link {

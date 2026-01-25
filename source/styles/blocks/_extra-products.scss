@@ -12,12 +12,12 @@
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
 
-.extra-products__item:first-child {
-  border-block-start: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
-}
-
 .extra-products__item {
   border-block-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+}
+
+.extra-products__item:first-child {
+  border-block-start: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
 }
 
 .extra-products__promo-container {
@@ -62,6 +62,10 @@
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
   }
 
+  .extra-products__item {
+    border-inline: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
   .extra-products__promo-container {
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
   }
@@ -83,6 +87,7 @@
         url("../../images/backgrounds/cat-in-the-bag-tablet@2x.jpg") 2x,
         url("../../images/backgrounds/cat-in-the-bag-tablet@1x.jpg") 1x,
       );
+    background-size: 80px 83px, auto, 100% auto;
     background-position: center left 77px, center, center;
   }
 }

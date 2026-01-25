@@ -48,6 +48,10 @@
   display: block;
 }
 
+.logo__text {
+  display: block;
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .logo {
     display: flex;

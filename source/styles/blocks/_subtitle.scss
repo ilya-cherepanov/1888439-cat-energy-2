@@ -19,10 +19,10 @@
     background-image:
       linear-gradient(
         to bottom,
-        rgba(0, 0, 0, 0) calc(50%),
-        var(--clr-basic-green, #{variables.$clr-basic-green}) calc(50%),
-        var(--clr-basic-green, #{variables.$clr-basic-green}) calc(50% + 2px),
-        rgba(0, 0, 0, 0) calc(50% + 2px),
+        rgba(0, 0, 0, 0) calc(50% - 1px),
+        var(--clr-basic-green, #{variables.$clr-basic-green}) calc(50% - 1px),
+        var(--clr-basic-green, #{variables.$clr-basic-green}) calc(50% + 1px),
+        rgba(0, 0, 0, 0) calc(50% + 1px),
       );
     background-repeat: no-repeat;
   }

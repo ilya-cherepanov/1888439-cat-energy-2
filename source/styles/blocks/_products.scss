@@ -22,7 +22,7 @@
 
   position: relative;
 
-  padding-block: 70px 25px;
+  padding-block: 71px 25px;
 
   @include mixins.primary-font(
     $font-size: 12px,
@@ -127,7 +127,7 @@
 
   .products__more-description {
     padding-inline: 40px;
-    margin-block: 23px 82px;
+    margin-block-end: 82px;
   }
 
   .products__more-button {
@@ -140,7 +140,7 @@
     display: grid;
     grid-template-columns: 1fr [content] 1220px 1fr;
     padding-inline: 0;
-    padding-block: 71px;
+    padding-block: 70px;
   }
 
   .products__list {
@@ -156,11 +156,15 @@
 
   .products__more-title {
     padding-inline: 0;
-    margin-block: 0 20px;
+    margin-block-end: 25px;
   }
 
   .products__more-description {
     padding-inline: 0;
-    margin-block: 20px 90px;
+    margin-block-end: 90px;
+  }
+
+  .products__more-button {
+    margin-block-start: 0;
   }
 }

@@ -19,7 +19,17 @@
 
 @media (min-width: #{variables.$tablet-width}) {
   .product-description__item {
-    padding-block: 7px 5px;
+    padding-block: 6px 5px;
     border-block-end: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
+  .product-description__item:first-child {
+    padding-block: 0 5px;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .product-description__item:last-child {
+    padding-block-end: 10px;
   }
 }

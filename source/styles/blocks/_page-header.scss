@@ -34,6 +34,12 @@
     column-gap: 33px;
     padding-block-start: 25px;
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+
+    border-block-end: 0;
+  }
+
+  .page-header__navigation {
+    margin-inline-end: -6px;
   }
 }
 
@@ -62,6 +68,6 @@
   .page-header__navigation {
     grid-column: 3;
     place-self: end;
-    margin-inline: 33px -4px;
+    margin-inline: 33px -7px;
   }
 }
