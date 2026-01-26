@@ -18,6 +18,7 @@
   font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
   line-height: clamp(18px, calc(9.43px + 2.68vw), 30px);
 
+  field-sizing: content;
   resize: vertical;
   border: 1px solid #e7e7e7;
   border-radius: 0;
