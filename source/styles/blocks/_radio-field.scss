@@ -2,9 +2,97 @@
 @use "../common/variables.scss";
 
 .radio-field {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+
   @include mixins.secondary-font(
     $color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey}),
   );
-  font-size: 16px;
-  line-height: 18px;
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(18px, calc(16.57px + 0.45vw), 20px);
+}
+
+.radio-field__input {
+  box-sizing: border-box;
+
+  position: relative;
+
+  align-self: flex-start;
+  min-block-size: 30px;
+  min-inline-size: 30px;
+  padding: 8.5px;
+  margin: 0;
+
+  appearance: none;
+  border: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  border-radius: 50%;
+  background-clip: content-box;
+  cursor: pointer;
+
+  &:checked {
+    background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+  }
+}
+
+.radio-field__label {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.radio-field__input:is(:hover, :focus) {
+  border-color: #bababa;
+}
+
+.radio-field__input:is(:hover, :focus) + .radio-field__label {
+  color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
+}
+
+@supports selector(:focus-visible) {
+  .radio-field__input:focus {
+    border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
+  .radio-field__input:is(:hover, :focus) + .radio-field__label {
+    color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+  }
+
+  .radio-field__input:is(:hover, :focus-visible) {
+    border-color: #bababa;
+  }
+
+  .radio-field__input:is(:hover, :focus-visible) + .radio-field__label {
+    color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
+  }
+}
+
+.radio-field__input:active,
+.radio-field__input:active + .radio-field__label {
+  filter: opacity(0.6);
+}
+
+.radio-field__input:disabled,
+.radio-field__input:disabled + .radio-field__label {
+  filter: opacity(0.3);
+  cursor: default;
+}
+
+.radio-field__input:disabled:hover {
+  border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
+}
+
+.radio-field__input:disabled:hover + .radio-field__label {
+  color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .radio-field {
+    column-gap: 20px;
+  }
+
+  .radio-field__input {
+    min-block-size: 40px;
+    min-inline-size: 40px;
+    padding: 11px;
+  }
 }
