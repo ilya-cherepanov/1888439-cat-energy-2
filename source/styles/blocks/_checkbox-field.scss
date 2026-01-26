@@ -2,9 +2,95 @@
 @use "../common/variables.scss";
 
 .checkbox-field {
+  display: flex;
+  column-gap: 15px;
+  align-items: center;
+
   @include mixins.secondary-font(
     $color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey}),
   );
-  font-size: 16px;
-  line-height: 18px;
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(18px, calc(16.57px + 0.45vw), 20px);
+}
+
+.checkbox-field__input {
+  align-self: flex-start;
+  box-sizing: border-box;
+  min-block-size: 30px;
+  min-inline-size: 30px;
+  margin: 0;
+
+  appearance: none;
+  border: 1px solid var(--clr-special-grey, #{variables.$clr-special-grey});
+  background-size: 18px 14px;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+
+  &:checked {
+    background-image: url("../../icons/stack.svg#tick");
+  }
+}
+
+.checkbox-field__label {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.checkbox-field__input:is(:hover, :focus) {
+  border-color: #bababa;
+}
+
+.checkbox-field__input:is(:hover, :focus) + .checkbox-field__label {
+  color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
+}
+
+@supports selector(:focus-visible) {
+  .checkbox-field__input:focus {
+    border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
+  .checkbox-field__input:is(:hover, :focus) + .checkbox-field__label {
+    color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+  }
+
+  .checkbox-field__input:is(:hover, :focus-visible) {
+    border-color: #bababa;
+  }
+
+  .checkbox-field__input:is(:hover, :focus-visible) + .checkbox-field__label {
+    color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
+  }
+}
+
+.checkbox-field__input:active,
+.checkbox-field__input:active + .checkbox-field__label {
+  filter: opacity(0.6);
+}
+
+.checkbox-field__input:disabled,
+.checkbox-field__input:disabled + .checkbox-field__label {
+  filter: opacity(0.3);
+  cursor: default;
+}
+
+.checkbox-field__input:disabled:hover {
+  border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
+}
+
+.checkbox-field__input:disabled:hover + .checkbox-field__label {
+  color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .checkbox-field {
+    column-gap: 20px;
+  }
+
+  .checkbox-field__input {
+    min-block-size: 40px;
+    min-inline-size: 40px;
+
+    background-size: 24px 19px;
+  }
 }
