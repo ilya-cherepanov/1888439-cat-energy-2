@@ -17,7 +17,7 @@
   </head>
 
   <body class="page__body">
-    <header class="page-header page-header--floating page-header--index">
+    <header class="page-header page-header--floating page-header--index" data-test="header">
       <div class="page-header__logo logo">
         <a class="logo__link logo__link--image" href="index.html" aria-current="page">
           <picture>
@@ -53,7 +53,7 @@
     </header>
 
     <main class="page__main">
-      <div class="page__hero hero">
+      <div class="page__hero hero" data-test="hero">
         <div class="hero__container">
           <hgroup class="hero__page-heading">
             <h1 class="hero__page-title title">
@@ -77,7 +77,7 @@
         </div>
       </div>
 
-      <section class="page__features features">
+      <section class="page__features features" data-test="programs">
         <h2 class="visually-hidden">Варианты применения</h2>
         <ul class="features__list">
           <li class="features__item feature feature--slim">
@@ -101,7 +101,7 @@
         </ul>
       </section>
 
-      <section class="page__principles principles">
+      <section class="page__principles principles" data-test="features">
         <h2 class="principles__title title">Как это работает</h2>
         <ol class="principles__list">
           <li class="principles__item principle principle--composition">
@@ -143,7 +143,7 @@
         </ol>
       </section>
 
-      <section class="example">
+      <section class="example" data-test="proof">
         <h2 class="example__title title">Живой пример</h2>
 
         <div class="example__text">
@@ -191,7 +191,7 @@
     </main>
 
     <footer class="page-footer">
-      <section class="page-footer__contacts contacts contacts--alt">
+      <section class="page-footer__contacts contacts contacts--alt" data-test="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__text">
           <p class="contacts__welcome">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
@@ -218,7 +218,7 @@
         </section>
       </section>
 
-      <div class="page-footer__end">
+      <div class="page-footer__end" data-test="footer">
         <a class="page-footer__logo logo logo--secondary" href="index.html" aria-current="page">
           <img class="logo__text" src="images/logo-text.svg" width="128" height="24" lang="en" alt="Cat Energy">
         </a>

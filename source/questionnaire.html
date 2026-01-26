@@ -17,20 +17,24 @@
   </head>
 
   <body class="page__body">
-    <header class="page-header">
-      <a class="page-header__logo logo logo--primary" href="index.html">
-        <picture>
-          <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-desktop.svg" width="70" height="59">
-          <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-tablet.svg" width="60" height="50">
-          <img class="logo__image" src="images/logo-mobile.svg" width="34" height="38" alt="Логотип сайта">
-        </picture>
-        <picture>
-          <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="118" height="21">
-          <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="101" height="18">
-          <img class="logo__text" src="images/logo-text.svg" width="101" height="18" lang="en" alt="Cat Energy">
-        </picture>
-      </a>
-      <nav class="page-navigation page-navigation--no-js page-navigation--menu-closed">
+    <header class="page__header page-header" data-test="header">
+      <div class="page-header__logo logo">
+        <a class="logo__link logo__link--image" href="index.html">
+          <picture>
+            <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-desktop.svg" width="70" height="59">
+            <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-tablet.svg" width="60" height="50">
+            <img class="logo__image" src="images/logo-mobile.svg" width="34" height="38" alt="Логотип сайта">
+          </picture>
+        </a>
+        <a class="logo__link logo__link--text" href="index.html">
+          <picture>
+            <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="118" height="21">
+            <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="101" height="18">
+            <img class="logo__text" src="images/logo-text.svg" width="101" height="18" lang="en" alt="Cat Energy">
+          </picture>
+        </a>
+      </div>
+      <nav class="page-header__navigation page-navigation page-navigation--no-js page-navigation--menu-closed">
         <button class="page-navigation__burger" type="button">
           <span class="visually-hidden">Открыть меню</span>
         </button>
@@ -59,20 +63,18 @@
         <form class="questionnaire__form" action="https://echo.htmlacademy.ru" method="post">
           <fieldset class="questionnaire__cat-data field-group">
             <legend class="visually-hidden">Данные кота</legend>
-            <ul class="field-group__list">
-              <li class="field-group__item text-field">
-                <label class="text-field__label input-label" for="cat-name">Имя:*</label>
-                <input class="text-field__input" type="text" name="cat-name" id="cat-name" placeholder="Барсик" required>
-              </li>
-              <li class="field-group__item text-field">
-                <label class="text-field__label input-label" for="cat-weight">Вес (кг):*</label>
-                <input class="text-field__input" type="number" name="cat-weight" id="cat-weight" placeholder="7" min="0" required>
-              </li>
-              <li class="field-group__item text-field">
-                <label class="text-field__label input-label" for="cat-age">Возраст (лет):</label>
-                <input class="text-field__input" type="number" name="cat-age" id="cat-age" placeholder="7" min="0">
-              </li>
-            </ul>
+            <div class="text-field">
+              <label class="text-field__label input-label" for="cat-name">Имя:*</label>
+              <input class="text-field__input" type="text" name="cat-name" id="cat-name" placeholder="Барсик" required>
+            </div>
+            <div class="text-field">
+              <label class="text-field__label input-label" for="cat-weight">Вес (кг):*</label>
+              <input class="text-field__input" type="number" name="cat-weight" id="cat-weight" placeholder="7" min="0" required>
+            </div>
+            <div class="text-field">
+              <label class="text-field__label input-label" for="cat-age">Возраст (лет):</label>
+              <input class="text-field__input" type="number" name="cat-age" id="cat-age" placeholder="7" min="0">
+            </div>
           </fieldset>
 
           <fieldset class="questionnaire__target field-group">
@@ -96,16 +98,14 @@
           <fieldset class="questionnaire__owner-data field-group">
             <legend class="subtitle">Контактные данные (владельца кота)</legend>
 
-            <ul class="field-group__list">
-              <li class="field-group__item text-field">
-                <label class="text-field__label input-label" for="owner-email">E-mail:*</label>
-                <input class="text-field__input text-field__input--email" type="email" name="owner-email" id="owner-email" placeholder="кuklachev@gmail.com" required>
-              </li>
-              <li class="field-group__item text-field">
-                <label class="text-field__label input-label" for="owner-phone">Телефон:*</label>
-                <input class="text-field__input text-field__input--phone" type="tel" name="owner-phone" id="owner-phone" placeholder="8 (960) 900-60-90" required>
-              </li>
-            </ul>
+            <div class="text-field">
+              <label class="text-field__label input-label" for="owner-email">E-mail:*</label>
+              <input class="text-field__input text-field__input--email" type="email" name="owner-email" id="owner-email" placeholder="кuklachev@gmail.com" required>
+            </div>
+            <div class="text-field">
+              <label class="text-field__label input-label" for="owner-phone">Телефон:*</label>
+              <input class="text-field__input text-field__input--phone" type="tel" name="owner-phone" id="owner-phone" placeholder="8 (960) 900-60-90" required>
+            </div>
           </fieldset>
 
           <div class="questionnaire__comment textarea-field">
@@ -145,7 +145,7 @@
     </main>
 
     <footer class="page-footer">
-      <section class="page-footer__contacts contacts">
+      <section class="page-footer__contacts contacts" data-test="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__text">
           <p class="contacts__welcome">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
@@ -172,7 +172,7 @@
         </section>
       </section>
 
-      <div class="page-footer__end">
+      <div class="page-footer__end" data-test="footer">
         <a class="page-footer__logo logo logo--secondary" href="index.html">
           <img class="logo__text" src="images/logo-text.svg" width="128" height="24" lang="en" alt="Cat Energy">
         </a>
