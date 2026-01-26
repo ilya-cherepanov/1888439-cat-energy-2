@@ -1,9 +1,13 @@
 @use "../common/mixins.scss";
 @use "../common/variables.scss";
 
+.textarea-field__label {
+  margin-block-end: 38px;
+}
+
 .textarea-field__input {
-  display: block;
   box-sizing: border-box;
+  display: block;
   inline-size: 100%;
   min-block-size: 150px;
   padding: 14px;
@@ -11,6 +15,52 @@
   @include mixins.secondary-font(
     $color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey}),
   );
-  font-size: 16px;
-  line-height: 18px;
+  font-size: clamp(16px, calc(13.14px + 0.89vw), 20px);
+  line-height: clamp(18px, calc(9.43px + 2.68vw), 30px);
+
+  resize: vertical;
+  border: 1px solid #e7e7e7;
+  border-radius: 0;
+
+  &:hover {
+    border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
+  }
+
+  &:focus {
+    outline: rgba(0, 0, 0, 0);
+    border-color: var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+    box-shadow: inset 0 0 0 1px var(--clr-special-dark-grey, #{variables.$clr-special-dark-grey});
+  }
+
+  &:user-invalid {
+    border-color: var(--clr-status-error, #{variables.$clr-status-error});
+    box-shadow: inset 0 0 0 1px var(--clr-status-error, #{variables.$clr-status-error});
+  }
+
+  &:disabled {
+    border: 1px solid #e7e7e7;
+    filter: opacity(0.3);
+  }
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .textarea-field__label {
+    margin-block-end: 87px;
+  }
+
+  .textarea-field__input {
+    min-block-size: 175px;
+    padding-block: 11px;
+    padding-inline: 20px;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .textarea-field__label {
+    margin-block-end: 78px;
+  }
+
+  .textarea-field__input {
+    padding-block: 9px;
+  }
 }
