@@ -73,6 +73,7 @@
 
 .page-navigation--menu-opened:not(.page-navigation--no-js) .page-navigation__burger {
   background-image: none;
+  margin-block-end: 3px;
 
   &::before,
   &::after {
@@ -130,6 +131,8 @@
   line-height: 20px;
   text-decoration: none;
   text-align: center;
+
+  transition: filter 100ms;
 }
 
 .page-navigation__link:hover {

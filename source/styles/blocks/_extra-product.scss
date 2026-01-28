@@ -17,10 +17,16 @@
   grid-column: 1 / -1;
   justify-self: start;
   text-decoration: none;
+
+  transition: filter 100ms;
 }
 
 .extra-product__title-link:hover {
   filter: opacity(0.6);
+}
+
+.extra-product__title-link:active {
+  filter: opacity(0.4);
 }
 
 .extra-product__title {

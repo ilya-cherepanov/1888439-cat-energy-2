@@ -26,6 +26,7 @@
     mask-repeat: no-repeat;
     mask-size: 27px 34px;
     mask-position: center;
+    transition: background-color 100ms;
   }
 
   &:is(:hover, :focus, :active)::after {

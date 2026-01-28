@@ -19,6 +19,7 @@
   border: 0;
   background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
   cursor: pointer;
+  transition: background 100ms;
 
   &:is(:hover, :focus) {
     background-color: var(--clr-basic-green-2, #{variables.$clr-basic-green-2});

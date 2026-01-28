@@ -11,10 +11,16 @@
 .product-card__title-link {
   grid-column: title;
   text-decoration: none;
+
+  transition: filter 100ms;
 }
 
 .product-card__title-link:hover {
   filter: opacity(0.6);
+}
+
+.product-card__title-link:active {
+  filter: opacity(0.4);
 }
 
 .product-card__image-link {
@@ -23,10 +29,16 @@
   align-items: center;
   grid-column: image;
   grid-row: 1 / 3;
+
+  transition: filter 100ms;
 }
 
 .product-card__image-link:hover {
   filter: opacity(0.6);
+}
+
+.product-card__image-link:active {
+  filter: opacity(0.4);
 }
 
 .product-card__description {

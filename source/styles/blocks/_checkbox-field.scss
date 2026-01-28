@@ -26,6 +26,10 @@
   background-repeat: no-repeat;
   background-position: center;
   cursor: pointer;
+  transition:
+    background-color 100ms,
+    border-color 100ms,
+    filter 100ms;
 
   &:checked {
     background-image: url("../../icons/stack.svg#tick");
@@ -35,6 +39,7 @@
 .checkbox-field__label {
   flex-grow: 1;
   cursor: pointer;
+  transition: color 100ms, filter 100ms;
 }
 
 .checkbox-field__input:is(:hover, :focus) {

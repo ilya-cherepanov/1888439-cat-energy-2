@@ -36,6 +36,7 @@
   mask-size: 28px 22px;
   mask-repeat: no-repeat;
   mask-position: center;
+  transition: background-color 100ms;
 }
 
 .socials__link--vk::before {

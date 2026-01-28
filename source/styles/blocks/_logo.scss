@@ -16,10 +16,12 @@
   justify-content: center;
 
   text-decoration: none;
+  transition: filter 100ms;
 }
 
 .logo__link {
   text-decoration: none;
+  transition: filter 100ms;
 }
 
 .logo__image {
@@ -28,6 +30,13 @@
 
 .logo__text {
   display: block;
+  inline-size: 101px;
+  block-size: 18px;
+}
+
+.logo--secondary .logo__text {
+  inline-size: 128px;
+  block-size: 24px;
 }
 
 .logo--secondary:is(:hover, :focus),
@@ -62,5 +71,10 @@
 @media (min-width: #{variables.$desktop-width}) {
   .logo {
     column-gap: 14px;
+  }
+
+  .logo__text {
+    inline-size: 118px;
+    block-size: 21px;
   }
 }

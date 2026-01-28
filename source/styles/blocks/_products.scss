@@ -75,7 +75,7 @@
 
   .products__list {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(324px, 1fr));
     gap: 60px;
 
     border: 0;
@@ -162,9 +162,5 @@
   .products__more-description {
     padding-inline: 0;
     margin-block-end: 90px;
-  }
-
-  .products__more-button {
-    margin-block-start: 0;
   }
 }

@@ -74,6 +74,22 @@
     line-height: 280px;
   }
 
+  .principle--composition .principle__number {
+    margin-inline-start: 7px;
+  }
+
+  .principle--substance .principle__number {
+    margin-inline-start: 1px;
+  }
+
+  .principle--application .principle__number {
+    margin-inline-start: 2px;
+  }
+
+  .principle--result .principle__number {
+    margin-inline-start: 3px;
+  }
+
   .principle__description {
     grid-row: 1;
     grid-column: 1 / -1;

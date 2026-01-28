@@ -35,6 +35,7 @@
 
   border: 1px solid #e7e7e7;
   border-radius: 0;
+  transition: border-color 100ms, box-shadow 100ms;
 
   &:hover {
     border-color: var(--clr-special-grey, #{variables.$clr-special-grey});
@@ -80,6 +81,7 @@
   background-color: var(--clr-special-dark-grey-2, #{variables.$clr-special-dark-grey-2});
   mask-repeat: no-repeat;
   mask-position: center;
+  transition: background-color 100ms;
 }
 
 .text-field__input--email ~ .text-field__label::before {
