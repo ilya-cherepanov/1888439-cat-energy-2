@@ -85,8 +85,9 @@
     content: "";
 
     display: inline-block;
-    inline-size: 57px;
-    block-size: 12px;
+    inline-size: 59px;
+    block-size: 1em;
+    transition: background 100ms;
 
     background-image:
       linear-gradient(var(--clr-black, #{variables.$clr-black})),
@@ -97,7 +98,7 @@
   }
 
   &:is(:hover, :active)::after {
-    background-size: 26px 2px, 7px 11px;
+    background-size: 27px 2px, 7px 11px;
     background-position: 25px center, 51px center;
   }
 
@@ -154,8 +155,9 @@
 
 @media (min-width: #{variables.$desktop-width}) {
   .feature {
-    padding-block: 77px 55px;
+    padding-block: 77px 60px;
     padding-inline: 52px 61px;
+    min-block-size: 374px;
 
     &::before {
       inline-size: 100px;

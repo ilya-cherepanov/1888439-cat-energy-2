@@ -4,9 +4,17 @@
   padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
 }
 
+.container--narrow {
+  padding-inline: calc(var(--padding-mobile, #{variables.$padding-mobile}) + clamp(0px, calc(-28.57px + 8.93vw), 40px));
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .container {
     padding-inline: var(--padding-tablet, #{variables.$padding-tablet});
+  }
+
+  .container--narrow {
+    padding-inline: calc(var(--padding-tablet, #{variables.$padding-tablet}) + clamp(0px, calc(85.71px + -5.95vw), 40px));
   }
 }
 

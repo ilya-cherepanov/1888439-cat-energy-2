@@ -5,10 +5,10 @@
   grid-template-columns: 1fr 101px;
   grid-template-rows: 66px;
   align-items: center;
+}
 
-  .logo__link--image {
-    justify-self: start;
-  }
+.logo .logo__link--image {
+  justify-self: start;
 }
 
 .logo--secondary {
@@ -16,10 +16,27 @@
   justify-content: center;
 
   text-decoration: none;
+  transition: filter 100ms;
 }
 
 .logo__link {
   text-decoration: none;
+  transition: filter 100ms;
+}
+
+.logo__image {
+  display: block;
+}
+
+.logo__text {
+  display: block;
+  inline-size: 101px;
+  block-size: 18px;
+}
+
+.logo--secondary .logo__text {
+  inline-size: 128px;
+  block-size: 24px;
 }
 
 .logo--secondary:is(:hover, :focus),
@@ -28,8 +45,8 @@
 }
 
 @supports selector(:focus-visible) {
-  .logo--secondary:is(:focus),
-  :not(.logo--secondary) .logo__link:is(:focus) {
+  .logo--secondary:focus,
+  :not(.logo--secondary) .logo__link:focus {
     filter: none;
   }
 
@@ -44,10 +61,6 @@
   filter: opacity(0.6);
 }
 
-.logo__image {
-  display: block;
-}
-
 @media (min-width: #{variables.$tablet-width}) {
   .logo {
     display: flex;
@@ -58,5 +71,10 @@
 @media (min-width: #{variables.$desktop-width}) {
   .logo {
     column-gap: 14px;
+  }
+
+  .logo__text {
+    inline-size: 118px;
+    block-size: 21px;
   }
 }

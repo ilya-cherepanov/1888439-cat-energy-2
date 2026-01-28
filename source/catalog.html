@@ -4,6 +4,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Каталог продукции</title>
+    <link rel="preload" href="fonts/lato/Lato-Regular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="fonts/oswald/oswaldregular.woff2" as="font" type="font/woff2" crossorigin="anonymous">
+    <link rel="preload" href="styles/styles.css" as="style" crossorigin="anonymous">
     <link rel="icon" href="favicon.ico">
     <link rel="icon" href="favicons/icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="favicons/apple.png">
@@ -14,7 +17,7 @@
   </head>
 
   <body class="page__body">
-    <header class="page__header page-header">
+    <header class="page__header page-header" data-test="header">
       <div class="page-header__logo logo">
         <a class="logo__link logo__link--image" href="index.html">
           <picture>
@@ -25,7 +28,6 @@
         </a>
         <a class="logo__link logo__link--text" href="index.html">
           <picture>
-            <source media="(min-width: 1440px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="118" height="21">
             <source media="(min-width: 768px)" type="image/svg+xml" srcset="images/logo-text.svg#alternative" width="101" height="18">
             <img class="logo__text" src="images/logo-text.svg" width="101" height="18" lang="en" alt="Cat Energy">
           </picture>
@@ -43,7 +45,7 @@
             <a class="page-navigation__link page-navigation__link--current" href="catalog.html" aria-current="page">Каталог продукции</a>
           </li>
           <li class="page-navigation__item">
-            <a class="page-navigation__link" href="#">Подбор программы</a>
+            <a class="page-navigation__link" href="questionnaire.html">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -54,7 +56,7 @@
         <h1 class="page__title title">Каталог продукции</h1>
       </div>
 
-      <section class="products">
+      <section class="products" data-test="catalog">
         <h2 class="visually-hidden">Основные продукты</h2>
         <ul class="products__list">
           <li class="products__item product-card">
@@ -84,7 +86,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">курица</dd>
+                <dd class="product-description__value">Курица</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -120,7 +122,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">курица</dd>
+                <dd class="product-description__value">Курица</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -156,7 +158,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">рыба</dd>
+                <dd class="product-description__value">Рыба</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -192,7 +194,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">рыба</dd>
+                <dd class="product-description__value">Рыба</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -228,7 +230,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">гречка</dd>
+                <dd class="product-description__value">Гречка</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -264,7 +266,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">гречка</dd>
+                <dd class="product-description__value">Гречка</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -300,7 +302,7 @@
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Вкус</dt>
-                <dd class="product-description__value">рис</dd>
+                <dd class="product-description__value">Рис</dd>
               </div>
               <div class="product-description__item">
                 <dt class="product-description__key">Цена</dt>
@@ -317,7 +319,7 @@
         </ul>
       </section>
 
-      <section class="extra-products">
+      <section class="extra-products" data-test="additional">
         <h2 class="extra-products__title subtitle">Дополнительные товары</h2>
         <ul class="extra-products__list">
           <li class="extra-products__item extra-product">
@@ -354,7 +356,7 @@
           </li>
         </ul>
         <div class="extra-products__promo-container">
-          <p class="extra-products__promo">Закажите все и получите чехол для кота в подарок!</p>
+          <p class="extra-products__promo">Закажите все и&nbsp;получите чехол для кота в подарок!</p>
         </div>
       </section>
 
@@ -372,7 +374,7 @@
     </main>
 
     <footer class="page-footer">
-      <section class="page-footer__contacts contacts">
+      <section class="page-footer__contacts contacts" data-test="contacts">
         <h2 class="visually-hidden">Контакты</h2>
         <div class="contacts__text">
           <p class="contacts__welcome">Приглашаем к&nbsp;сотрудничеству дилеров!</p>
@@ -399,7 +401,7 @@
         </section>
       </section>
 
-      <div class="page-footer__end">
+      <div class="page-footer__end" data-test="footer">
         <a class="page-footer__logo logo logo--secondary" href="index.html">
           <img class="logo__text" src="images/logo-text.svg" width="128" height="24" lang="en" alt="Cat Energy">
         </a>

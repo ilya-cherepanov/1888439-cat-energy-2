@@ -13,36 +13,37 @@
     $line-height: 20px,
   );
   text-decoration: none;
-}
 
-.copyright::after {
-  content: "";
+  &::after {
+    content: "";
 
-  display: inline-block;
-  inline-size: 27px;
-  block-size: 34px;
+    display: inline-block;
+    inline-size: 27px;
+    block-size: 34px;
 
-  background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
-  mask-image: url("../../icons/stack.svg#html-academy-logo");
-  mask-repeat: no-repeat;
-  mask-size: 27px 34px;
-  mask-position: center;
-}
-
-.copyright:is(:hover, :focus, :active)::after {
-  background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
-}
-
-@supports selector(:focus-visible) {
-  .copyright:focus::after {
     background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+    mask-image: url("../../icons/stack.svg#html-academy-logo");
+    mask-repeat: no-repeat;
+    mask-size: 27px 34px;
+    mask-position: center;
+    transition: background-color 100ms;
   }
 
-  .copyright:is(:hover, :focus-visible, :active)::after {
+  &:is(:hover, :focus, :active)::after {
     background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
   }
-}
 
-.copyright:active {
-  filter: opacity(0.3);
+  @supports selector(:focus-visible) {
+    &:focus::after {
+      background-color: var(--clr-special-grey-2, #{variables.$clr-special-grey-2});
+    }
+
+    &:is(:hover, :focus-visible, :active)::after {
+      background-color: var(--clr-basic-green, #{variables.$clr-basic-green});
+    }
+  }
+
+  &:active {
+    filter: opacity(0.3);
+  }
 }

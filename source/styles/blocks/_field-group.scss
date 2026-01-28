@@ -3,13 +3,106 @@
 
 .field-group {
   padding: 0;
+  margin: 0;
 
   border: 0;
-  border-block-start: 2px solid var(--clr-basic-green, #{variables.$clr-basic-green});
 }
 
-.field-group__list {
-  @include mixins.reset-list;
+.field-group__legend {
+  float: inline-start;
+  inline-size: 100%;
+}
 
-  padding-inline: var(--padding-mobile, #{variables.$padding-mobile});
+.field-group--text .field-group__legend {
+  margin-block-end: 15px;
+}
+
+.field-group--checkbox .field-group__legend {
+  margin-block-end: 12px;
+}
+
+.field-group__container {
+  @include mixins.reset-list;
+  padding-inline: calc(var(--padding-mobile, #{variables.$padding-mobile}) + clamp(0px, calc(-28.57px + 8.93vw), 40px));
+  padding-block: 22px 19px;
+  margin: 0;
+  clear: both;
+}
+
+.field-group--plain .field-group__container {
+  padding-inline: 0;
+  padding-block: 0;
+}
+
+.field-group__item:not(:last-child) {
+  margin-block-end: 14px;
+}
+
+.field-group--checkbox:not(.field-group--plain) .field-group__item:not(:last-child) {
+  margin-block-end: 12px;
+}
+
+@media (min-width: #{variables.$tablet-width}) {
+  .field-group__legend br {
+    display: none;
+  }
+
+  .field-group__container {
+    padding-block: 23px 27px;
+    padding-inline: calc(var(--padding-tablet, #{variables.$padding-tablet}) + clamp(0px, calc(85.71px + -5.95vw), 40px));
+  }
+
+  .field-group--text .field-group__legend {
+    margin-block-end: 54px;
+  }
+
+  .field-group--text .field-group__item:not(:last-child) {
+    margin-block-end: 20px;
+  }
+
+  .field-group--radio .field-group__item:not(:last-child) {
+    margin-block-end: 13px;
+  }
+
+  .field-group--checkbox .field-group__legend {
+    margin-block-end: 32px;
+  }
+
+  .field-group--checkbox .field-group__container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px 60px;
+  }
+
+  .field-group--checkbox:not(.field-group--plain) .field-group__item:not(:last-child) {
+    margin: 0;
+  }
+}
+
+@media (min-width: #{variables.$desktop-width}) {
+  .field-group--text:not(.field-group--plain) .field-group__container {
+    inline-size: 1220px;
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 80px;
+    padding-inline: 0;
+  }
+
+  .field-group--text:not(.field-group--plain) .field-group__item {
+    margin-block-end: 0;
+  }
+
+  .field-group--checkbox .field-group__legend {
+    margin-block-end: 33px;
+  }
+
+  .field-group--checkbox:not(.field-group--plain) .field-group__container {
+    inline-size: 1220px;
+    margin-inline: auto;
+    padding-inline: 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px 80px;
+  }
 }
