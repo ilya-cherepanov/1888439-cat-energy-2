@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="page" lang="ru">
+<html class="page page--questionnaire" lang="ru">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -53,92 +53,106 @@
     </header>
 
     <main class="page__main">
-      <div class="container">
-        <h1 class="title">Подбор программы</h1>
+      <div class="container container--narrow">
+        <h1 class="page__title title">Подбор программы</h1>
       </div>
 
-      <section class="questionnaire">
-        <h2 class="questionnaire__title">Заполните анкету, и мы подберем программу питания для вашего кота</h2>
+      <section class="page__questionnaire questionnaire">
+        <div class="container container--narrow">
+          <h2 class="questionnaire__title">Заполните анкету, и мы подберем программу питания для вашего кота</h2>
+        </div>
 
         <form class="questionnaire__form" action="https://echo.htmlacademy.ru" method="post">
-          <fieldset class="questionnaire__cat-data field-group">
-            <legend class="visually-hidden">Данные кота</legend>
-            <div class="text-field">
-              <input class="text-field__input" type="text" name="cat-name" id="cat-name" placeholder="Барсик" required>
-              <label class="text-field__label input-label" for="cat-name">Имя:*</label>
-            </div>
-            <div class="text-field">
-              <input class="text-field__input" type="number" name="cat-weight" id="cat-weight" placeholder="7" min="0" required>
-              <label class="text-field__label input-label" for="cat-weight">Вес (кг):*</label>
-            </div>
-            <div class="text-field">
-              <input class="text-field__input" type="number" name="cat-age" id="cat-age" placeholder="7" min="0">
-              <label class="text-field__label input-label" for="cat-age">Возраст (лет):</label>
-            </div>
-          </fieldset>
+          <div class="questionnaire__cat-data">
+            <fieldset class="field-group field-group--text field-group--plain">
+              <legend class="visually-hidden">Данные кота</legend>
 
-          <fieldset class="questionnaire__target field-group">
-            <legend class="visually-hidden">Цель</legend>
-            <ul class="field-group__list">
-              <li class="field-group__item radio-field">
-                <input class="radio-field__input" type="radio" name="target" id="target-weight-loss" value="weight-loss" checked>
-                <label class="radio-field__label input-label" for="target-weight-loss">Похудение</label>
-              </li>
-              <li class="field-group__item radio-field">
-                <input class="radio-field__input" type="radio" name="target" id="target-weight-gain" value="weight-gain">
-                <label class="radio-field__label input-label" for="target-weight-gain">Набор массы</label>
-              </li>
-              <li class="field-group__item radio-field">
-                <input class="radio-field__input" type="radio" name="target" id="target-unknown" value="unknown">
-                <label class="radio-field__label input-label" for="target-unknown">Не знаю (Нужен ваш совет)</label>
-              </li>
-            </ul>
-          </fieldset>
+              <div class="field-group__container">
+                <div class="field-group__item text-field">
+                  <input class="text-field__input" type="text" name="cat-name" id="cat-name" placeholder="Барсик" required>
+                  <label class="text-field__label" for="cat-name">Имя:*</label>
+                </div>
+                <div class="field-group__item text-field">
+                  <input class="text-field__input" type="number" name="cat-weight" id="cat-weight" placeholder="7" min="0" required>
+                  <label class="text-field__label" for="cat-weight">Вес (кг):*</label>
+                </div>
+                <div class="field-group__item text-field">
+                  <input class="text-field__input" type="number" name="cat-age" id="cat-age" placeholder="7" min="0">
+                  <label class="text-field__label" for="cat-age">Возраст (лет):</label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
 
-          <fieldset class="questionnaire__owner-data field-group">
-            <legend class="subtitle">Контактные данные (владельца кота)</legend>
+          <div class="questionnaire__target">
+            <fieldset class="field-group field-group--radio field-group--plain">
+              <legend class="visually-hidden">Цель</legend>
 
-            <div class="text-field">
-              <input class="text-field__input text-field__input--email" type="email" name="owner-email" id="owner-email" placeholder="кuklachev@gmail.com" required>
-              <label class="text-field__label input-label" for="owner-email">E-mail:*</label>
-            </div>
-            <div class="text-field">
-              <input class="text-field__input text-field__input--phone" type="tel" name="owner-phone" id="owner-phone" placeholder="8 (960) 900-60-90" required>
-              <label class="text-field__label input-label" for="owner-phone">Телефон:*</label>
+              <ul class="field-group__container">
+                <li class="field-group__item radio-field">
+                  <input class="radio-field__input" type="radio" name="target" id="target-weight-loss" value="weight-loss" checked>
+                  <label class="radio-field__label" for="target-weight-loss">Похудение</label>
+                </li>
+                <li class="field-group__item radio-field">
+                  <input class="radio-field__input" type="radio" name="target" id="target-weight-gain" value="weight-gain">
+                  <label class="radio-field__label" for="target-weight-gain">Набор массы</label>
+                </li>
+                <li class="field-group__item radio-field">
+                  <input class="radio-field__input" type="radio" name="target" id="target-unknown" value="unknown">
+                  <label class="radio-field__label" for="target-unknown">Не знаю (Нужен ваш совет)</label>
+                </li>
+              </ul>
+            </fieldset>
+          </div>
+
+          <fieldset class="questionnaire__owner-data field-group field-group--text">
+            <legend class="field-group__legend subtitle subtitle--alt">Контактные данные&#32;<br>(владельца кота)</legend>
+
+            <div class="field-group__container">
+              <div class="field-group__item text-field">
+                <input class="text-field__input text-field__input--email" type="email" name="owner-email" id="owner-email" placeholder="кuklachev@gmail.com" required>
+                <label class="text-field__label" for="owner-email">E-mail:*</label>
+              </div>
+              <div class="field-group__item text-field">
+                <input class="text-field__input text-field__input--phone" type="tel" name="owner-phone" id="owner-phone" placeholder="8 (960) 900-60-90" required>
+                <label class="text-field__label" for="owner-phone">Телефон:*</label>
+              </div>
             </div>
           </fieldset>
 
           <div class="questionnaire__comment textarea-field">
-            <label class="textarea-field__label subtitle" for="comment">Комментарий</label>
+            <label class="textarea-field__label subtitle subtitle--alt" for="comment">Комментарий</label>
             <div class="container container--narrow">
               <textarea class="textarea-field__input" name="comment" id="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
             </div>
           </div>
 
-          <fieldset class="questionnaire__additionally field-group">
-            <legend class="subtitle">Дополнительно</legend>
+          <fieldset class="questionnaire__additionally field-group field-group--checkbox">
+            <legend class="field-group__legend subtitle subtitle--alt">Дополнительно</legend>
 
-            <ul class="field-group__list">
+            <ul class="field-group__container">
               <li class="field-group__item checkbox-field">
                 <input class="checkbox-field__input" type="checkbox" name="addition-sweetener" id="addition-sweetener" checked>
-                <label class="checkbox-field__label input-label" for="addition-sweetener">Сахарозаменитель</label>
+                <label class="checkbox-field__label" for="addition-sweetener">Сахарозаменитель</label>
               </li>
               <li class="field-group__item checkbox-field">
                 <input class="checkbox-field__input" type="checkbox" name="addition-water" id="addition-water">
-                <label class="checkbox-field__label input-label" for="addition-water">Питьевая вода</label>
+                <label class="checkbox-field__label" for="addition-water">Питьевая вода</label>
               </li>
               <li class="field-group__item checkbox-field">
                 <input class="checkbox-field__input" type="checkbox" name="addition-milk" id="addition-milk">
-                <label class="checkbox-field__label input-label" for="addition-milk">Молоко</label>
+                <label class="checkbox-field__label" for="addition-milk">Молоко</label>
               </li>
               <li class="field-group__item checkbox-field">
                 <input class="checkbox-field__input" type="checkbox" name="addition-vitamins" id="addition-vitamins">
-                <label class="checkbox-field__label input-label" for="addition-vitamins">Витамины</label>
+                <label class="checkbox-field__label" for="addition-vitamins">Витамины</label>
               </li>
             </ul>
           </fieldset>
 
-          <button class="questionnaire__submit button button--large" type="submit">Отправить заявку</button>
+          <div class="questionnaire__submit">
+            <button class="button button--adaptive" type="submit">Отправить заявку</button>
+          </div>
           <p class="questionnaire__notice">* — Обязательные поля</p>
         </form>
       </section>

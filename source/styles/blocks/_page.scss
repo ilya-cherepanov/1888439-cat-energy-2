@@ -20,6 +20,18 @@
   margin-block: 0 15px;
 }
 
+.page--questionnaire .page__header {
+  margin-block-end: 27px;
+}
+
+.page--questionnaire .page__title {
+  margin-block: 0 37px;
+}
+
+.page--questionnaire .page__questionnaire {
+  margin-block: 0 32px;
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .page--index .page__hero {
     margin-block-end: 0;
@@ -39,6 +51,18 @@
 
   .page--catalog .page__title {
     margin-block: 0 10px;
+  }
+
+  .page--questionnaire .page__header {
+    margin-block-end: 65px;
+  }
+
+  .page--questionnaire .page__title {
+    margin-block-end: 54px;
+  }
+
+  .page--questionnaire .page__questionnaire {
+    margin-block-end: 62px;
   }
 }
 
@@ -61,5 +85,17 @@
 
   .page--catalog .page__title {
     margin-block: 0 13px;
+  }
+
+  .page--questionnaire .page__header {
+    margin-block-end: 74px;
+  }
+
+  .page--questionnaire .page__title {
+    margin-block-end: 55px;
+  }
+
+  .page--questionnaire .page__questionnaire {
+    margin-block-end: 80px;
   }
 }

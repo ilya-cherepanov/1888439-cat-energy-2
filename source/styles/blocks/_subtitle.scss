@@ -4,6 +4,7 @@
 .subtitle {
   display: grid;
   grid-template-columns: clamp(20px, calc(-15.71px + 11.16vw), 70px) auto minmax(20px, 1fr);
+  padding: 0;
 
   @include mixins.secondary-font(
     $text-transform: none,
@@ -36,12 +37,51 @@
   }
 }
 
+.subtitle--alt {
+  --line-position: clamp(15px, calc(10px + 1.56vw), 22px);
+  font-size: clamp(24px, calc(15.43px + 2.68vw), 36px);
+  line-height: clamp(26px, calc(18.86px + 2.23vw), 36px);
+
+  &::before,
+  &::after {
+    background-image:
+      linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0) var(--line-position),
+        var(--clr-basic-green, #{variables.$clr-basic-green}) var(--line-position),
+        var(--clr-basic-green, #{variables.$clr-basic-green}) calc(var(--line-position) + 2px),
+        rgba(0, 0, 0, 0) calc(var(--line-position) + 2px),
+      );
+  }
+
+  &::before {
+    background-position-x: -20px;
+  }
+
+  &::after {
+    background-position-x: 20px;
+  }
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .subtitle {
     grid-template-columns: clamp(70px, calc(24.29px + 5.95vw), 110px) auto minmax(40px, 1fr);
 
     font-size: clamp(32px, calc(22.86px + 1.19vw), 40px);
     line-height: clamp(32px, calc(22.86px + 1.19vw), 40px);
+  }
+
+  .subtitle--alt {
+    font-size: 36px;
+    line-height: 36px;
+
+    &::before {
+      background-position-x: -40px;
+    }
+
+    &::after {
+      background-position-x: 40px;
+    }
   }
 }
 
