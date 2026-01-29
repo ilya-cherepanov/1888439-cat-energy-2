@@ -59,6 +59,7 @@
 
   cursor: ew-resize;
   transition: background 100ms;
+  touch-action: none;
 }
 
 .slider__thumb::after {
