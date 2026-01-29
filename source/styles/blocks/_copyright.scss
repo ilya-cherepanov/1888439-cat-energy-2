@@ -6,7 +6,6 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
-  min-inline-size: 163px;
 
   @include mixins.primary-font(
     $font-size: 16px,
