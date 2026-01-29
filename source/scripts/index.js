@@ -99,7 +99,81 @@ class Map {
   }
 }
 
+class Slider {
+  static KEY_DOWN_INCREMENT = 5;
+  static DEFAULT_SLIDER_STATE = 50;
+
+  thumbElement = null;
+  sliderElement = null;
+  _currentState = 0;
+
+  constructor(sliderElement) {
+    this.sliderElement = sliderElement;
+    this.currentState = Slider.DEFAULT_SLIDER_STATE;
+
+    const thumb = this.sliderElement.querySelector('.slider__thumb');
+    if (!thumb) {
+      throw new Error('Couldn\'t find .slider__thumb element!');
+    }
+    this.thumbElement = thumb;
+    this.thumbElement.addEventListener('pointerdown', this.onThumbDown);
+    this.thumbElement.addEventListener('ondragstart', () => false);
+    this.thumbElement.addEventListener('focus', this.onThumbFocus);
+  }
+
+  get currentState() {
+    return this._currentState;
+  }
+
+  set currentState(newState) {
+    this._currentState = Math.max(0, Math.min(newState, 100));
+    this.sliderElement.style.setProperty('--slider-state', `${this._currentState}%`);
+  }
+
+  onThumbDown = (evt) => {
+    evt.preventDefault();
+    this.thumbElement.setPointerCapture(evt.pointerId);
+    this.thumbElement.addEventListener('pointerup', this.onThumbUp);
+    this.thumbElement.addEventListener('pointermove', this.onThumbMove);
+  };
+
+  onThumbUp = () => {
+    this.thumbElement.removeEventListener('pointermove', this.onThumbMove);
+    this.thumbElement.removeEventListener('pointerup', this.onThumbUp);
+  };
+
+  onThumbMove = (evt) => {
+    const sliderBoundingRect = this.sliderElement.getBoundingClientRect();
+    const newPositionRatio = (evt.clientX - sliderBoundingRect.x) / sliderBoundingRect.width;
+    this.currentState = newPositionRatio * 100;
+  };
+
+  onThumbFocus = (evt) => {
+    evt.preventDefault();
+    document.addEventListener('keydown', this.onKeyDown);
+    this.thumbElement.addEventListener('blur', this.onThumbBlur);
+  };
+
+  onThumbBlur = () => {
+    document.removeEventListener('keydown', this.onKeyDown);
+    this.thumbElement.removeEventListener('blur', this.onThumbBlur);
+  };
+
+  onKeyDown = (evt) => {
+    if (evt.code === 'ArrowLeft') {
+      this.currentState = this.currentState - Slider.KEY_DOWN_INCREMENT;
+    } else if (evt.code === 'ArrowRight') {
+      this.currentState = this.currentState + Slider.KEY_DOWN_INCREMENT;
+    }
+  };
+}
+
 const navigationMenu = new NavigationMenu();
 navigationMenu.handleEvents();
 
 new Map();
+
+const slider = document.querySelector('.slider');
+if (slider) {
+  new Slider(slider);
+}
