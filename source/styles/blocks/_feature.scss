@@ -85,7 +85,7 @@
     content: "";
 
     display: inline-block;
-    inline-size: 59px;
+    inline-size: 50px;
     block-size: 1em;
     transition: background 100ms;
 
@@ -93,13 +93,13 @@
       linear-gradient(var(--clr-black, #{variables.$clr-black})),
       url("../../icons/stack.svg#triangle");
     background-repeat: no-repeat, no-repeat;
-    background-size: 18px 2px, 7px 11px;
-    background-position: 25px center, 43px center;
+    background-size: 19px 2px, 7px 11px;
+    background-position: 16px center, 34px center;
   }
 
   &:is(:hover, :active)::after {
     background-size: 27px 2px, 7px 11px;
-    background-position: 25px center, 51px center;
+    background-position: 16px center, 42px center;
   }
 
   &:active {
@@ -150,6 +150,18 @@
 
   .feature__follow {
     margin-block-start: auto;
+
+    &::after {
+      inline-size: 59px;
+
+      background-size: 18px 2px, 7px 11px;
+      background-position: 25px center, 43px center;
+    }
+
+    &:is(:hover, :active)::after {
+      background-size: 27px 2px, 7px 11px;
+      background-position: 25px center, 51px center;
+    }
   }
 }
 

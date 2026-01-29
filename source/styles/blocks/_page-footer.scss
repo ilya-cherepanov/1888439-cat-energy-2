@@ -17,6 +17,12 @@
   margin-block-end: 20px;
 }
 
+.page-footer__copyright {
+  min-inline-size: 163px;
+  max-inline-size: 280px;
+  margin-inline: auto;
+}
+
 @media (min-width: #{variables.$tablet-width}) {
   .page-footer__end {
     display: grid;
@@ -40,6 +46,7 @@
 
   .page-footer__copyright {
     justify-self: end;
+    margin-inline: 0;
   }
 }
 

@@ -51,14 +51,24 @@
   margin-block-start: clamp(0px, calc(-14.29px + 4.46vw), 20px);
 }
 
+.contacts__map {
+  position: relative;
+  min-block-size: 362px;
+}
+
 .contacts__map-container {
-  block-size: 362px;
+  position: absolute;
+  inset: 0;
+}
+
+.contacts__map-image-container {
+  position: absolute;
+  inset: 0;
 }
 
 .contacts__map-image {
   display: block;
   inline-size: 100%;
-  block-size: 362px;
   object-fit: cover;
 }
 
@@ -98,13 +108,8 @@
     text-align: end;
   }
 
-  .contacts__map-container {
-    inline-size: 100%;
-    block-size: 400px;
-  }
-
-  .contacts__map-image {
-    block-size: 400px;
+  .contacts__map {
+    min-block-size: 400px;
   }
 
   .contacts__map-pin::before {
@@ -150,13 +155,5 @@
   .contacts__map {
     position: absolute;
     inset: 0;
-  }
-
-  .contacts__map-container {
-    block-size: 100%;
-  }
-
-  .contacts__map-image {
-    block-size: 100%;
   }
 }
