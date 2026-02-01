@@ -115,15 +115,15 @@ class Map {
 }
 
 class Slider {
-  static DEFAULT_KEY_DOWN_INCREMENT = 5;
-  static DEFAULT_SLIDER_STATE = 50;
+  static DEFAULT_KEY_DOWN_INCREMENT = 0.05;
+  static DEFAULT_SLIDER_STATE = 0.5;
 
   keyDownIncrement = Slider.DEFAULT_KEY_DOWN_INCREMENT;
 
   _thumbElement = null;
   _sliderElement = null;
   _sliderX = 0;
-  _percentOfSliderWidth = 0;
+  _sliderWidth = 0;
   _currentState = 0;
   _rafId = null;
 
@@ -143,11 +143,11 @@ class Slider {
   }
 
   set currentState(newState) {
-    this._currentState = Math.max(0, Math.min(newState, 100));
+    this._currentState = Math.max(0, Math.min(newState, 1));
 
     if (this._rafId === null) {
       this._rafId = requestAnimationFrame(() => {
-        this._sliderElement.style.setProperty('--slider-state', `${this._currentState}%`);
+        this._sliderElement.style.setProperty('--slider-state', this._currentState);
         this._rafId = null;
       });
     }
@@ -164,7 +164,7 @@ class Slider {
   setSliderDimensions = () => {
     const boundingRect = this._sliderElement.getBoundingClientRect();
     this._sliderX = boundingRect.x;
-    this._percentOfSliderWidth = boundingRect.width / 100;
+    this._sliderWidth = boundingRect.width;
   };
 
   onThumbDown = (evt) => {
@@ -180,7 +180,7 @@ class Slider {
   };
 
   onThumbMove = (evt) => {
-    this.currentState = (evt.clientX - this._sliderX) / this._percentOfSliderWidth;
+    this.currentState = (evt.clientX - this._sliderX) / this._sliderWidth;
   };
 
   onThumbFocus = (evt) => {
