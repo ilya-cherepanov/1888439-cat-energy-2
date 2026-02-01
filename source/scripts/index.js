@@ -4,6 +4,21 @@ const Viewport = {
   DESKTOP: 1440,
 };
 
+function debounce(cb, ms) {
+  let id = null;
+
+  return (...args) => {
+    if (id !== null) {
+      clearTimeout(id);
+    }
+
+    id = setTimeout(() => {
+      cb(...args);
+      id = null;
+    }, ms);
+  };
+}
+
 class NavigationMenu {
   static State = {
     OPENED: 'page-navigation--menu-opened',
@@ -100,25 +115,27 @@ class Map {
 }
 
 class Slider {
-  static KEY_DOWN_INCREMENT = 5;
-  static DEFAULT_SLIDER_STATE = 50;
+  static DEFAULT_KEY_DOWN_INCREMENT = 0.05;
+  static DEFAULT_SLIDER_STATE = 0.5;
 
-  thumbElement = null;
-  sliderElement = null;
+  keyDownIncrement = Slider.DEFAULT_KEY_DOWN_INCREMENT;
+
+  _thumbElement = null;
+  _sliderElement = null;
+  _sliderX = 0;
+  _sliderWidth = 0;
   _currentState = 0;
+  _rafId = null;
 
   constructor(sliderElement) {
-    this.sliderElement = sliderElement;
+    this._sliderElement = sliderElement;
     this.currentState = Slider.DEFAULT_SLIDER_STATE;
 
-    const thumb = this.sliderElement.querySelector('.slider__thumb');
+    const thumb = this._sliderElement.querySelector('.slider__thumb');
     if (!thumb) {
       throw new Error('Couldn\'t find .slider__thumb element!');
     }
-    this.thumbElement = thumb;
-    this.thumbElement.addEventListener('pointerdown', this.onThumbDown);
-    this.thumbElement.addEventListener('ondragstart', () => false);
-    this.thumbElement.addEventListener('focus', this.onThumbFocus);
+    this._thumbElement = thumb;
   }
 
   get currentState() {
@@ -126,46 +143,66 @@ class Slider {
   }
 
   set currentState(newState) {
-    this._currentState = Math.max(0, Math.min(newState, 100));
-    this.sliderElement.style.setProperty('--slider-state', `${this._currentState}%`);
+    this._currentState = Math.max(0, Math.min(newState, 1));
+
+    if (this._rafId === null) {
+      this._rafId = requestAnimationFrame(() => {
+        this._sliderElement.style.setProperty('--slider-state', this._currentState);
+        this._rafId = null;
+      });
+    }
   }
+
+  handleEvents() {
+    window.addEventListener('resize', this.onWindowResize);
+    this.setSliderDimensions();
+    this._thumbElement.addEventListener('pointerdown', this.onThumbDown);
+    this._thumbElement.addEventListener('ondragstart', () => false);
+    this._thumbElement.addEventListener('focus', this.onThumbFocus);
+  }
+
+  setSliderDimensions = () => {
+    const boundingRect = this._sliderElement.getBoundingClientRect();
+    this._sliderX = boundingRect.x;
+    this._sliderWidth = boundingRect.width;
+  };
 
   onThumbDown = (evt) => {
     evt.preventDefault();
-    this.thumbElement.setPointerCapture(evt.pointerId);
-    this.thumbElement.addEventListener('pointerup', this.onThumbUp);
-    this.thumbElement.addEventListener('pointermove', this.onThumbMove);
+    this._thumbElement.setPointerCapture(evt.pointerId);
+    this._thumbElement.addEventListener('pointerup', this.onThumbUp);
+    this._thumbElement.addEventListener('pointermove', this.onThumbMove);
   };
 
   onThumbUp = () => {
-    this.thumbElement.removeEventListener('pointermove', this.onThumbMove);
-    this.thumbElement.removeEventListener('pointerup', this.onThumbUp);
+    this._thumbElement.removeEventListener('pointermove', this.onThumbMove);
+    this._thumbElement.removeEventListener('pointerup', this.onThumbUp);
   };
 
   onThumbMove = (evt) => {
-    const sliderBoundingRect = this.sliderElement.getBoundingClientRect();
-    const newPositionRatio = (evt.clientX - sliderBoundingRect.x) / sliderBoundingRect.width;
-    this.currentState = newPositionRatio * 100;
+    this.currentState = (evt.clientX - this._sliderX) / this._sliderWidth;
   };
 
   onThumbFocus = (evt) => {
     evt.preventDefault();
     document.addEventListener('keydown', this.onKeyDown);
-    this.thumbElement.addEventListener('blur', this.onThumbBlur);
+    this._thumbElement.addEventListener('blur', this.onThumbBlur);
   };
 
   onThumbBlur = () => {
     document.removeEventListener('keydown', this.onKeyDown);
-    this.thumbElement.removeEventListener('blur', this.onThumbBlur);
+    this._thumbElement.removeEventListener('blur', this.onThumbBlur);
   };
 
   onKeyDown = (evt) => {
     if (evt.code === 'ArrowLeft') {
-      this.currentState = this.currentState - Slider.KEY_DOWN_INCREMENT;
+      this.currentState -= this.keyDownIncrement;
     } else if (evt.code === 'ArrowRight') {
-      this.currentState = this.currentState + Slider.KEY_DOWN_INCREMENT;
+      this.currentState += this.keyDownIncrement;
     }
   };
+
+  onWindowResize = debounce(this.setSliderDimensions, 100);
 }
 
 const navigationMenu = new NavigationMenu();
@@ -173,7 +210,8 @@ navigationMenu.handleEvents();
 
 new Map();
 
-const slider = document.querySelector('.slider');
-if (slider) {
-  new Slider(slider);
+const sliderEl = document.querySelector('.slider');
+if (sliderEl) {
+  const slider = new Slider(sliderEl);
+  slider.handleEvents();
 }

@@ -1,13 +1,16 @@
 @use "../common/variables.scss";
 
-
 .slider {
-  --slider-state: 50%;
-  --_slider-state: clamp(0%, var(--slider-state), 100%);
+  --slider-state: 0.5;
+  --_slider-state: clamp(0, var(--slider-state), 1);
 
   position: relative;
 
   contain: size;
+
+  @supports (container-type: inline-size) {
+    container-type: inline-size;
+  }
 }
 
 .slider__image-container {
@@ -20,31 +23,20 @@
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
-  mask-repeat: no-repeat;
 }
 
 .slider__image--before {
-  mask-image:
-    linear-gradient(
-      to right,
-      #000000 var(--_slider-state),
-      rgba(0, 0, 0, 0) var(--_slider-state),
-    );
+  clip-path: inset(0 calc(100% - var(--_slider-state) * 100%) 0 0);
 }
 
 .slider__image--after {
-  mask-image:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) var(--_slider-state),
-      #000000 var(--_slider-state),
-    );
+  clip-path: inset(0 0 0 calc(var(--_slider-state) * 100%));
 }
 
 .slider__thumb {
   position: absolute;
   inset-block-start: 0;
-  inset-inline-start: calc(var(--_slider-state) - 2px);
+  inset-inline-start: calc(var(--_slider-state) * 100% - 2px);
 
   display: flex;
   justify-content: center;
@@ -60,6 +52,11 @@
   cursor: ew-resize;
   transition: background 100ms;
   touch-action: none;
+
+  @supports (transform: translateX(1cqw)) {
+    inset-inline-start: -2px;
+    transform: translateX(calc(var(--_slider-state) * 100cqw));
+  }
 }
 
 .slider__thumb::after {
