@@ -1,6 +1,5 @@
 @use "../common/variables.scss";
 
-
 .slider {
   --slider-state: 50%;
   --_slider-state: clamp(0%, var(--slider-state), 100%);
@@ -20,25 +19,14 @@
   block-size: 100%;
   inline-size: 100%;
   object-fit: cover;
-  mask-repeat: no-repeat;
 }
 
 .slider__image--before {
-  mask-image:
-    linear-gradient(
-      to right,
-      #000000 var(--_slider-state),
-      rgba(0, 0, 0, 0) var(--_slider-state),
-    );
+  clip-path: inset(0 calc(100% - var(--_slider-state)) 0 0);
 }
 
 .slider__image--after {
-  mask-image:
-    linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0) var(--_slider-state),
-      #000000 var(--_slider-state),
-    );
+  clip-path: inset(0 0 0 var(--_slider-state));
 }
 
 .slider__thumb {
